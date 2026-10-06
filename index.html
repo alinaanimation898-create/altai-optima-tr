@@ -71,9 +71,9 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--red);outline-offset:3px}
 .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
 section{padding:100px 0}
-h1,h2,h3{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;margin:0;text-wrap:balance}
-h1{font-size:clamp(32px,5.2vw,68px);line-height:1.06;overflow-wrap:break-word;color:var(--ink)}
-h2{font-size:clamp(26px,3.6vw,44px);line-height:1.14;max-width:920px;color:var(--ink)}
+h1,h2,h3{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;margin:0;word-break:normal;overflow-wrap:normal;hyphens:none;text-wrap:balance}
+h1{font-size:clamp(28px,3.8vw,52px);line-height:1.08;color:var(--ink)}
+h2{font-size:clamp(24px,3.2vw,40px);line-height:1.14;max-width:920px;color:var(--ink)}
 h3{font-size:19px;margin:0 0 8px;font-weight:700}
 p{margin:0}
 .red{color:var(--red)}
@@ -96,19 +96,20 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .nav ul a:hover{color:var(--red)}
 .nav .btn{min-height:46px;padding:0 22px;font-size:15px}
 
-/* 1. HERO (FULL WIDTH BANNER) */
-.hero{padding:50px 0 90px}
-.hero-content{max-width:880px}
-.hero-facts{display:flex;flex-wrap:wrap;gap:40px;margin:36px 0 40px}
+/* 1. HERO (BALANCED 2-COLUMN SPLIT ABOVE THE FOLD) */
+.hero{padding:40px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero-content{max-width:620px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:36px;margin:32px 0 36px}
 .hero-facts > div{transition:transform .3s cubic-bezier(0.16,1,0.3,1);cursor:default}
 .hero-facts > div:hover{transform:translateY(-3px) scale(1.05)}
 .hero-facts b{display:block;font-size:34px;color:var(--garnet);line-height:1}
 .hero-facts span{font-size:14px;color:var(--muted);margin-top:6px;display:block}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px}
-.hero-banner-box{width:100%;margin-top:52px;position:relative}
-.hero-banner{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center 30%;border-radius:28px;box-shadow:0 28px 70px -20px rgba(35,24,22,.22)}
-.hero-badge-float{position:absolute;left:32px;bottom:32px;max-width:380px;background:#fff;border-radius:18px 18px 18px 6px;padding:16px 20px;font-size:14px;line-height:1.45;box-shadow:0 20px 50px -15px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.9);z-index:2}
-.hero-badge-float small{display:block;color:#008069;font-weight:600;margin-bottom:5px;font-size:12.5px}
+.hero-media{position:relative}
+.hero-banner{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 25%;border-radius:28px;box-shadow:0 24px 60px -15px rgba(35,24,22,.22)}
+.hero-badge-float{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-radius:18px;padding:14px 18px;font-size:13.5px;line-height:1.45;box-shadow:0 16px 40px -10px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.9);z-index:2}
+.hero-badge-float small{display:block;color:#008069;font-weight:600;margin-bottom:4px;font-size:12px}
 
 /* 2. NUMBERS */
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px}
@@ -137,24 +138,31 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .pain .answer{padding-left:28px;position:relative}
 .pain .answer::before{content:"";position:absolute;left:0;top:10px;width:12px;height:12px;border-radius:50%;background:var(--red)}
 
-/* 5. ASLAN GİBİ SATIŞ (NO PODLOZHKI) */
-.split{display:grid;grid-template-columns:360px 1fr;gap:64px;align-items:center}
-.aslan-photo{width:100%;max-width:360px;aspect-ratio:1/1;object-fit:cover;object-position:center 15%;border-radius:24px;box-shadow:0 20px 45px -15px rgba(35,24,22,.18)}
-.traits-clean{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:44px}
-.trait-row{border-top:2px solid #F0E6DE;padding-top:18px;transition:border-color .3s,transform .3s}
-.trait-row:hover{border-color:var(--red);transform:translateY(-2px)}
-.trait-num{font-family:var(--display);font-size:14px;font-weight:800;color:var(--red);margin-bottom:8px;display:block}
-.trait-row h3{font-size:18px;margin:0 0 8px;color:var(--ink)}
-.trait-row p{font-size:15px;line-height:1.55;color:var(--muted);margin:0}
+/* 5. ASLAN GİBİ SATIŞ (PACKAGED LUXURY CARDS & PROMINENT PHOTO) */
+.aslan-split{display:grid;grid-template-columns:460px 1fr;gap:56px;align-items:center}
+.aslan-photo-card{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 28px 70px -15px rgba(35,24,22,.25)}
+.aslan-photo{width:100%;min-height:540px;aspect-ratio:4/5;object-fit:cover;object-position:center 15%;display:block}
+.aslan-photo-badge{position:absolute;bottom:24px;left:24px;right:24px;background:rgba(35,24,22,.85);backdrop-filter:blur(10px);color:#fff;border-radius:16px;padding:12px 18px;font-size:13px;line-height:1.4;border:1px solid rgba(255,255,255,.15)}
+.aslan-photo-badge b{color:#FFE58F;display:block;font-size:13.5px;margin-bottom:2px}
+.traits-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+.trait-card{background:#FAF8F5;border:1px solid var(--line);border-radius:20px;padding:24px 22px;transition:all .25s ease;display:flex;flex-direction:column;justify-content:space-between}
+.trait-card:hover{background:#fff;transform:translateY(-3px);border-color:#E30A17;box-shadow:0 12px 30px -10px rgba(227,10,23,.12)}
+.trait-pill{display:inline-block;font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--red);background:rgba(227,10,23,.08);padding:3px 10px;border-radius:999px;margin-bottom:12px;width:fit-content}
+.trait-card h3{font-size:17px;color:var(--ink);margin:0 0 8px;line-height:1.25}
+.trait-card p{font-size:14px;color:var(--muted);line-height:1.5;margin:0}
 
-/* 6. DEMO (ANIMATED WHATSAPP UI) */
-.demo{display:grid;grid-template-columns:1fr 450px;gap:64px;align-items:start;margin-top:56px}
-.tabs{display:flex;flex-wrap:wrap;gap:10px}
-.tab{min-height:46px;padding:0 20px;border-radius:999px;border:1px solid #E3D2C6;background:#fff;font:600 15px var(--body);color:var(--muted);cursor:pointer;transition:transform .2s,border-color .2s,background .2s,color .2s}
-.tab:hover{transform:translateY(-2px);border-color:var(--red)}
-.tab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#fff}
-.channels{margin-top:44px;color:var(--muted);font-size:15px;max-width:440px}
-.wa-window{border-radius:24px;background:#EFEAE2;min-height:500px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 60px -20px rgba(0,0,0,.22);border:1px solid #D8CFC8}
+/* 6. DEMO (ANIMATED WHATSAPP UI & 10 SECTORS) */
+.demo{display:grid;grid-template-columns:1.15fr 440px;gap:56px;align-items:stretch;margin-top:52px}
+.demo-left{display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tab{min-height:44px;padding:10px 14px;border-radius:14px;border:1px solid #E3D2C6;background:#fff;font:600 13.5px var(--body);color:var(--muted);cursor:pointer;transition:all .2s ease;text-align:left;display:flex;align-items:center;justify-content:space-between}
+.tab:hover{border-color:var(--red);transform:translateY(-1px);color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:0 4px 14px rgba(35,24,22,.2)}
+.tab[aria-selected="true"] .tab-arrow{color:var(--red);transform:translateX(3px)}
+.tab-arrow{font-size:12px;transition:transform .2s;color:#B9A398}
+.channels-box{background:#FAF8F5;border:1px solid var(--line);border-radius:16px;padding:18px 20px;font-size:13.5px;color:var(--muted);line-height:1.55}
+.channels-box b{color:var(--ink);display:block;margin-bottom:4px}
+.wa-window{border-radius:28px;background:#EFEAE2;min-height:580px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 60px -20px rgba(0,0,0,.25);border:1px solid #D8CFC8}
 .wa-head{background:#008069;color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 4px rgba(0,0,0,.1)}
 .wa-user{display:flex;align-items:center;gap:12px}
 .wa-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
@@ -169,8 +177,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .wa-bubble.out{align-self:flex-end;background:#D9FDD3;color:#111B21;border-top-right-radius:0}
 .wa-meta{display:inline-flex;align-items:center;gap:3px;float:right;margin-left:12px;margin-top:5px;font-size:11px;color:#667781}
 .wa-ticks{color:#53BDEB;font-weight:700;letter-spacing:-2px}
-.wa-note{align-self:center;text-align:center;font-size:11.5px;color:#54656F;background:rgba(255,255,255,.85);padding:4px 12px;border-radius:8px;margin-top:6px;box-shadow:0 1px .5px rgba(0,0,0,.08);opacity:0;animation:waFadeIn .35s ease .4s forwards}
-.wa-typing{align-self:flex-start;background:#fff;padding:6px 14px;border-radius:14px;border-top-left-radius:0;box-shadow:0 1px .5px rgba(0,0,0,.13);display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#667781}
+.wa-note{align-self:center;text-align:center;font-size:11.5px;color:#54656F;background:rgba(255,255,255,.85);padding:4px 12px;border-radius:8px;margin-top:6px;box-shadow:0 1px .5px rgba(0,0,0,.08);opacity:0;animation:waFadeIn .35s ease .3s forwards}
+.wa-typing{align-self:flex-start;background:#fff;padding:8px 14px;border-radius:14px;border-top-left-radius:0;box-shadow:0 1px .5px rgba(0,0,0,.13);display:inline-flex;align-items:center;gap:4px;font-size:12.5px;color:#667781}
 .wa-typing-dot{width:6px;height:6px;border-radius:50%;background:#00A884;animation:waTyping 1.2s infinite ease-in-out}
 .wa-typing-dot:nth-child(2){animation-delay:.2s}
 .wa-typing-dot:nth-child(3){animation-delay:.4s}
@@ -179,72 +187,93 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .wa-input-pill{background:#fff;border-radius:24px;flex:1;padding:8px 14px;font-size:13.5px;color:#8696A0;display:flex;align-items:center;gap:8px}
 .wa-mic{width:38px;height:38px;border-radius:50%;background:#00A884;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
 
-/* 7. CRM (CLEAN MINIMALIST NO PODLOZHKI) */
-.crm-clean-grid{display:flex;flex-wrap:wrap;gap:28px 44px;align-items:center;margin-top:52px;max-width:960px}
-.crm-item{display:inline-flex;align-items:center;gap:10px;font-size:17px;font-weight:600;color:#6E5C57;transition:color .2s,transform .2s;cursor:default}
-.crm-item:hover{color:var(--ink);transform:translateY(-2px)}
-.crm-item svg{width:22px;height:22px;fill:currentColor;flex-shrink:0;opacity:.8}
+/* 7. CRM (SPLIT LAYOUT: STORY ON LEFT, LOGOS ON RIGHT) */
+.crm-split{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center}
+.crm-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.crm-card-item{background:#FAF8F5;border:1px solid var(--line);border-radius:18px;padding:18px 16px;display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600;color:#503E38;transition:all .2s ease}
+.crm-card-item:hover{background:#fff;border-color:#E30A17;transform:translateY(-2px);color:var(--ink);box-shadow:0 8px 20px -6px rgba(0,0,0,.08)}
+.crm-card-item svg{width:22px;height:22px;fill:currentColor;flex-shrink:0;color:var(--garnet)}
 
-/* 8. CALCULATOR (PREMIUM FINTECH RESULT PANEL) */
-.calc{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;margin-top:64px;align-items:stretch}
-.calc-inputs{display:flex;flex-direction:column;justify-content:center}
-.field{margin-bottom:34px}
-.field-top{display:flex;justify-content:space-between;gap:16px;font-weight:600;margin-bottom:12px;font-size:16px}
-.field-top output{color:var(--red);font-size:18px}
+/* 8. CALCULATOR (BALANCED 2 COLUMNS ON ONE ROW) */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:56px;align-items:stretch}
+.calc-inputs-box{background:#FAF8F5;border:1px solid var(--line);border-radius:28px;padding:40px;display:flex;flex-direction:column;justify-content:space-between}
+.field{margin-bottom:28px}
+.field:last-child{margin-bottom:0}
+.field-top{display:flex;justify-content:space-between;gap:16px;font-weight:600;margin-bottom:12px;font-size:15.5px;color:var(--ink)}
+.field-top output{color:var(--red);font-size:19px;font-weight:700}
 input[type=range]{width:100%;accent-color:var(--red);height:28px;cursor:pointer}
-.speed{display:flex;flex-wrap:wrap;gap:10px}
-.speed button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid #E3D2C6;background:#fff;font:600 14px var(--body);color:var(--muted);cursor:pointer;transition:transform .2s,background .2s,color .2s}
-.speed button:hover{transform:scale(1.03)}
+.speed{display:flex;flex-wrap:wrap;gap:8px}
+.speed button{min-height:42px;padding:0 16px;border-radius:999px;border:1px solid #E3D2C6;background:#fff;font:600 13.5px var(--body);color:var(--muted);cursor:pointer;transition:all .2s}
+.speed button:hover{border-color:var(--ink);color:var(--ink)}
 .speed button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.calc-card{background:linear-gradient(145deg,#1E1412 0%,#2D1C19 100%);color:#fff;border-radius:28px;padding:44px 40px;box-shadow:0 30px 70px -15px rgba(35,24,22,.4);display:flex;flex-direction:column;justify-content:space-between}
-.calc-card .tag{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.6);font-weight:600}
-.calc-card .big{font-size:clamp(48px,5.5vw,72px);line-height:1;color:#FF3B30;margin:12px 0 16px;text-shadow:0 0 40px rgba(255,59,48,.25)}
-.calc-card .formula{font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.55}
-.calc-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:32px 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.12)}
-.calc-stats dt{font-size:13px;color:rgba(255,255,255,.6)}
-.calc-stats dd{margin:4px 0 0;font-size:22px;color:#fff}
+.calc-card{background:linear-gradient(150deg,#1D1311 0%,#2B1B18 100%);color:#fff;border-radius:28px;padding:40px;box-shadow:0 24px 60px -15px rgba(35,24,22,.35);display:flex;flex-direction:column;justify-content:space-between}
+.calc-card .tag{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.6);font-weight:600}
+.calc-card .big{font-size:clamp(44px,4.8vw,64px);line-height:1;color:#FF3B30;margin:10px 0 14px;text-shadow:0 0 30px rgba(255,59,48,.3)}
+.calc-card .formula{font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.5}
+.calc-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:28px 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
+.calc-stats dt{font-size:12.5px;color:rgba(255,255,255,.6)}
+.calc-stats dd{margin:4px 0 0;font-size:20px;color:#fff}
 .calc-stats .annual{grid-column:1/-1}
-.calc-stats .annual dd{color:#25D366;font-size:32px}
+.calc-stats .annual dd{color:#25D366;font-size:28px}
 .calc-card .btn{background:var(--red);color:#fff;align-self:flex-start}
 
-/* 9. COMPARE (LIRA WATERMARK BACKGROUND & NO PODLOZHKI) */
-.compare-section{position:relative;overflow:hidden;background:#FAF8F5}
-.lira-bg{position:absolute;inset:0;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24' fill='none' stroke='%23231816' stroke-width='1.2'%3E%3Cpath d='M9 3v15c0 1.5 2 3 5 3M7 7h8M7 11h6'/%3E%3C/svg%3E");background-repeat:repeat;background-size:90px 90px}
-.table-box{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:60px;max-width:100%;background:#fff;border-radius:20px;border:1px solid var(--line);box-shadow:0 8px 30px -10px rgba(0,0,0,.04)}
+/* 9. COMPARE SECTION (FLOATING SIDE LIRAS & HIGHLIGHTED CRITERIA) */
+.compare-section{position:relative;background:#FAF8F5;overflow:hidden}
+.lira-flank{position:absolute;top:0;bottom:0;width:140px;pointer-events:none;z-index:0;overflow:hidden}
+.lira-flank-left{left:0}
+.lira-flank-right{right:0}
+.lira-item{position:absolute;font-family:var(--display);font-size:68px;font-weight:800;color:rgba(227,10,23,.06);line-height:1;user-select:none}
+.lira-item.l1{top:15%;left:20px;animation:liraFloat 6s ease-in-out infinite}
+.lira-item.l2{top:55%;left:45px;font-size:92px;color:rgba(35,24,22,.04);animation:liraFloat 7.5s ease-in-out infinite reverse}
+.lira-item.r1{top:20%;right:20px;animation:liraFloat 6.5s ease-in-out infinite .5s}
+.lira-item.r2{top:65%;right:35px;font-size:84px;color:rgba(227,10,23,.05);animation:liraFloat 8s ease-in-out infinite reverse .8s}
+@keyframes liraFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(4deg)}}
+
+.table-box{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:60px;max-width:100%;background:#fff;border-radius:24px;border:1px solid var(--line);box-shadow:0 8px 30px -10px rgba(0,0,0,.04);position:relative;z-index:1}
 table{width:100%;min-width:680px;border-collapse:separate;border-spacing:0}
 th,td{text-align:left;padding:20px 22px;vertical-align:middle;border-bottom:1px solid var(--line)}
 th{font-size:14px;color:var(--muted);font-weight:600;background:#FAF8F6}
-td:first-child{font-weight:600;width:24%;color:var(--ink)}
-.rep-col{color:#7A6963;width:38%}
+td:first-child{width:26%;color:#1A1210}
+.criteria-cell{font-weight:700;font-size:15px;color:#1A1210;display:inline-flex;align-items:center;gap:8px}
+.criteria-dot{width:7px;height:7px;border-radius:50%;background:var(--red);display:inline-block;flex-shrink:0}
+.rep-col{color:#7A6963;width:37%}
 .aslan-col{background:rgba(227,10,23,.04);border-left:2px solid var(--red);border-right:2px solid var(--red);font-weight:600;color:#1A1210}
 th.aslan-col{border-top:2px solid var(--red);border-top-left-radius:12px;border-top-right-radius:12px;color:var(--red);font-size:16px;font-weight:800;background:rgba(227,10,23,.07)}
 tr:last-child .aslan-col{border-bottom:2px solid var(--red);border-bottom-left-radius:12px;border-bottom-right-radius:12px}
 .aslan-tag{display:inline-block;font-size:11px;background:var(--red);color:#fff;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;letter-spacing:.02em}
 .check{color:#0F7A55;font-weight:700;margin-right:6px}
 .cross{color:#9E8D88;margin-right:6px}
-.clean-saving{display:flex;flex-wrap:wrap;gap:24px 56px;align-items:baseline;margin-top:48px;padding-top:24px}
+.clean-saving{display:flex;flex-wrap:wrap;gap:24px 56px;align-items:baseline;margin-top:48px;padding-top:24px;position:relative;z-index:1}
 .clean-saving .num{font-size:clamp(46px,6vw,72px);line-height:1;color:var(--red)}
 
-/* 10. PLANS (CLEAN MINIMALIST TIERS, NO HEAVY BOXES) */
-.plans-clean{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px}
-.plan-item{padding:28px 20px;border-top:3px solid #E4DBD3;transition:border-color .3s,transform .2s;cursor:default}
-.plan-item:hover{transform:translateY(-3px)}
-.plan-item.on{border-top-color:var(--red)}
-.plan-item h3{font-family:var(--display);font-size:18px;text-transform:uppercase}
-.plan-item .vol{font-size:14px;color:var(--muted);margin:8px 0 16px}
-.plan-item .price{font-size:36px;color:var(--ink);line-height:1}
-.plan-item.on .price{color:var(--red)}
-.plan-item .period{font-size:13.5px;color:var(--muted);margin-top:6px}
-.picker{margin-top:52px;max-width:760px}
-.setup{display:flex;flex-wrap:wrap;gap:48px;align-items:center;margin-top:36px}
-.setup b{display:block;font-size:24px}
+/* 10. PLANS (PACKAGED CARDS WITH CHECKLISTS & SETUP BREAKDOWN) */
+.plans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+.plan-card{background:#fff;border:2px solid var(--line);border-radius:24px;padding:32px 24px;display:flex;flex-direction:column;justify-content:space-between;transition:all .25s ease;position:relative}
+.plan-card:hover{transform:translateY(-4px);border-color:#D8C5BC;box-shadow:0 16px 40px -10px rgba(0,0,0,.08)}
+.plan-card.popular{border-color:var(--red);box-shadow:0 16px 40px -10px rgba(227,10,23,.15)}
+.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 12px;border-radius:999px;white-space:nowrap}
+.plan-card.on{border-color:var(--red);background:#FFFDFD}
+.plan-card h3{font-family:var(--display);font-size:20px;text-transform:uppercase;margin:0 0 4px}
+.plan-for{font-size:12.5px;color:var(--muted);min-height:36px;line-height:1.4}
+.plan-price-wrap{margin:18px 0;padding:16px 0;border-top:1px solid #F0E6DE;border-bottom:1px solid #F0E6DE}
+.plan-price-wrap .price{font-size:38px;font-weight:800;color:var(--ink);line-height:1}
+.plan-card.popular .price,.plan-card.on .price{color:var(--red)}
+.plan-price-wrap .period{font-size:13px;color:var(--muted);margin-top:4px}
+.plan-features{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;font-size:13.5px;color:#4A3B37}
+.plan-features li{display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.plan-features svg{width:16px;height:16px;fill:#0F7A55;flex-shrink:0;margin-top:2px}
+.plan-btn{margin-top:auto;width:100%;min-height:44px;border-radius:999px;border:1px solid #DCC3B5;background:#fff;font:600 14px var(--body);color:var(--garnet);cursor:pointer;transition:all .2s;text-align:center;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.plan-card.popular .plan-btn,.plan-card.on .plan-btn{background:var(--red);border-color:var(--red);color:#fff}
 
-/* 11. STEPS (SLEEK NUMBERED TIMELINE) */
+.plans-slider-box{margin-top:48px;background:#FAF8F5;border:1px solid var(--line);border-radius:24px;padding:32px 36px}
+.plans-setup-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+
+/* 11. STEPS (SLEEK NUMBERED TIMELINE - INTER FONT) */
 .steps-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:64px;position:relative}
 .step-item{position:relative}
-.step-item::before{content:"";position:absolute;top:20px;left:40px;right:-40px;height:2px;background:#F0E6DE;z-index:0}
+.step-item::before{content:"";position:absolute;top:22px;left:44px;right:-40px;height:2px;background:#F0E6DE;z-index:0}
 .step-item:last-child::before{display:none}
-.step-num{width:42px;height:42px;border-radius:50%;background:#fff;border:2px solid var(--red);color:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:15px;font-weight:800;margin-bottom:24px;position:relative;z-index:1}
+.step-num{width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid var(--red);color:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--body);font-size:17px;font-weight:800;margin-bottom:24px;position:relative;z-index:1;letter-spacing:-0.02em}
 .step-item h3{font-size:18px;margin:0 0 10px}
 .step-item p{color:var(--muted);font-size:15px;line-height:1.55}
 
@@ -277,20 +306,26 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 .copy{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#B9A398}
 
 .mob-br{display:none}
+.desk-br{display:inline}
 
 @media (max-width:960px){
+  .desk-br{display:none}
   section{padding:70px 0}
   .nav > nav{display:none}
   .nav ul{display:none}
-  .split,.demo,.calc,.trial-grid,.founders-grid,.principle-grid{grid-template-columns:1fr;gap:44px}
+  .hero-grid,.aslan-split,.demo,.crm-split,.calc,.trial-grid,.founders-grid,.principle-grid{grid-template-columns:1fr;gap:40px}
   .facts{grid-template-columns:1fr;gap:24px}
   .pain{grid-template-columns:1fr;gap:16px}
-  .plans-clean{grid-template-columns:1fr 1fr}
+  .traits-cards{grid-template-columns:1fr 1fr}
+  .crm-cards{grid-template-columns:repeat(2,1fr)}
+  .plans-grid{grid-template-columns:1fr 1fr}
   .steps-timeline{grid-template-columns:1fr 1fr;gap:32px}
   .step-item::before{display:none}
   .foot{grid-template-columns:1fr}
-  .hero-badge-float{position:relative;left:auto;bottom:auto;margin-top:16px;max-width:none}
-  .aslan-photo,.principle-photo{max-width:320px;margin:0 auto}
+  .lira-flank{display:none}
+  .hero-badge-float{position:relative;left:auto;right:auto;bottom:auto;margin-top:16px;max-width:none}
+  .aslan-photo{min-height:auto;aspect-ratio:4/5;max-width:400px;margin:0 auto}
+  .principle-photo{max-width:320px;margin:0 auto}
 }
 @media (max-width:560px){
   .mob-br{display:block}
@@ -300,10 +335,14 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   .logo{font-size:14px;letter-spacing:.02em}
   h1{font-size:clamp(17px,4.8vw,24px);line-height:1.22;word-break:normal;hyphens:none}
   h2{font-size:clamp(16px,4.4vw,22px);line-height:1.24;word-break:normal;hyphens:none}
+  .hero-facts{gap:20px}
   .founder-item{flex-direction:column;gap:16px}
   .founder-avatar{width:90px;height:90px}
-  .traits-clean{grid-template-columns:1fr}
-  .plans-clean{grid-template-columns:1fr}
+  .traits-cards{grid-template-columns:1fr}
+  .tabs{grid-template-columns:1fr}
+  .crm-cards{grid-template-columns:1fr}
+  .calc-inputs-box,.calc-card{padding:28px 20px}
+  .plans-grid{grid-template-columns:1fr}
   .steps-timeline{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -330,9 +369,9 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 
 <!-- 1. HERO -->
 <section class="hero">
-  <div class="wrap">
+  <div class="wrap hero-grid">
     <div class="hero-content">
-      <h1>Dünyanın en iyi <span class="red">satıcısı</span> artık sizin&nbsp;ekibinizde</h1>
+      <h1>Dünyanın en iyi <span class="red">satıcısı</span><br class="desk-br">artık sizin ekibinizde</h1>
       <p class="lead">Aslan; WhatsApp, Instagram ve tüm kanallarda müşterinize 60 saniyede cevap verir, ürününüzü sizden iyi bilir, Türk misafirperverliğiyle karşılar ve her konuşmayı CRM'e işler. Gece, hafta sonu ve&nbsp;bayramda da.</p>
       <div class="hero-facts">
         <div><b class="num">60 sn</b><span>ilk cevap</span></div>
@@ -344,7 +383,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
         <a class="btn btn-line" href="#ornekler">Aslan nasıl konuşuyor</a>
       </div>
     </div>
-    <div class="hero-banner-box">
+    <div class="hero-media">
       <img class="hero-banner" src="assets/hero-desk.webp" alt="Yapay zeka satış temsilcisi Aslan masada çalışıyor" width="1920" height="1071">
       <div class="hero-badge-float">
         <small>🟢 Aslan, 23:48 • WhatsApp Business</small>
@@ -410,90 +449,146 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<!-- 5. ASLAN GİBİ SATIŞ (NEW PHOTO & NO PODLOZHKI) -->
+<!-- 5. ASLAN GİBİ SATIŞ -->
 <section id="aslan">
-  <div class="wrap split">
-    <div>
-      <img class="aslan-photo" src="assets/aslan-gesture.webp" alt="Yapay zeka satış temsilcisi Aslan" width="1200" height="1200" loading="lazy">
+  <div class="wrap aslan-split">
+    <div class="aslan-photo-card">
+      <img class="aslan-photo" src="assets/aslan-gesture.webp" alt="Yapay zeka satış temsilcisi Aslan" width="1200" height="1500" loading="lazy">
+      <div class="aslan-photo-badge">
+        <b>⭐ Türk Ahilik Geleneği & Misafirperverlik</b>
+        Müşterinizi kendi dükkânınız gibi karşılar, güvenle satışa dönüştürür
+      </div>
     </div>
     <div>
       <h2><span class="red">Aslan&nbsp;gibi</span> satış</h2>
-      <p class="lead">Dünyanın en iyi otellerinin hizmet standardı, Türk misafirperverliği ve Ahilik geleneğinin dürüst ticaret ahlakı. Hepsi tek bir satış&nbsp;temsilcisinde</p>
-      <div class="traits-clean">
-        <div class="trait-row">
-          <span class="trait-num">01 / İLETİŞİM STANDARDI</span>
-          <h3>"Hoş geldiniz" ile başlar</h3>
+      <p class="lead">Dünyanın en iyi otellerinin hizmet standardı, Türk misafirperverliği ve dürüst ticaret ahlakı. Hepsi tek bir satış&nbsp;temsilcisinde</p>
+      <div class="traits-cards">
+        <div class="trait-card">
+          <div>
+            <span class="trait-pill">01 / İLETİŞİM STANDARDI</span>
+            <h3>"Hoş geldiniz" ile başlar</h3>
+          </div>
           <p>Selamlar, teşekkür eder, nasıl hitap edeceğini sorar: Ahmet Bey, Elif&nbsp;Hanım</p>
         </div>
-        <div class="trait-row">
-          <span class="trait-num">02 / DÜRÜST TİCARET</span>
-          <h3>Sözünün eri</h3>
-          <p>Doğru fiyat, doğru bilgi ve verilen sözün kusursuz&nbsp;takibi</p>
+        <div class="trait-card">
+          <div>
+            <span class="trait-pill">02 / DÜRÜST TİCARET</span>
+            <h3>Sözünün eri</h3>
+          </div>
+          <p>Doğru fiyat, net bilgi ve verilen sözün kusursuz&nbsp;takibi</p>
         </div>
-        <div class="trait-row">
-          <span class="trait-num">03 / MARJ KORUMASI</span>
-          <h3>Pazarlığı bilir</h3>
+        <div class="trait-card">
+          <div>
+            <span class="trait-pill">03 / MARJ KORUMASI</span>
+            <h3>Pazarlığı bilir</h3>
+          </div>
           <p>Sizin belirlediğiniz sınırlar içinde kalarak kârlılığınızı&nbsp;korur</p>
         </div>
-        <div class="trait-row">
-          <span class="trait-num">04 / GLOBAL SATIŞ</span>
-          <h3>Her dilden konuşur</h3>
-          <p>Türkçe, İngilizce, Rusça, Almanca, Arapça ve 30'dan fazla&nbsp;dil</p>
+        <div class="trait-card">
+          <div>
+            <span class="trait-pill">04 / GLOBAL SATIŞ</span>
+            <h3>Her dilden konuşur</h3>
+          </div>
+          <p>Türkçe, İngilizce, Rusça, Almanca, Arapça ve 30'dan fazla dilde anadil&nbsp;akıcılığı</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 6. DEMO (ANIMATED WHATSAPP) -->
+<!-- 6. DEMO (ANIMATED WHATSAPP UI & 10 SECTORS) -->
 <section id="ornekler">
   <div class="wrap">
-    <h2>Aslan farklı sektörlerde <br class="mob-br"><span class="red">nasıl&nbsp;konuşuyor?</span></h2>
-    <p class="lead">Örnek senaryolar: gece 2'de Rusça yazan emlak alıcısı, Almanca soran otel misafiri, "son fiyat?" diyen Instagram&nbsp;müşterisi</p>
     <div class="demo">
-      <div>
-        <div class="tabs" role="tablist" aria-label="Sektörler" id="tabs"></div>
-        <p class="channels">WhatsApp, Instagram DM ve yorumlar, Telegram, web sitesi, Sahibinden, Facebook Messenger. Aslan hepsinde aynı anda çalışır ve sesli mesajları da&nbsp;anlar</p>
+      <div class="demo-left">
+        <div>
+          <h2>Aslan farklı sektörlerde <br class="mob-br"><span class="red">nasıl&nbsp;konuşuyor?</span></h2>
+          <p class="lead" style="margin-top:16px">Örnek senaryolar: gece 2'de Rusça yazan emlak alıcısı, Almanca soran otel misafiri, "son fiyat?" diyen Instagram&nbsp;müşterisi</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px">Sektör seçin (10 Farklı Alan)</div>
+          <div class="tabs" role="tablist" aria-label="Sektörler" id="tabs"></div>
+        </div>
+        <div class="channels-box">
+          <b>⚡ Tek Sistem, Tüm İletişim Kanalları</b>
+          WhatsApp, Instagram DM &amp; yorumlar, Telegram, Web sitesi, Sahibinden ve Messenger. Aslan hepsinde 60 saniyede aynı uzmanlıkla cevap verir ve sesli mesajları anında&nbsp;metne&nbsp;döker.
+        </div>
       </div>
       <div class="wa-window" id="chat" role="tabpanel" aria-live="polite"></div>
     </div>
   </div>
 </section>
 
-<!-- 7. CRM (MINIMALIST LOGOS, NO PODLOZHKI) -->
-<section id="crm">
-  <div class="wrap">
-    <h2>Müşterileriniz <br class="mob-br">şirketinizde&nbsp;<span class="red">kalır</span></h2>
-    <p class="lead">Aslan müşteri kartını anında açar, konuşmanın özetini yazar ve tüm alanları sizin kurallarınıza göre&nbsp;doldurur</p>
-    <div class="crm-clean-grid">
-      <div class="crm-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Bitrix24</div>
-      <div class="crm-item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V7h2z"/></svg>HubSpot</div>
-      <div class="crm-item"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>Zoho CRM</div>
-      <div class="crm-item"><svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>Salesforce</div>
-      <div class="crm-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>Logo</div>
-      <div class="crm-item"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11z"/></svg>Paraşüt</div>
-      <div class="crm-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>ikas</div>
-      <div class="crm-item"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/></svg>IdeaSoft</div>
-      <div class="crm-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h10M7 16h6" stroke="#6E5C57" stroke-width="2"/></svg>Google E-Tablolar</div>
-      <div class="crm-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8l8 8M16 8l-8 8" stroke="#6E5C57" stroke-width="2"/></svg>Excel</div>
+<!-- 7. TRIAL (MOVED RIGHT AFTER DEMO AS REQUESTED) -->
+<section class="trial" id="test">
+  <div class="wrap trial-grid">
+    <div>
+      <h2>7&nbsp;gün <span class="red" style="color:#FFE58F">ücretsiz&nbsp;test</span></h2>
+      <p class="lead">Aslan'ı bir kanalınıza bağlayalım, talepleri tabloya toplayalım. Kart bilgisi gerekmez, 24 saatte&nbsp;başlıyoruz</p>
+    </div>
+    <div>
+      <form id="trialForm">
+        <label>Adınız<input type="text" name="name" placeholder="Ahmet" required autocomplete="name"></label>
+        <label>WhatsApp numaranız<input type="tel" name="phone" placeholder="+90 5__ ___ __ __" required autocomplete="tel"></label>
+        <label>Sektörünüz<input type="text" name="biz" placeholder="Örn. emlak, klinik, butik"></label>
+        <button class="btn" type="submit">7 günlük erişimi al</button>
+        <p class="small">Göndererek <a href="#">KVKK Aydınlatma Metni</a>'ni okuduğunuzu onaylarsınız</p>
+      </form>
+      <p class="thanks" id="thanks">Talebiniz alındı! Ekibimiz WhatsApp'tan size yazacak. Hoş geldiniz!</p>
     </div>
   </div>
 </section>
 
-<!-- 8. CALCULATOR (PREMIUM FINTECH PANEL) -->
+<!-- 8. CRM (LOGOS ON RIGHT SIDE) -->
+<section id="crm">
+  <div class="wrap crm-split">
+    <div>
+      <h2>Müşterileriniz <br class="mob-br">şirketinizde&nbsp;<span class="red">kalır</span></h2>
+      <p class="lead" style="margin-top:18px">Aslan müşteri kartını anında açar, konuşmanın özetini yazar ve tüm alanları sizin kurallarınıza göre&nbsp;doldurur.</p>
+      <p style="margin-top:16px;color:var(--muted);font-size:16px;line-height:1.6">İyi satıcınız işten ayrılsa bile müşteri portföyü, teklif geçmişi ve özel tercihler şirketinizin hafızasında güvende kalır. Hiçbir lead kaybolmaz, hiçbir müşteri unutulmaz.</p>
+    </div>
+    <div class="crm-cards">
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Bitrix24</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V7h2z"/></svg>HubSpot</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>Zoho CRM</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>Salesforce</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>Logo</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11z"/></svg>Paraşüt</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>ikas</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/></svg>IdeaSoft</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h10M7 16h6" stroke="#6E5C57" stroke-width="2"/></svg>Google E-Tablolar</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8l8 8M16 8l-8 8" stroke="#6E5C57" stroke-width="2"/></svg>Excel</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. CALCULATOR (BALANCED 2 COLUMNS ON ONE ROW) -->
 <section id="hesap">
   <div class="wrap">
     <h2>Aslan olmadan ayda <br class="mob-br">ne kadar&nbsp;<span class="red">kaybediyorsunuz?</span></h2>
     <div class="calc">
-      <div class="calc-inputs">
-        <div class="field"><div class="field-top"><label for="leads" style="display:inline">Ayda kaç talep geliyor?</label><output id="leadsOut" class="num"></output></div><input type="range" id="leads" min="10" max="2000" step="10" value="200"></div>
-        <div class="field"><div class="field-top"><label for="conv" style="display:inline">Taleplerin yüzde kaçı satışa dönüyor?</label><output id="convOut" class="num"></output></div><input type="range" id="conv" min="1" max="50" step="1" value="10"></div>
-        <div class="field"><div class="field-top"><label for="check" style="display:inline">Ortalama sepet tutarı</label><output id="checkOut" class="num"></output></div><input type="range" id="check" min="500" max="250000" step="500" value="5000"></div>
-        <div class="field"><div class="field-top"><span>Müşteriye şu an ne kadar hızlı cevap veriyorsunuz?</span></div>
-        <div class="speed" id="speed">
-          <button type="button" data-rate="0.05" aria-pressed="false">5 dakika içinde</button>
-          <button type="button" data-rate="0.12" aria-pressed="false">1 saat içinde</button>
-          <button type="button" data-rate="0.20" aria-pressed="true">Birkaç saat sonra</button>
+      <div class="calc-inputs-box">
+        <div>
+          <div class="field">
+            <div class="field-top"><label for="leads" style="display:inline">Ayda kaç talep geliyor?</label><output id="leadsOut" class="num"></output></div>
+            <input type="range" id="leads" min="10" max="2000" step="10" value="200">
+          </div>
+          <div class="field">
+            <div class="field-top"><label for="conv" style="display:inline">Taleplerin yüzde kaçı satışa dönüyor?</label><output id="convOut" class="num"></output></div>
+            <input type="range" id="conv" min="1" max="50" step="1" value="10">
+          </div>
+          <div class="field">
+            <div class="field-top"><label for="check" style="display:inline">Ortalama sepet tutarı</label><output id="checkOut" class="num"></output></div>
+            <input type="range" id="check" min="500" max="250000" step="500" value="5000">
+          </div>
+        </div>
+        <div class="field" style="margin-top:16px">
+          <div class="field-top"><span>Müşteriye şu an ne kadar hızlı cevap veriyorsunuz?</span></div>
+          <div class="speed" id="speed">
+            <button type="button" data-rate="0.05" aria-pressed="false">5 dakika içinde</button>
+            <button type="button" data-rate="0.12" aria-pressed="false">1 saat içinde</button>
+            <button type="button" data-rate="0.20" aria-pressed="true">Birkaç saat sonra</button>
+          </div>
         </div>
       </div>
       <div class="calc-card">
@@ -515,9 +610,16 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<!-- 9. COMPARE (LIRA WATERMARK BG, NO PODLOZHKI ON SAVING) -->
+<!-- 10. COMPARE (SIDE LIRAS, CRITERIA HIGHLIGHTS) -->
 <section id="karsilastirma" class="compare-section">
-  <div class="lira-bg"></div>
+  <div class="lira-flank lira-flank-left">
+    <div class="lira-item l1">₺</div>
+    <div class="lira-item l2">₺</div>
+  </div>
+  <div class="lira-flank lira-flank-right">
+    <div class="lira-item r1">₺</div>
+    <div class="lira-item r2">₺</div>
+  </div>
   <div class="wrap" style="position:relative;z-index:1">
     <h2>Aslan mı, <br class="mob-br"><span class="red">satış&nbsp;temsilcisi&nbsp;mi?</span></h2>
     <p class="lead">Kadrolu satış temsilcisi yılda yaklaşık 1.000.000 TL, Aslan yılda 156.800 TL'den&nbsp;başlar</p>
@@ -531,13 +633,13 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
           </tr>
         </thead>
         <tbody>
-          <tr><td>Aylık maliyet</td><td class="rep-col"><span class="cross">✕</span> ≈79.000 TL'den (maaş, SGK, prim, hat)</td><td class="aslan-col"><span class="check">✓</span> 12.900 TL'den, her şey dahil</td></tr>
-          <tr><td>Çalışma süresi</td><td class="rep-col"><span class="cross">✕</span> Haftada 45 saat (zamanın %27'si)</td><td class="aslan-col"><span class="check">✓</span> Haftada 168 saat (7/24 gece ve bayram)</td></tr>
-          <tr><td>İzin ve ayrılık</td><td class="rep-col"><span class="cross">✕</span> Yıllık izin, rapor, kıdem tazminatı riski</td><td class="aslan-col"><span class="check">✓</span> Kesintisiz hizmet, her zaman güler yüzlü</td></tr>
-          <tr><td>Evrak yükü</td><td class="rep-col"><span class="cross">✕</span> İş sözleşmesi, bordro, SGK bildirgeleri</td><td class="aslan-col"><span class="check">✓</span> Ayda tek resmi fatura</td></tr>
-          <tr><td>Başlangıç</td><td class="rep-col"><span class="cross">✕</span> 1-2 ay: ilan, mülakat, deneme süresi</td><td class="aslan-col"><span class="check">✓</span> 3 günden itibaren ürünlerinizle hazır</td></tr>
-          <tr><td>Diller</td><td class="rep-col"><span class="cross">✕</span> Genellikle sadece Türkçe</td><td class="aslan-col"><span class="check">✓</span> 30'dan fazla dilde anadil akıcılığı</td></tr>
-          <tr><td>Yıllık toplam</td><td class="rep-col"><span class="cross">✕</span> ≈1.000.000 TL</td><td class="aslan-col"><span class="check">✓</span> 156.800 TL'den başlayan maliyet</td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Aylık maliyet</span></td><td class="rep-col"><span class="cross">✕</span> ≈79.000 TL'den (maaş, SGK, prim, hat)</td><td class="aslan-col"><span class="check">✓</span> 12.900 TL'den, her şey dahil</td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Çalışma süresi</span></td><td class="rep-col"><span class="cross">✕</span> Haftada 45 saat (zamanın %27'si)</td><td class="aslan-col"><span class="check">✓</span> Haftada 168 saat (7/24 gece ve bayram)</td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>İzin ve ayrılık</span></td><td class="rep-col"><span class="cross">✕</span> Yıllık izin, rapor, kıdem tazminatı riski</td><td class="aslan-col"><span class="check">✓</span> Kesintisiz hizmet, her zaman güler yüzlü</td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Evrak yükü</span></td><td class="rep-col"><span class="cross">✕</span> İş sözleşmesi, bordro, SGK bildirgeleri</td><td class="aslan-col"><span class="check">✓</span> Ayda tek resmi fatura</td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Başlangıç</span></td><td class="rep-col"><span class="cross">✕</span> 1-2 ay: ilan, mülakat, deneme süresi</td><td class="aslan-col"><span class="check">✓</span> 3 günden itibaren ürünlerinizle hazır</td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Diller</span></td><td class="rep-col"><span class="cross">✕</span> Genellikle sadece Türkçe</td><td class="aslan-col"><span class="check">✓</span> 30'dan fazla dilde anadil akıcılığı</td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Yıllık toplam</span></td><td class="rep-col"><span class="cross">✕</span> ≈1.000.000 TL</td><td class="aslan-col"><span class="check">✓</span> 156.800 TL'den başlayan maliyet</td></tr>
         </tbody>
       </table>
     </div>
@@ -551,51 +653,109 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<!-- 10. PLANS (CLEAN TIERS, NO HEAVY BOXES) -->
+<!-- 11. PLANS (CLEAR PACKAGING) -->
 <section id="paketler">
   <div class="wrap">
     <h2>Şeffaf fiyat, <br class="mob-br"><span class="red">TL&nbsp;cinsinden</span></h2>
     <p class="lead">Tüm kanalların ve CRM'inizin entegrasyonu her pakete dahil. Fiyat sadece konuşma sayısına&nbsp;bağlı</p>
-    <div class="plans-clean" id="plans">
-      <div class="plan-item" data-max="200">
-        <h3>Esnaf</h3>
-        <p class="vol">200 konuşmaya kadar</p>
-        <div class="price num">12.900</div>
-        <p class="period">TL / ay</p>
+    
+    <div class="plans-grid" id="plans">
+      <div class="plan-card" data-max="200">
+        <div>
+          <h3>Esnaf</h3>
+          <p class="plan-for">Butikler ve yerel işletmeler için</p>
+          <div class="plan-price-wrap">
+            <div class="price num">12.900</div>
+            <div class="period">TL / ay</div>
+          </div>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 200 konuşmaya kadar</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>WhatsApp &amp; Instagram DM</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>7/24 kesintisiz anında cevap</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>CRM otomatik kayıt</li>
+          </ul>
+        </div>
+        <a class="plan-btn" href="#test">Bu paketi seç</a>
       </div>
-      <div class="plan-item" data-max="600">
-        <h3>İşletme</h3>
-        <p class="vol">600 konuşmaya kadar</p>
-        <div class="price num">19.900</div>
-        <p class="period">TL / ay</p>
+
+      <div class="plan-card popular" data-max="600">
+        <span class="plan-badge">⭐ En Popüler</span>
+        <div>
+          <h3>İşletme</h3>
+          <p class="plan-for">Büyüyen KOBİ'ler ve klinikler için</p>
+          <div class="plan-price-wrap">
+            <div class="price num">19.900</div>
+            <div class="period">TL / ay</div>
+          </div>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 600 konuşmaya kadar</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Tüm kanallar + CRM entegrasyonu</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Sesli mesajları anlama ve yanıtlama</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>30+ dilde yabancı müşteri satışı</li>
+          </ul>
+        </div>
+        <a class="plan-btn" href="#test">Bu paketi seç</a>
       </div>
-      <div class="plan-item" data-max="1500">
-        <h3>Akış</h3>
-        <p class="vol">1.500 konuşmaya kadar</p>
-        <div class="price num">29.900</div>
-        <p class="period">TL / ay</p>
+
+      <div class="plan-card" data-max="1500">
+        <div>
+          <h3>Akış</h3>
+          <p class="plan-for">Yoğun e-ticaret ve gayrimenkul için</p>
+          <div class="plan-price-wrap">
+            <div class="price num">29.900</div>
+            <div class="period">TL / ay</div>
+          </div>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 1.500 konuşmaya kadar</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Yüksek eşzamanlı diyalog hacmi</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Özel indirim ve pazarlık kuralları</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Öncelikli teknik destek hattı</li>
+          </ul>
+        </div>
+        <a class="plan-btn" href="#test">Bu paketi seç</a>
       </div>
-      <div class="plan-item" data-max="999999">
-        <h3>Sultan</h3>
-        <p class="vol">1.500 konuşmadan fazla</p>
-        <div class="price num">49.900'den</div>
-        <p class="period">TL / ay</p>
+
+      <div class="plan-card" data-max="999999">
+        <div>
+          <h3>Sultan</h3>
+          <p class="plan-for">Büyük ekipler ve kurumsal yapılar için</p>
+          <div class="plan-price-wrap">
+            <div class="price num">49.900'den</div>
+            <div class="period">TL / ay</div>
+          </div>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>1.500 konuşmadan fazla</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Özel ERP / CRM API entegrasyonu</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Kurumsal SLA &amp; Dedike yönetici</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Özel yapay zeka fine-tuning</li>
+          </ul>
+        </div>
+        <a class="plan-btn" href="#test">Teklif al</a>
       </div>
     </div>
-    <div class="picker">
-      <div class="field-top"><label for="dialogs" style="display:inline">Ayda kaç müşteri konuşması bekliyorsunuz?</label><output id="dialogsOut" class="num"></output></div>
+
+    <div class="plans-slider-box">
+      <div class="field-top"><label for="dialogs" style="display:inline;font-size:16px;font-weight:600">Ayda kaç müşteri konuşması bekliyorsunuz?</label><output id="dialogsOut" class="num" style="color:var(--red);font-size:18px;font-weight:700"></output></div>
       <input type="range" id="dialogs" min="50" max="3000" step="50" value="400">
-      <div class="setup">
-        <div><span class="small">Kurulum, tek sefer, ilk ay dahil</span><b class="num">14.900 TL</b></div>
-        <div><span class="small">2. aydan itibaren</span><b class="num" id="planPrice"></b></div>
+      
+      <div class="plans-setup-bar">
+        <div>
+          <span style="font-size:13.5px;color:var(--muted);display:block">Tek seferlik kurulum bedeli</span>
+          <b style="font-size:22px;color:var(--ink)">14.900 TL</b>
+          <span style="font-size:12.5px;color:#0F7A55;font-weight:600;display:block;margin-top:2px">✓ İlk ay aboneliği bu ücrete dahildir</span>
+        </div>
+        <div>
+          <span style="font-size:13.5px;color:var(--muted);display:block">2. aydan itibaren aylık</span>
+          <b style="font-size:22px;color:var(--red)" id="planPrice"></b>
+        </div>
         <a class="btn btn-red" href="#test">Aslan'ı ekibime al</a>
       </div>
-      <p class="small" style="margin-top:28px">Limit aşılırsa önceden haber veririz, ertesi aydan bir üst pakete geçersiniz. Ceza ve kesinti yok. Abonelik aylık, istediğiniz zaman sonlandırabilirsiniz. [KDV ve fatura bilgisi]</p>
+      <p class="small" style="margin-top:20px;color:var(--muted)">Limit aşılırsa önceden haber veririz, ertesi aydan bir üst pakete geçersiniz. Ceza ve kesinti yok. Abonelik aylıktır, dilediğiniz an sonlandırabilirsiniz.</p>
     </div>
   </div>
 </section>
 
-<!-- 11. STEPS (NUMBERED TIMELINE) -->
+<!-- 12. STEPS (NUMBERED TIMELINE - INTER FONT) -->
 <section id="baslangic" style="background:#FAF8F5">
   <div class="wrap">
     <h2>Dört adımda Aslan <br class="mob-br"><span class="red">iş&nbsp;başında</span></h2>
@@ -625,27 +785,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<!-- 12. TRIAL -->
-<section class="trial" id="test">
-  <div class="wrap trial-grid">
-    <div>
-      <h2>7&nbsp;gün <span class="red" style="color:#FFE58F">ücretsiz&nbsp;test</span></h2>
-      <p class="lead">Aslan'ı bir kanalınıza bağlayalım, talepleri tabloya toplayalım. Kart bilgisi gerekmez, 24 saatte&nbsp;başlıyoruz</p>
-    </div>
-    <div>
-      <form id="trialForm">
-        <label>Adınız<input type="text" name="name" placeholder="Ahmet" required autocomplete="name"></label>
-        <label>WhatsApp numaranız<input type="tel" name="phone" placeholder="+90 5__ ___ __ __" required autocomplete="tel"></label>
-        <label>Sektörünüz<input type="text" name="biz" placeholder="Örn. emlak, klinik, butik"></label>
-        <button class="btn" type="submit">7 günlük erişimi al</button>
-        <p class="small">Göndererek <a href="#">KVKK Aydınlatma Metni</a>'ni okuduğunuzu onaylarsınız</p>
-      </form>
-      <p class="thanks" id="thanks">Talebiniz alındı! Ekibimiz WhatsApp'tan size yazacak. Hoş geldiniz!</p>
-    </div>
-  </div>
-</section>
-
-<!-- 13. PRINCIPLE (FOUNDERS PHOTO TOGETHER) -->
+<!-- 13. PRINCIPLE (FOUNDERS PHOTO TOGETHER & CTA) -->
 <section class="principle">
   <div class="wrap principle-grid">
     <div>
@@ -655,6 +795,9 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
       <h2>Kârınızın&nbsp;<span class="red">müttefikiyiz</span></h2>
       <p>Finansal modelimiz tamamen şeffaf. Tanışma ücretsiz 7 günlük testle başlar. 14.900 TL kurulum ücreti; senaryoların hazırlanmasının, kuralların yüklenmesinin ve sistemin bağlanmasının net maliyetini&nbsp;karşılar.</p>
       <p>Asıl kazancımız uzun ortaklık. Aslan size düzenli para kazandırdığında kazanıyoruz, siz de aboneliği ay ay gönül rahatlığıyla uzatıyorsunuz. Dilediğiniz an bırakabilirsiniz, ama eminiz: Aslan'la tanışma ilk mesajdan aklınızda&nbsp;kalacak</p>
+      <div style="margin-top:32px">
+        <a class="btn btn-red" href="#test">Aslan'ı ekibime kat</a>
+      </div>
     </div>
   </div>
 </section>
@@ -676,38 +819,58 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 (function () {
   var fmt = function (n) { return Math.round(n).toLocaleString("tr-TR"); };
 
-  /* DEMO CHAT (ANIMATED) */
+  /* DEMO CHAT (ANIMATED - 10 SECTORS) */
   var sectors = [
-    { label: "Güzellik salonu", channel: "WhatsApp", brand: "Lâl Beauty", note: "", msgs: [
+    { label: "Güzellik & Klinik", channel: "WhatsApp", brand: "Lâl Beauty", note: "Müşteriye ismiyle hitap eder, randevu saatini ve süresini netleştirir", msgs: [
       [1, "Merhaba, cumartesi balayaj için yer var mı? Saçlarım omuz altı.", "23:41"],
       [0, "İyi akşamlar, hoş geldiniz! Ben Aslan, Lâl Beauty'nin danışmanıyım. Size nasıl hitap edebilirim?", "23:41"],
       [1, "Elif", "23:42"],
       [0, "Memnun oldum Elif Hanım. Cumartesi 11:30'da renk uzmanımız Derya Hanım müsait. İşlem yaklaşık 3,5 saat sürüyor; açma, tonlama ve bakım dahil. Saati adınıza ayırayım mı?", "23:42"]]},
-    { label: "Emlak", channel: "WhatsApp", brand: "Alanya Homes", note: "Aslan müşterinin dilinde yazar, CRM'e Türkçe özet düşer", msgs: [
-      [1, "Здравствуйте! Ищу квартиру 1+1 в Махмутларе, до моря не больше 500 м, бюджет до 140 000 €", "02:15"],
-      [0, "Здравствуйте, добро пожаловать! Меня зовут Аслан, я консультант Alanya Homes. Как я могу к вам обращаться?", "02:15"],
-      [1, "Ольга", "02:16"],
-      [0, "Ольга, благодарю! Сейчас есть три квартиры 1+1 в Махмутларе в 400 м от моря, от 118 000 €. Отправить подборку с фото и записать вас на онлайн-показ завтра?", "02:16"]]},
-    { label: "Sağlık turizmi", channel: "Instagram", brand: "Smile Antalya", note: "Gece gelen yabancı hasta adayı sabaha kadar beklemez", msgs: [
-      [1, "Hi! How much are zirconia crowns? I'm coming to Antalya in May.", "03:07"],
-      [0, "Hello and welcome! I'm Aslan from Smile Antalya. May I ask your name?", "03:07"],
-      [1, "James", "03:08"],
-      [0, "Thank you, James! Our doctor prepares an exact treatment plan for free from your X-ray. Could you send a panoramic X-ray or a clear photo of your smile? I'll also check May dates for you.", "03:08"]]},
-    { label: "Butik giyim", channel: "Instagram", brand: "Nar Butik", note: "Pazarlıkta indirim yerine sizin belirlediğiniz hediye", msgs: [
+    { label: "Emlak & Gayrimenkul", channel: "WhatsApp", brand: "Boğaz Emlak", note: "Yabancı müşterinin dilinde akıcı konuşur, CRM'e Türkçe özet kaydeder", msgs: [
+      [1, "Здравствуйте! Ищу виллу в Бодруме с видом на море, 3+1, бюджет до 450 000 €", "02:15"],
+      [0, "Здравствуйте, добро пожаловать! Меня зовут Аслан, консультант Boğaz Emlak. Как я могу к вам обращаться?", "02:15"],
+      [1, "Михаил", "02:16"],
+      [0, "Михаил, очень приятно! В Ялыкаваке есть две виллы 3+1 с панорамным видом и приватным бассейном от 390 000 €. Отправить вам PDF-презентацию с видео и согласовать онлайн-показ?", "02:16"]]},
+    { label: "Butik giyim", channel: "Instagram", brand: "Nar Butik", note: "Pazarlık sınırlarınızı korur, indirim yerine hediye teklif eder", msgs: [
       [1, "Keten takımın fiyatı nedir? Son fiyat ne olur?", "21:30"],
       [0, "Merhaba, hoş geldiniz! Ben Aslan. Size nasıl hitap edeyim?", "21:30"],
       [1, "Zeynep", "21:31"],
       [0, "Zeynep Hanım, keten takım 2.450 TL. Bugün sipariş verirseniz kargo bizden, yanında keten çanta da hediye. Bedeninizi yazarsanız stoğu hemen kontrol edeyim.", "21:31"]]},
-    { label: "Otel", channel: "Telegram", brand: "Kale Hotel", note: "Misafir kendi dilinde rezervasyon yapar", msgs: [
-      [1, "Guten Tag! Haben Sie vom 12. bis 19. Mai ein Doppelzimmer mit Meerblick frei?", "07:12"],
-      [0, "Guten Tag und herzlich willkommen! Ich bin Aslan vom Kale Hotel. Wie darf ich Sie ansprechen?", "07:12"],
+    { label: "Ayakkabı & Çanta", channel: "WhatsApp", brand: "Adım Ayakkabı", note: "Numara ve kalıp endişesini giderir, güvenle sepete yönlendirir", msgs: [
+      [1, "Hakiki deri beyaz sneaker kalıbı dar mı? Normalde 38 giyiyorum.", "15:20"],
+      [0, "Merhaba, hoş geldiniz! Ben Aslan. Size nasıl hitap edebilirim?", "15:20"],
+      [1, "Merve", "15:21"],
+      [0, "Merve Hanım, modelimiz tam kalıptır, ayak yapınız taraklı değilse 38 numara tam oturur. Olmazsa ücretsiz değişim garantimiz var. Yarın kargoya vermemi ister misiniz?", "15:21"]]},
+    { label: "Restoran & Kafe", channel: "WhatsApp", brand: "Deniz Restoran", note: "Özel istekleri not alır, rezervasyonu saniyeler içinde onaylar", msgs: [
+      [1, "Bu cuma akşamı 4 kişi için Boğaz manzaralı terasta yeriniz var mı? Doğum günü kutlayacağız.", "18:45"],
+      [0, "İyi akşamlar, hoş geldiniz! Ben Aslan. Size nasıl hitap edebilirim?", "18:45"],
+      [1, "Can", "18:46"],
+      [0, "Can Bey şimdiden mutlu yıllar! Cuma 20:00 için teras birinci sıra masamızı adınıza ayırabilirim. Doğum günü pastası ikramımız için özel bir notunuz var mı?", "18:46"]]},
+    { label: "Butik otel", channel: "Telegram", brand: "Alesta Çeşme", note: "Almanca, İngilizce ve Rusça rezervasyon taleplerini gece gündüz karşılar", msgs: [
+      [1, "Guten Tag! Haben Sie vom 12. bis 19. Mai ein Doppelzimmer mit Meerblick frei? Dürfen Hunde mit?", "07:12"],
+      [0, "Guten Tag und herzlich willkommen! Ich bin Aslan vom Alesta Çeşme. Wie darf ich Sie ansprechen?", "07:12"],
       [1, "Familie Becker", "07:13"],
-      [0, "Vielen Dank, Familie Becker! Vom 12. bis 19. Mai ist ein Doppelzimmer mit Meerblick frei, Frühstück inklusive. Soll ich es 24 Stunden für Sie reservieren?", "07:13"]]},
-    { label: "Mobilya", channel: "Sahibinden", brand: "Ahşap Ev", note: "", msgs: [
-      [1, "İlandaki yemek odası takımı hâlâ satılık mı? 40 bine bırakır mısınız?", "14:05"],
-      [0, "Merhaba, hoş geldiniz! Ben Aslan, Ahşap Ev'in satış danışmanıyım. Size nasıl hitap edebilirim?", "14:05"],
+      [0, "Vielen Dank, Familie Becker! Vom 12. bis 19. Mai haben wir ein Deluxe-Doppelzimmer mit Meerblick frei. Hunde sind bei uns herzlich willkommen! Soll ich das Zimmer für Sie unverbindlich reservieren?", "07:13"]]},
+    { label: "Mobilya & Dekor", channel: "Sahibinden", brand: "Arte Mobilya", note: "Ölçü, kumaş ve montaj detaylarını netleştirir, showroom'a çeker", msgs: [
+      [1, "L köşe koltuk takımı ölçüleri nedir? Salonum 25 metrekare, sığar mı?", "14:05"],
+      [0, "Merhaba, hoş geldiniz! Ben Aslan, Arte Mobilya danışmanıyım. Size nasıl hitap edebilirim?", "14:05"],
       [1, "Murat", "14:06"],
-      [0, "Murat Bey, takım stokta. Liste fiyatı 46.900 TL; peşin ödemede 44.500 TL yapabiliyorum, şehir içi montaj da ücretsiz. Showroom'a bugün mü gelirsiniz, yoksa ölçüleri mi göndereyim?", "14:06"]]}
+      [0, "Murat Bey, modelimiz 280×190 cm modüler ölçüdedir, 25 m² salon için idealdir. Silinebilir nubuk kumaş kartelamızı WhatsApp'tan ileteyim mi, yoksa showroom'da kumaşa dokunmak ister misiniz?", "14:06"]]},
+    { label: "Rent a Car", channel: "WhatsApp", brand: "Vira Filo", note: "Uçuş saatini ve teslimat noktasını anında organize eder", msgs: [
+      [1, "Antalya Havalimanı teslim 4 gün otomatik SUV ne kadar? Kasko dahil mi?", "11:10"],
+      [0, "Merhaba, hoş geldiniz! Ben Aslan. Size nasıl hitap edebilirim?", "11:10"],
+      [1, "Serdar", "11:11"],
+      [0, "Serdar Bey merhaba! Sıfır km Peugeot 3008 aracımız günlük 1.650 TL, tam kasko ve sınırsız km fiyata dahildir. Uçuş kodunuzu iletirseniz görevlimiz aracı kapıda hazır bekletir.", "11:11"]]},
+    { label: "Diş & Sağlık turizmi", channel: "WhatsApp", brand: "Smile Dental", note: "Yurtdışı hasta adayına VIP transfer ve doktor ön muayenesi sağlar", msgs: [
+      [1, "Hi! I want 20 zirconia veneers. What is the total package price including hotel in Istanbul?", "03:07"],
+      [0, "Hello and warm welcome! I'm Aslan from Smile Dental. May I have your name, please?", "03:07"],
+      [1, "David", "03:08"],
+      [0, "David, great to meet you! Our all-inclusive package includes 20 veneers, 5-star hotel and VIP airport transfers for £3,400. Could you share a photo of your smile so our chief surgeon can review it today?", "03:08"]]},
+    { label: "Toptan tekstil (B2B)", channel: "WhatsApp", brand: "Ege Tekstil", note: "Minimum sipariş adetlerini bildirir, toptan fiyat listesini PDF iletir", msgs: [
+      [1, "Toptan penye tişört için minimum adet nedir ve toptan liste fiyatınız var mı?", "09:30"],
+      [0, "Merhaba, hoş geldiniz! Ben Aslan, Ege Tekstil toptan satış sorumlusuyum. Size nasıl hitap edebilirim?", "09:30"],
+      [1, "Hakan Bey", "09:31"],
+      [0, "Hakan Bey merhaba. Asgari sipariş model başına 100 adettir. %100 pamuk 180 gr penye güncel toptan fiyat kataloğumuzu ve renk kartelamızı PDF olarak buraya iletiyorum. İncelemek ister misiniz?", "09:31"]]}
   ];
   var tabs = document.getElementById("tabs");
   var chat = document.getElementById("chat");
@@ -733,27 +896,33 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
     footHtml += '<div class="wa-mic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/></svg></div>';
     footHtml += '</div>';
 
-    // Show initial typing animation before messages appear
-    chat.innerHTML = headHtml + '<div class="wa-body"><div class="wa-typing"><span class="wa-typing-dot"></span><span class="wa-typing-dot"></span><span class="wa-typing-dot"></span><span style="margin-left:4px">Aslan yazıyor...</span></div></div>' + footHtml;
+    // 1. Initial State: Show client initial message + Aslan typing indicator for 3 seconds
+    var initialBody = '<div class="wa-body">';
+    initialBody += '<div class="wa-bubble in" style="animation-delay:0s">' + esc(s.msgs[0][1]) + '<span class="wa-meta"><time>' + s.msgs[0][2] + '</time></span></div>';
+    initialBody += '<div class="wa-typing"><span class="wa-typing-dot"></span><span class="wa-typing-dot"></span><span class="wa-typing-dot"></span><span style="margin-left:6px;font-weight:500">Aslan yazıyor...</span></div>';
+    initialBody += '</div>';
 
+    chat.innerHTML = headHtml + initialBody + footHtml;
+
+    // 2. Smoothly reveal Aslan response after exactly 3000ms
     chatTimer = setTimeout(function () {
-      var bodyHtml = '<div class="wa-body">';
+      var fullBody = '<div class="wa-body">';
       s.msgs.forEach(function (m, idx) {
         var isClient = m[0] === 1;
-        var delay = (idx * 0.12).toFixed(2);
-        bodyHtml += '<div class="wa-bubble ' + (isClient ? "in" : "out") + '" style="animation-delay:' + delay + 's">' + esc(m[1]) + '<span class="wa-meta"><time>' + m[2] + '</time>' + (!isClient ? '<span class="wa-ticks">✓✓</span>' : '') + '</span></div>';
+        var delay = idx === 0 ? "0s" : ((idx - 1) * 0.28).toFixed(2) + "s";
+        fullBody += '<div class="wa-bubble ' + (isClient ? "in" : "out") + '" style="animation-delay:' + delay + '">' + esc(m[1]) + '<span class="wa-meta"><time>' + m[2] + '</time>' + (!isClient ? '<span class="wa-ticks">✓✓</span>' : '') + '</span></div>';
       });
-      if (s.note) bodyHtml += '<div class="wa-note">💡 ' + esc(s.note) + '</div>';
-      bodyHtml += '</div>';
+      if (s.note) fullBody += '<div class="wa-note">💡 ' + esc(s.note) + '</div>';
+      fullBody += '</div>';
 
-      chat.innerHTML = headHtml + bodyHtml + footHtml;
-    }, 380);
+      chat.innerHTML = headHtml + fullBody + footHtml;
+    }, 3000);
   }
 
   sectors.forEach(function (s, i) {
     var b = document.createElement("button");
     b.type = "button"; b.className = "tab"; b.setAttribute("role", "tab");
-    b.textContent = s.label;
+    b.innerHTML = '<span>' + esc(s.label) + '</span><span class="tab-arrow">→</span>';
     b.addEventListener("click", function () { showSector(i); });
     tabs.appendChild(b);
   });
@@ -787,10 +956,11 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 
   /* PLANS */
   var dialogs = document.getElementById("dialogs");
-  var plans = document.querySelectorAll("#plans .plan-item");
+  var plans = document.querySelectorAll("#plans .plan-card");
   function pick() {
     var d = +dialogs.value, chosen = null;
     plans.forEach(function (p) { p.classList.remove("on"); if (!chosen && d <= +p.dataset.max) chosen = p; });
+    if (!chosen && plans.length > 0) chosen = plans[plans.length - 1];
     chosen.classList.add("on");
     document.getElementById("dialogsOut").textContent = fmt(d) + " konuşma, " + chosen.querySelector("h3").textContent;
     document.getElementById("planPrice").textContent = chosen.querySelector(".price").textContent + " TL / ay";
