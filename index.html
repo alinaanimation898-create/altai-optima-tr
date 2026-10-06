@@ -95,7 +95,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .logo{display:inline-flex;align-items:center;text-decoration:none;transition:transform .2s ease}
 .logo:hover{transform:scale(1.03)}
 .logo-img{height:34px;width:auto;display:block}
-.logo-foot{height:32px}
+.logo-foot{height:42px}
 .nav ul{display:flex;gap:36px;list-style:none;margin:0;padding:0}
 .nav ul a{text-decoration:none;color:var(--muted);font-size:15px;transition:color .2s}
 .nav ul a:hover{color:var(--red)}
@@ -328,15 +328,15 @@ input[type=text],input[type=tel]{min-height:54px;border-radius:14px;border:0;pad
 .principle-cta{text-align:center;margin-top:36px;width:100%}
 .principle-cta .btn{margin:0 auto}
 
-/* footer */
-footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-area-inset-bottom,0px))}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
-.foot h4{margin:0 0 14px;color:#fff;font-size:15px;font-family:var(--body);font-weight:700}
+/* footer (LIGHT THEME) */
+footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(35,24,22,.02)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:flex-start}
+.foot h4{margin:0 0 14px;color:var(--ink);font-size:15px;font-family:var(--body);font-weight:700}
 .foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px}
-.foot a{text-decoration:none;color:#EADBD2;transition:color .2s}
-.foot a:hover{color:#fff}
-.motto{font-family:"Caveat",cursive;font-size:28px;color:#E8C27A;margin-top:14px}
-.copy{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#B9A398;text-align:center;width:100%}
+.foot a{text-decoration:none;color:var(--muted);transition:color .2s}
+.foot a:hover{color:var(--red)}
+.motto{font-family:"Caveat",cursive;font-size:28px;color:var(--garnet);margin-top:14px}
+.copy{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:#8F7D77;text-align:center;width:100%}
 
 /* CUSTOMER JOURNEY: ACCENT KEYWORD EXPANDING UNDERLINE */
 .red-path{position:relative;display:inline-block;padding-bottom:18px;line-height:1.2;transition:color .3s ease,text-shadow .3s ease}
@@ -450,8 +450,18 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   .pain .answer{padding:12px 14px 12px 32px;background:#FFFFFF;border-radius:12px;border:1px solid rgba(227,10,23,0.18);font-size:13.5px;color:var(--ink);line-height:1.45}
   .pain .answer::before{left:12px;top:16px;width:8px;height:8px}
   
-  /* 5. Traits Mobile */
-  .trait-row{padding:14px 0;gap:14px}
+  /* 5. Traits Mobile: Optimized and contained */
+  .aslan-split{gap:24px}
+  .aslan-photo-card{border-radius:20px;max-width:100%;margin:0 auto}
+  .aslan-photo{max-height:360px;aspect-ratio:3/4;object-fit:cover;object-position:center 20%}
+  .aslan-photo-badge{bottom:14px;left:14px;right:14px;padding:10px 14px;font-size:12px;border-radius:12px}
+  .aslan-photo-badge b{font-size:12.5px}
+  .traits-list{margin-top:20px}
+  .trait-row{padding:14px 0;gap:12px}
+  .trait-row:hover{transform:none}
+  .trait-num{width:30px;height:30px;font-size:12px}
+  .trait-content h3{font-size:16.5px}
+  .trait-content p{font-size:13.5px;line-height:1.5}
   
   /* 6. Demo Tabs Mobile: Compact Horizontal Chip Bar */
   .demo{grid-template-columns:1fr;gap:20px;margin-top:24px}
@@ -977,7 +987,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   <div class="wrap">
     <div class="foot">
       <div>
-        <a class="logo" href="#top" aria-label="Altai Optima Ana Sayfa"><img class="logo-img logo-foot" src="assets/logo-white.webp" alt="Altai Optima" width="160" height="35"></a>
+        <a class="logo" href="#top" aria-label="Altai Optima Ana Sayfa"><img class="logo-img logo-foot" src="assets/logo.webp" alt="Altai Optima" width="180" height="42"></a>
         <div class="motto">"Global düşün, yerel hareket et"</div>
       </div>
       <div>
@@ -987,16 +997,6 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
           <li><a href="https://t.me/altaioptima">Telegram</a></li>
           <li><a href="mailto:optima@altaiweb.online">optima@altaiweb.online</a></li>
           <li><a href="partner.html">İş ortaklığı programı</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Yasal</h4>
-        <ul>
-          <li><a href="#">Mesafeli Hizmet Sözleşmesi</a></li>
-          <li><a href="#">KVKK Aydınlatma Metni</a></li>
-          <li><a href="#">Açık Rıza Metni</a></li>
-          <li><a href="#">Çerez Politikası</a></li>
-          <li><a href="#">Ticari Elektronik İleti Onayı</a></li>
         </ul>
       </div>
     </div>
