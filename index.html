@@ -70,7 +70,7 @@ img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--red);outline-offset:3px}
 .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
-section{padding:100px 0}
+section{padding:140px 0}
 h1,h2,h3{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;margin:0;word-break:normal;overflow-wrap:normal;hyphens:none;text-wrap:balance}
 h1{font-size:clamp(28px,3.8vw,52px);line-height:1.08;color:var(--ink)}
 h2{font-size:clamp(24px,3.2vw,40px);line-height:1.14;max-width:920px;color:var(--ink)}
@@ -96,20 +96,21 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .nav ul a:hover{color:var(--red)}
 .nav .btn{min-height:46px;padding:0 22px;font-size:15px}
 
-/* 1. HERO (BALANCED 2-COLUMN SPLIT ABOVE THE FOLD) */
-.hero{padding:40px 0 80px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.hero-content{max-width:620px}
-.hero-facts{display:flex;flex-wrap:wrap;gap:36px;margin:32px 0 36px}
-.hero-facts > div{transition:transform .3s cubic-bezier(0.16,1,0.3,1);cursor:default}
+/* 1. HERO (FULL BLEED PANORAMIC BANNER) */
+.hero{padding:50px 0 100px}
+.hero-content{max-width:920px;margin:0 auto;text-align:center}
+.hero-content .lead{margin:24px auto 0;max-width:740px}
+.hero-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:48px;margin:36px 0 40px}
+.hero-facts > div{transition:transform .3s cubic-bezier(0.16,1,0.3,1);cursor:default;text-align:center}
 .hero-facts > div:hover{transform:translateY(-3px) scale(1.05)}
-.hero-facts b{display:block;font-size:34px;color:var(--garnet);line-height:1}
+.hero-facts b{display:block;font-size:36px;color:var(--garnet);line-height:1}
 .hero-facts span{font-size:14px;color:var(--muted);margin-top:6px;display:block}
-.cta-row{display:flex;flex-wrap:wrap;gap:14px}
-.hero-media{position:relative}
-.hero-banner{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 25%;border-radius:28px;box-shadow:0 24px 60px -15px rgba(35,24,22,.22)}
-.hero-badge-float{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-radius:18px;padding:14px 18px;font-size:13.5px;line-height:1.45;box-shadow:0 16px 40px -10px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.9);z-index:2}
-.hero-badge-float small{display:block;color:#008069;font-weight:600;margin-bottom:4px;font-size:12px}
+.hero-content .cta-row{justify-content:center;gap:16px}
+
+.hero-full-media{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;margin-top:60px;overflow:hidden;box-shadow:0 30px 80px -25px rgba(35,24,22,.25)}
+.hero-full-banner{width:100%;height:clamp(440px,52vw,700px);object-fit:cover;object-position:center 25%;display:block}
+.hero-badge-float{position:absolute;bottom:36px;left:max(28px, calc((100vw - 1160px) / 2));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-radius:20px;padding:18px 24px;max-width:440px;box-shadow:0 20px 50px -10px rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.9);z-index:2;text-align:left}
+.hero-badge-float small{display:block;color:#008069;font-weight:600;margin-bottom:6px;font-size:13px}
 
 /* 2. NUMBERS */
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px}
@@ -120,7 +121,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .source{margin-top:44px;font-size:13px;color:#9C8A84;max-width:840px}
 
 /* 3. FOUNDERS (NO PODLOZHKI) */
-.founders-block{padding:90px 0}
+.founders-block{padding:140px 0}
 .founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:56px}
 .founder-item{display:flex;gap:24px;align-items:flex-start}
 .founder-avatar{width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center 15%;flex-shrink:0;box-shadow:0 12px 28px -6px rgba(0,0,0,.15);border:3px solid #FAF4F0}
@@ -305,12 +306,53 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 .motto{font-family:"Caveat",cursive;font-size:28px;color:#E8C27A;margin-top:14px}
 .copy{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#B9A398}
 
+/* CUSTOMER JOURNEY: RED KEYWORD PATH & LIRA INDICATOR */
+.red-path{position:relative;display:inline-block;transition:color .3s ease,text-shadow .3s ease}
+.red-path::after{content:"";position:absolute;bottom:-4px;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--red),#FF8A00);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 2px 8px rgba(227,10,23,.5)}
+.red-path.is-active::after{transform:scaleX(1)}
+.red-path.is-active{text-shadow:0 0 20px rgba(227,10,23,.25)}
+
+.lira-pin{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FFE599 0%,#E30A17 100%);color:#fff;font-size:12px;font-weight:800;vertical-align:middle;margin-left:8px;box-shadow:0 4px 14px rgba(227,10,23,.45);animation:liraPinPulse 2.4s ease-in-out infinite;text-transform:none;letter-spacing:normal}
+@keyframes liraPinPulse{
+  0%,100%{transform:translateY(0) scale(1);box-shadow:0 4px 14px rgba(227,10,23,.45)}
+  50%{transform:translateY(-3px) scale(1.12);box-shadow:0 8px 22px rgba(227,10,23,.7)}
+}
+
+/* SECTION JOURNEY FLOW CONNECTOR */
+.journey-flow-guide{display:flex;justify-content:center;align-items:center;height:90px;position:relative;z-index:5;pointer-events:none;margin:-45px 0}
+.flow-track{width:2px;height:100%;background:linear-gradient(180deg,transparent,rgba(227,10,23,.3) 30%,rgba(227,10,23,.3) 70%,transparent);position:relative}
+.flow-traveler{position:absolute;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:3px;animation:flowTravel 2.8s cubic-bezier(0.45,0,0.55,1) infinite}
+.flow-lira{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#FFE599,#E30A17);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;box-shadow:0 0 16px rgba(227,10,23,.6),0 4px 10px rgba(0,0,0,.15)}
+.flow-arrow{font-size:13px;color:var(--red);font-weight:900;line-height:1;animation:arrowBob .8s ease-in-out infinite alternate}
+
+@keyframes flowTravel{
+  0%{top:8%;opacity:0;transform:translate(-50%,-50%) scale(.8)}
+  20%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  80%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  100%{top:92%;opacity:0;transform:translate(-50%,-50%) scale(.8)}
+}
+@keyframes arrowBob{
+  0%{transform:translateY(-2px)}
+  100%{transform:translateY(3px)}
+}
+
+/* FLOATING JOURNEY WAYFINDER */
+.journey-wayfinder{position:fixed;bottom:24px;right:24px;z-index:90;transition:opacity .3s ease,transform .3s ease}
+.wf-btn{display:flex;align-items:center;gap:12px;background:rgba(29,19,17,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);color:#fff;padding:8px 18px 8px 10px;border-radius:999px;cursor:pointer;box-shadow:0 14px 34px -6px rgba(0,0,0,.45),0 0 20px rgba(227,10,23,.25);transition:all .25s ease}
+.wf-btn:hover{transform:translateY(-3px) scale(1.02);background:#1D1311;box-shadow:0 18px 40px -6px rgba(227,10,23,.4)}
+.wf-coin{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FFE599,#E30A17);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 14px rgba(227,10,23,.6)}
+.wf-lira{font-size:15px;font-weight:900;color:#fff}
+.wf-arrow{position:absolute;bottom:-4px;right:-4px;background:#fff;color:var(--red);font-size:11px;font-weight:900;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.25);animation:arrowBob .8s ease-in-out infinite alternate}
+.wf-info{display:flex;flex-direction:column;text-align:left;line-height:1.2}
+.wf-badge{font-size:9.5px;font-weight:700;letter-spacing:.08em;color:#FFB877;text-transform:uppercase}
+.wf-name{font-size:12.5px;font-weight:600;color:#fff;white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis}
+
 .mob-br{display:none}
 .desk-br{display:inline}
 
 @media (max-width:960px){
   .desk-br{display:none}
-  section{padding:70px 0}
+  section{padding:90px 0}
   .nav > nav{display:none}
   .nav ul{display:none}
   .hero-grid,.aslan-split,.demo,.crm-split,.calc,.trial-grid,.founders-grid,.principle-grid{grid-template-columns:1fr;gap:40px}
@@ -323,9 +365,14 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   .step-item::before{display:none}
   .foot{grid-template-columns:1fr}
   .lira-flank{display:none}
-  .hero-badge-float{position:relative;left:auto;right:auto;bottom:auto;margin-top:16px;max-width:none}
+  .hero-badge-float{position:relative;left:auto;right:auto;bottom:auto;margin:16px 18px 0;max-width:none}
+  .hero-full-media{margin-top:40px}
+  .hero-full-banner{height:clamp(280px,58vw,440px)}
   .aslan-photo{min-height:auto;aspect-ratio:4/5;max-width:400px;margin:0 auto}
   .principle-photo{max-width:320px;margin:0 auto}
+  .journey-wayfinder{bottom:16px;right:16px}
+  .wf-info{display:none}
+  .wf-btn{padding:6px}
 }
 @media (max-width:560px){
   .mob-br{display:block}
@@ -369,9 +416,9 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 
 <!-- 1. HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
+  <div class="wrap">
     <div class="hero-content">
-      <h1>Dünyanın en iyi <span class="red">satıcısı</span><br class="desk-br">artık sizin ekibinizde</h1>
+      <h1>Dünyanın en iyi <span class="red red-path" data-path="1" data-label="Kayıplara bak">satıcısı<span class="lira-pin">₺</span></span><br class="desk-br">artık sizin ekibinizde</h1>
       <p class="lead">Aslan; WhatsApp, Instagram ve tüm kanallarda müşterinize 60 saniyede cevap verir, ürününüzü sizden iyi bilir, Türk misafirperverliğiyle karşılar ve her konuşmayı CRM'e işler. Gece, hafta sonu ve&nbsp;bayramda da.</p>
       <div class="hero-facts">
         <div><b class="num">60 sn</b><span>ilk cevap</span></div>
@@ -383,20 +430,22 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
         <a class="btn btn-line" href="#ornekler">Aslan nasıl konuşuyor</a>
       </div>
     </div>
-    <div class="hero-media">
-      <img class="hero-banner" src="assets/hero-desk.webp" alt="Yapay zeka satış temsilcisi Aslan masada çalışıyor" width="1920" height="1071">
-      <div class="hero-badge-float">
-        <small>🟢 Aslan, 23:48 • WhatsApp Business</small>
-        İyi akşamlar, hoş geldiniz! M beden stokta. Size nasıl hitap&nbsp;edebilirim?
-      </div>
+  </div>
+  <div class="hero-full-media">
+    <img class="hero-full-banner" src="assets/hero-desk.webp" alt="Yapay zeka satış temsilcisi Aslan masada çalışıyor" width="1920" height="1071">
+    <div class="hero-badge-float">
+      <small>🟢 Aslan, 23:48 • WhatsApp Business</small>
+      İyi akşamlar, hoş geldiniz! M beden stokta. Size nasıl hitap&nbsp;edebilirim?
     </div>
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 2. LOSSES -->
-<section id="kayip" style="padding-top:20px">
+<section id="kayip">
   <div class="wrap">
-    <h2>İşletmeler parayı <br class="mob-br">nerede&nbsp;<span class="red">kaybediyor?</span></h2>
+    <h2>İşletmeler parayı <br class="mob-br">nerede&nbsp;<span class="red red-path" data-path="2" data-label="Kurucuları tanı">kaybediyor?<span class="lira-pin">₺</span></span></h2>
     <p class="lead">Türk müşterisi mesaj atar, sesli mesaj bırakır, "fiyat?" diye yorum yazar ve cevabı hemen bekler. Cevap gecikirse sipariş komşu dükkâna&nbsp;gider</p>
     <div class="facts">
       <div><div class="num">%90</div><p>Türkiye'de internet kullanıcılarının yüzde 90'ı WhatsApp'ta. Müşteriniz orada yazıyor, sizden de orada cevap&nbsp;bekliyor</p></div>
@@ -407,10 +456,12 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 3. FOUNDERS (NO PODLOZHKI) -->
 <section id="kurucular" class="founders-block">
   <div class="wrap">
-    <h2>Merhaba! Biz Altai <br class="mob-br">Optima'nın&nbsp;<span class="red">kurucularıyız</span></h2>
+    <h2>Merhaba! Biz Altai <br class="mob-br">Optima'nın&nbsp;<span class="red red-path" data-path="3" data-label="Çözümleri incele">kurucularıyız<span class="lira-pin">₺</span></span></h2>
     <p class="lead">Satış deneyimi ve yapay zeka mühendisliğini Türk ticaret kültürünün sıcaklığıyla&nbsp;buluşturduk</p>
     <div class="founders-grid">
       <div class="founder-item">
@@ -434,10 +485,12 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 4. PAINS -->
 <section id="aci">
   <div class="wrap">
-    <h2>Sizin derdiniz, <br class="mob-br">Aslan'ın&nbsp;<span class="red">işi</span></h2>
+    <h2>Sizin derdiniz, <br class="mob-br">Aslan'ın&nbsp;<span class="red red-path" data-path="4" data-label="Aslan'ın satışı">işi<span class="lira-pin">₺</span></span></h2>
     <div class="pains">
       <div class="pain"><div class="problem"><h3>"Fiyat için DM" ve sonra sessizlik</h3><p>Instagram'da yorumlar ve DM'ler saatlerce bekliyor, müşteri rakibe&nbsp;gidiyor</p></div><div class="answer">DM'lere ve yorumlara 60 saniyede, net fiyat ve stok bilgisiyle cevap&nbsp;verir</div></div>
       <div class="pain"><div class="problem"><h3>Gece, hafta sonu, bayram</h3><p>Mesajlar sabaha, uzun bayram tatillerinde ise haftaya&nbsp;kalıyor</p></div><div class="answer">7/24 çalışır, bayramda ve gece 3'te de aynı&nbsp;enerjiyle</div></div>
@@ -448,6 +501,8 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
     </div>
   </div>
 </section>
+
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
 
 <!-- 5. ASLAN GİBİ SATIŞ -->
 <section id="aslan">
@@ -460,7 +515,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
       </div>
     </div>
     <div>
-      <h2><span class="red">Aslan&nbsp;gibi</span> satış</h2>
+      <h2><span class="red red-path" data-path="5" data-label="Diyaloglar">Aslan&nbsp;gibi<span class="lira-pin">₺</span></span> satış</h2>
       <p class="lead">Dünyanın en iyi otellerinin hizmet standardı, Türk misafirperverliği ve dürüst ticaret ahlakı. Hepsi tek bir satış&nbsp;temsilcisinde</p>
       <div class="traits-cards">
         <div class="trait-card">
@@ -496,13 +551,15 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 6. DEMO (ANIMATED WHATSAPP UI & 10 SECTORS) -->
 <section id="ornekler">
   <div class="wrap">
     <div class="demo">
       <div class="demo-left">
         <div>
-          <h2>Aslan farklı sektörlerde <br class="mob-br"><span class="red">nasıl&nbsp;konuşuyor?</span></h2>
+          <h2>Aslan farklı sektörlerde <br class="desk-br"><span class="red red-path" data-path="6" data-label="Ücretsiz test">nasıl&nbsp;konuşuyor?<span class="lira-pin">₺</span></span></h2>
           <p class="lead" style="margin-top:16px">Örnek senaryolar: gece 2'de Rusça yazan emlak alıcısı, Almanca soran otel misafiri, "son fiyat?" diyen Instagram&nbsp;müşterisi</p>
         </div>
         <div>
@@ -519,11 +576,13 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 7. TRIAL (MOVED RIGHT AFTER DEMO AS REQUESTED) -->
 <section class="trial" id="test">
   <div class="wrap trial-grid">
     <div>
-      <h2>7&nbsp;gün <span class="red" style="color:#FFE58F">ücretsiz&nbsp;test</span></h2>
+      <h2>7&nbsp;gün <span class="red red-path" data-path="7" data-label="CRM hafızası" style="color:#FFE58F">ücretsiz&nbsp;test<span class="lira-pin" style="background:linear-gradient(135deg,#FFE58F,#FF4D4F)">₺</span></span></h2>
       <p class="lead">Aslan'ı bir kanalınıza bağlayalım, talepleri tabloya toplayalım. Kart bilgisi gerekmez, 24 saatte&nbsp;başlıyoruz</p>
     </div>
     <div>
@@ -539,11 +598,13 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 8. CRM (LOGOS ON RIGHT SIDE) -->
 <section id="crm">
   <div class="wrap crm-split">
     <div>
-      <h2>Müşterileriniz <br class="mob-br">şirketinizde&nbsp;<span class="red">kalır</span></h2>
+      <h2>Müşterileriniz <br class="mob-br">şirketinizde&nbsp;<span class="red red-path" data-path="8" data-label="Kayıp hesabı">kalır<span class="lira-pin">₺</span></span></h2>
       <p class="lead" style="margin-top:18px">Aslan müşteri kartını anında açar, konuşmanın özetini yazar ve tüm alanları sizin kurallarınıza göre&nbsp;doldurur.</p>
       <p style="margin-top:16px;color:var(--muted);font-size:16px;line-height:1.6">İyi satıcınız işten ayrılsa bile müşteri portföyü, teklif geçmişi ve özel tercihler şirketinizin hafızasında güvende kalır. Hiçbir lead kaybolmaz, hiçbir müşteri unutulmaz.</p>
     </div>
@@ -562,10 +623,12 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 9. CALCULATOR (BALANCED 2 COLUMNS ON ONE ROW) -->
 <section id="hesap">
   <div class="wrap">
-    <h2>Aslan olmadan ayda <br class="mob-br">ne kadar&nbsp;<span class="red">kaybediyorsunuz?</span></h2>
+    <h2>Aslan olmadan ayda <br class="mob-br">ne kadar&nbsp;<span class="red red-path" data-path="9" data-label="Kadro kıyası">kaybediyorsunuz?<span class="lira-pin">₺</span></span></h2>
     <div class="calc">
       <div class="calc-inputs-box">
         <div>
@@ -610,6 +673,8 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 10. COMPARE (SIDE LIRAS, CRITERIA HIGHLIGHTS) -->
 <section id="karsilastirma" class="compare-section">
   <div class="lira-flank lira-flank-left">
@@ -621,7 +686,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
     <div class="lira-item r2">₺</div>
   </div>
   <div class="wrap" style="position:relative;z-index:1">
-    <h2>Aslan mı, <br class="mob-br"><span class="red">satış&nbsp;temsilcisi&nbsp;mi?</span></h2>
+    <h2>Aslan mı, <br class="mob-br"><span class="red red-path" data-path="10" data-label="Şeffaf paketler">satış&nbsp;temsilcisi&nbsp;mi?<span class="lira-pin">₺</span></span></h2>
     <p class="lead">Kadrolu satış temsilcisi yılda yaklaşık 1.000.000 TL, Aslan yılda 156.800 TL'den&nbsp;başlar</p>
     <div class="table-box">
       <table>
@@ -653,10 +718,12 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 11. PLANS (CLEAR PACKAGING) -->
 <section id="paketler">
   <div class="wrap">
-    <h2>Şeffaf fiyat, <br class="mob-br"><span class="red">TL&nbsp;cinsinden</span></h2>
+    <h2>Şeffaf fiyat, <br class="mob-br"><span class="red red-path" data-path="11" data-label="Başlangıç adımları">TL&nbsp;cinsinden<span class="lira-pin">₺</span></span></h2>
     <p class="lead">Tüm kanalların ve CRM'inizin entegrasyonu her pakete dahil. Fiyat sadece konuşma sayısına&nbsp;bağlı</p>
     
     <div class="plans-grid" id="plans">
@@ -755,10 +822,12 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 12. STEPS (NUMBERED TIMELINE - INTER FONT) -->
 <section id="baslangic" style="background:#FAF8F5">
   <div class="wrap">
-    <h2>Dört adımda Aslan <br class="mob-br"><span class="red">iş&nbsp;başında</span></h2>
+    <h2>Dört adımda Aslan <br class="mob-br"><span class="red red-path" data-path="12" data-label="Ortaklık prensibi">iş&nbsp;başında<span class="lira-pin">₺</span></span></h2>
     <p class="lead">Yazışmalar, fiyat listeleri ve müşteri tabanı sizindir: tüm veriler gizlilik sözleşmesi ve KVKK kapsamında&nbsp;korunur</p>
     <div class="steps-timeline">
       <div class="step-item">
@@ -785,6 +854,8 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
+<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
+
 <!-- 13. PRINCIPLE (FOUNDERS PHOTO TOGETHER & CTA) -->
 <section class="principle">
   <div class="wrap principle-grid">
@@ -792,7 +863,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
       <img class="principle-photo" src="assets/founders-table.webp" alt="Alina ve David Altai Optima kurucuları" width="1200" height="1200" loading="lazy">
     </div>
     <div class="principle-text">
-      <h2>Kârınızın&nbsp;<span class="red">müttefikiyiz</span></h2>
+      <h2>Kârınızın&nbsp;<span class="red red-path" data-path="13" data-label="Aslan'ı ekibe kat">müttefikiyiz<span class="lira-pin">₺</span></span></h2>
       <p>Finansal modelimiz tamamen şeffaf. Tanışma ücretsiz 7 günlük testle başlar. 14.900 TL kurulum ücreti; senaryoların hazırlanmasının, kuralların yüklenmesinin ve sistemin bağlanmasının net maliyetini&nbsp;karşılar.</p>
       <p>Asıl kazancımız uzun ortaklık. Aslan size düzenli para kazandırdığında kazanıyoruz, siz de aboneliği ay ay gönül rahatlığıyla uzatıyorsunuz. Dilediğiniz an bırakabilirsiniz, ama eminiz: Aslan'la tanışma ilk mesajdan aklınızda&nbsp;kalacak</p>
       <div style="margin-top:32px">
@@ -801,6 +872,20 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
     </div>
   </div>
 </section>
+
+<!-- FLOATING WAYFINDER -->
+<div id="journeyWayfinder" class="journey-wayfinder" role="region" aria-label="Müşteri Yolculuğu Rehberi">
+  <button type="button" id="wfBtn" class="wf-btn" title="Sonraki kırmızı başlığa git">
+    <div class="wf-coin">
+      <span class="wf-lira">₺</span>
+      <span class="wf-arrow">↓</span>
+    </div>
+    <div class="wf-info">
+      <span class="wf-badge">MÜŞTERİ YOLCULUĞU</span>
+      <span id="wfNextName" class="wf-name">Kayıpları gör</span>
+    </div>
+  </button>
+</div>
 
 </main>
 
@@ -1028,6 +1113,62 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
       });
     });
   }
+
+  /* CUSTOMER JOURNEY: WAYFINDER & RED-PATH HIGHLIGHTING */
+  var pathNodes = Array.prototype.slice.call(document.querySelectorAll(".red-path"));
+  var wfBtn = document.getElementById("wfBtn");
+  var wfNextName = document.getElementById("wfNextName");
+  var currentPathIndex = 0;
+
+  function updateJourneyPath() {
+    if (!pathNodes.length) return;
+    var scrollPos = window.scrollY + window.innerHeight * 0.45;
+    var activeIdx = 0;
+
+    for (var i = 0; i < pathNodes.length; i++) {
+      var rect = pathNodes[i].getBoundingClientRect();
+      var top = rect.top + window.scrollY;
+      if (scrollPos >= top) {
+        activeIdx = i;
+      }
+    }
+
+    pathNodes.forEach(function(node, idx) {
+      if (idx === activeIdx) {
+        node.classList.add("is-active");
+      } else {
+        node.classList.remove("is-active");
+      }
+    });
+
+    currentPathIndex = activeIdx;
+    var nextIdx = activeIdx + 1;
+    if (nextIdx < pathNodes.length) {
+      var nextNode = pathNodes[nextIdx];
+      var label = nextNode.getAttribute("data-label") || nextNode.textContent.trim();
+      if (wfNextName) wfNextName.textContent = label;
+      if (wfBtn) wfBtn.setAttribute("title", "Sonraki adım: " + label);
+    } else {
+      if (wfNextName) wfNextName.textContent = "7 Gün Ücretsiz Dene";
+      if (wfBtn) wfBtn.setAttribute("title", "Ücretsiz test formuna git");
+    }
+  }
+
+  if (wfBtn) {
+    wfBtn.addEventListener("click", function() {
+      var nextIdx = currentPathIndex + 1;
+      if (nextIdx < pathNodes.length) {
+        pathNodes[nextIdx].scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        var testSec = document.getElementById("test");
+        if (testSec) testSec.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateJourneyPath, { passive: true });
+  window.addEventListener("resize", updateJourneyPath, { passive: true });
+  updateJourneyPath();
 })();
 </script>
 </body>
