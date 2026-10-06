@@ -89,8 +89,10 @@ p{margin:0}
 /* header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid rgba(239,228,219,.5)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:78px}
-.logo{font-family:var(--display);font-weight:800;letter-spacing:.05em;text-decoration:none;font-size:17px;transition:transform .2s ease}
+.logo{display:inline-flex;align-items:center;text-decoration:none;transition:transform .2s ease}
 .logo:hover{transform:scale(1.03)}
+.logo-img{height:34px;width:auto;display:block}
+.logo-foot{height:32px}
 .nav ul{display:flex;gap:36px;list-style:none;margin:0;padding:0}
 .nav ul a{text-decoration:none;color:var(--muted);font-size:15px;transition:color .2s}
 .nav ul a:hover{color:var(--red)}
@@ -379,7 +381,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   .wrap{padding:0 18px}
   .nav{gap:8px;height:64px}
   .nav .btn{min-height:36px;padding:0 14px;font-size:12px;white-space:nowrap}
-  .logo{font-size:14px;letter-spacing:.02em}
+  .logo-img{height:25px}
   h1{font-size:clamp(17px,4.8vw,24px);line-height:1.22;word-break:normal;hyphens:none}
   h2{font-size:clamp(16px,4.4vw,22px);line-height:1.24;word-break:normal;hyphens:none}
   .hero-facts{gap:20px}
@@ -399,7 +401,9 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#top">ALTAI OPTIMA</a>
+    <a class="logo" href="#top" aria-label="Altai Optima Ana Sayfa">
+      <img class="logo-img" src="assets/logo.webp" alt="Altai Optima" width="160" height="35">
+    </a>
     <nav aria-label="Ana menü">
       <ul>
         <li><a href="#ornekler">Örnekler</a></li>
@@ -892,7 +896,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 <footer>
   <div class="wrap">
     <div class="foot">
-      <div><a class="logo" href="#top" style="color:#fff">ALTAI OPTIMA</a><div class="motto">"Global düşün, yerel hareket et"</div></div>
+      <div><a class="logo" href="#top" aria-label="Altai Optima Ana Sayfa"><img class="logo-img logo-foot" src="assets/logo-white.webp" alt="Altai Optima" width="160" height="35"></a><div class="motto">"Global düşün, yerel hareket et"</div></div>
       <div><h4>İletişim</h4><ul><li><a href="https://wa.me/79067574355">WhatsApp</a></li><li><a href="https://t.me/altaioptima">Telegram</a></li><li><a href="mailto:optima@altaiweb.online">optima@altaiweb.online</a></li><li><a href="partner.html">İş ortaklığı programı</a></li></ul></div>
       <div><h4>Yasal</h4><ul><li><a href="#">Mesafeli Hizmet Sözleşmesi</a></li><li><a href="#">KVKK Aydınlatma Metni</a></li><li><a href="#">Açık Rıza Metni</a></li><li><a href="#">Çerez Politikası</a></li><li><a href="#">Ticari Elektronik İleti Onayı</a></li></ul></div>
     </div>
