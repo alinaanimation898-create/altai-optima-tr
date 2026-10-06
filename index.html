@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Altai Optima - Yapay zeka satış temsilcisi Aslan</title>
+<meta name="description" content="Aslan, WhatsApp, Instagram ve tüm kanallarda müşterinize 60 saniyede cevap veren yapay zeka satış temsilcisi. 7 gün ücretsiz test.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Altai Optima - Yapay zeka satış temsilcisi Aslan">
+<meta property="og:description" content="Aslan, WhatsApp, Instagram ve tüm kanallarda müşterinize 60 saniyede cevap veren yapay zeka satış temsilcisi. 7 gün ücretsiz test.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Altai Optima">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Altai Optima - Yapay zeka satış temsilcisi Aslan">
+<meta name="twitter:description" content="Aslan, WhatsApp, Instagram ve tüm kanallarda müşterinize 60 saniyede cevap veren yapay zeka satış temsilcisi. 7 gün ücretsiz test.">
+<meta name="twitter:image" content="assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+@font-face{
+  font-family:"Benzin";
+  src:url("assets/fonts/Benzin-Bold.woff2") format("woff2"),
+      url("assets/fonts/Benzin-Bold.woff") format("woff");
+  font-weight:700 800;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Benzin";
+  src:url("assets/fonts/Benzin-Semibold.woff2") format("woff2");
+  font-weight:600;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Benzin";
+  src:url("assets/fonts/Benzin-Medium.woff2") format("woff2");
+  font-weight:500;
+  font-style:normal;
+  font-display:swap;
+}
+:root{
+  --red:#E30A17;
+  --garnet:#9E0B14;
+  --gold:#B8862E;
+  --ink:#231816;
+  --muted:#6E5C57;
+  --line:#EFE4DB;
+  --bg:#FFFFFF;
+  --soft:#FBF8F5;
+  --display:"Benzin","Unbounded","Arial Black",sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+section{padding:140px 0}
+h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;margin:0}
+h1{font-size:clamp(28px,5.2vw,68px);line-height:1.05;overflow-wrap:break-word;background:linear-gradient(100deg,var(--garnet) 0%,var(--red) 50%,var(--gold) 110%);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(24px,3.6vw,44px);line-height:1.08;max-width:820px}
+h3{font-size:19px;margin:0 0 8px;font-weight:700}
+p{margin:0}
+.lead{font-size:19px;color:var(--muted);max-width:620px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 30px;border-radius:999px;font:600 16px var(--body);text-decoration:none;border:0;cursor:pointer;transition:filter .2s}
+.btn-red{background:linear-gradient(100deg,#C20E1A,var(--red));color:#fff}
+.btn-red:hover{filter:brightness(1.08)}
+.btn-line{color:var(--garnet);box-shadow:inset 0 0 0 1px #DCC3B5;background:transparent}
+.btn-line:hover{background:var(--soft)}
+.num{font-weight:700;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
+.small{font-size:14px;color:var(--muted)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:78px}
+.logo{font-family:var(--display);font-weight:800;letter-spacing:.05em;text-decoration:none;font-size:17px}
+.nav ul{display:flex;gap:36px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--muted);font-size:15px}
+.nav ul a:hover{color:var(--red)}
+.nav .btn{min-height:46px;padding:0 22px;font-size:15px}
+
+/* hero */
+.hero{padding:80px 0 120px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero-facts{display:flex;flex-wrap:wrap;gap:40px;margin:44px 0 48px}
+.hero-facts b{display:block;font-size:30px;color:var(--garnet)}
+.hero-facts span{font-size:14px;color:var(--muted)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.hero-photo{position:relative}
+.hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;background:var(--soft)}
+.bubble{position:absolute;left:-36px;bottom:40px;max-width:270px;background:#fff;border-radius:18px 18px 18px 6px;padding:14px 16px;font-size:14px;line-height:1.5;box-shadow:0 20px 50px -20px rgba(80,20,20,.35)}
+.bubble small{display:block;color:#0F7A55;font-weight:600;margin-bottom:4px}
+
+/* numbers */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;margin-top:72px}
+.facts .num{font-size:clamp(52px,6vw,80px);line-height:1;color:var(--red)}
+.facts p{margin-top:16px;color:var(--muted)}
+.source{margin-top:56px;font-size:13px;color:#9C8A84;max-width:820px}
+
+/* pains */
+.pains{margin-top:72px;border-top:1px solid var(--line)}
+.pain{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:34px 0;border-bottom:1px solid var(--line)}
+.pain .problem{color:var(--muted)}
+.pain .problem h3{color:var(--ink)}
+.pain .answer{padding-left:28px;position:relative}
+.pain .answer::before{content:"";position:absolute;left:0;top:10px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+
+/* aslan */
+.aslan{background:var(--soft)}
+.split{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
+.split img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px}
+.traits{display:grid;grid-template-columns:1fr 1fr;gap:40px 48px;margin-top:56px}
+.traits p{color:var(--muted)}
+
+/* founders */
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:72px}
+.founder-card{display:flex;flex-direction:column}
+.founder-photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;background:var(--soft);margin-bottom:28px}
+.quotes blockquote{margin:0;font-size:18px;line-height:1.7}
+.quotes cite{display:block;margin-top:20px;font-style:normal;font-weight:600}
+.quotes cite span{display:block;font-weight:400;color:var(--muted);font-size:14px}
+.signature{font-family:"Caveat",cursive;font-size:40px;color:var(--garnet);margin-top:64px;line-height:1.1}
+
+/* demo */
+.demo{display:grid;grid-template-columns:1fr 440px;gap:72px;align-items:start;margin-top:64px}
+.tabs{display:flex;flex-wrap:wrap;gap:10px}
+.tab{min-height:46px;padding:0 20px;border-radius:999px;border:1px solid #E3D2C6;background:#fff;font:600 15px var(--body);color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.channels{margin-top:48px;color:var(--muted);font-size:15px;max-width:440px}
+.chat{border-radius:28px;background:var(--soft);padding:24px;min-height:440px;display:flex;flex-direction:column;gap:10px}
+.chat-head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.chat-head img{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#EAD9CF}
+.chat-head small{display:block;color:#0F7A55;font-size:13px}
+.msg{max-width:86%;padding:10px 14px;font-size:14px;line-height:1.5;border-radius:16px}
+.msg time{display:block;font-size:11px;color:#A08F89;margin-top:4px}
+.msg.in{align-self:flex-start;background:#fff;border-bottom-left-radius:4px}
+.msg.out{align-self:flex-end;background:#FCE6E2;border-bottom-right-radius:4px}
+.chat-note{align-self:center;text-align:center;font-size:12px;color:#0F7A55;margin-top:8px}
+
+/* crm */
+.crm-list{margin-top:40px;font-size:20px;font-weight:600;line-height:2;color:var(--ink);max-width:820px}
+.crm-list span{color:#D6C2B6;margin:0 10px;font-weight:400}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;margin-top:72px;align-items:start}
+.field{margin-bottom:40px}
+.field-top{display:flex;justify-content:space-between;gap:16px;font-weight:600;margin-bottom:12px}
+.field-top output{color:var(--red)}
+input[type=range]{width:100%;accent-color:var(--red);height:28px}
+.speed{display:flex;flex-wrap:wrap;gap:10px}
+.speed button{min-height:46px;padding:0 18px;border-radius:999px;border:1px solid #E3D2C6;background:#fff;font:600 14px var(--body);color:var(--muted);cursor:pointer}
+.speed button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.result .big{font-size:clamp(44px,5vw,64px);line-height:1;color:var(--red);margin:10px 0 18px}
+.result dl{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:40px 0;padding-top:32px;border-top:1px solid var(--line)}
+.result dt{font-size:14px;color:var(--muted)}
+.result dd{margin:4px 0 0;font-size:22px}
+
+/* compare */
+.table-box{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:64px;max-width:100%}
+table{width:100%;min-width:720px;border-collapse:collapse}
+th,td{text-align:left;padding:22px 20px 22px 0;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-size:14px;color:var(--muted);font-weight:600}
+td:first-child{font-weight:600;width:22%}
+td:nth-child(2){color:var(--muted);width:39%}
+th:last-child,td:last-child{color:var(--ink)}
+th:last-child{color:var(--red)}
+.saving{display:flex;flex-wrap:wrap;gap:24px 64px;align-items:end;margin-top:56px}
+.saving .num{font-size:clamp(44px,6vw,72px);line-height:1;color:var(--red)}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(4,1fr);margin-top:72px;border-top:1px solid var(--line)}
+.plan{padding:36px 28px 36px 0;border-bottom:1px solid var(--line);transition:color .2s}
+.plan h3{font-family:var(--display);text-transform:uppercase;font-size:18px}
+.plan .price{font-size:34px;margin:18px 0 2px}
+.plan.on{border-bottom:3px solid var(--red)}
+.plan.on .price{color:var(--red)}
+.picker{margin-top:56px;max-width:720px}
+.setup{display:flex;flex-wrap:wrap;gap:48px;align-items:center;margin-top:40px}
+.setup b{display:block;font-size:24px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:48px;margin-top:72px;list-style:none;padding:0;counter-reset:s}
+.steps li{counter-increment:s}
+.steps li::before{content:"0" counter(s);display:block;font-family:var(--display);font-size:28px;color:var(--red);margin-bottom:18px}
+.steps p{color:var(--muted);font-size:16px}
+
+/* trial */
+.trial{background:linear-gradient(150deg,var(--garnet),#D10F1C 65%,var(--gold) 140%);color:#fff}
+.trial h2{color:#fff}
+.trial .lead{color:rgba(255,255,255,.88)}
+.trial-grid{display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center}
+form{display:flex;flex-direction:column;gap:16px}
+label{font-size:14px;font-weight:600;display:flex;flex-direction:column;gap:8px}
+input[type=text],input[type=tel]{min-height:54px;border-radius:14px;border:0;padding:0 16px;font:16px var(--body);color:var(--ink)}
+.trial .btn{background:#fff;color:var(--garnet)}
+.trial .small{color:rgba(255,255,255,.8)}
+.trial .small a{color:#fff}
+.thanks{display:none;font-size:20px;font-weight:600}
+
+/* principle + faq */
+.principle p{max-width:760px;margin-top:24px;color:var(--muted);font-size:18px;line-height:1.75}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line);margin-top:56px}
+summary{list-style:none;cursor:pointer;padding:26px 40px 26px 0;font-weight:600;font-size:18px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:22px;font-size:26px;color:var(--red);font-weight:400}
+details[open] summary::after{content:"−"}
+details p{padding:0 0 28px;color:var(--muted);max-width:760px}
+
+/* footer */
+footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-area-inset-bottom,0px))}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
+.foot h4{margin:0 0 14px;color:#fff;font-size:15px}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.foot a{text-decoration:none;color:#EADBD2}
+.foot a:hover{color:#fff}
+.motto{font-family:"Caveat",cursive;font-size:28px;color:#E8C27A;margin-top:14px}
+.copy{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#B9A398}
+
+@media (max-width:960px){
+  section{padding:96px 0}
+  .nav ul{display:none}
+  .hero-grid,.split,.demo,.calc,.trial-grid,.quotes{grid-template-columns:1fr;gap:48px}
+  .facts{grid-template-columns:1fr;gap:40px}
+  .pain{grid-template-columns:1fr;gap:16px}
+  .plans{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr}
+  .bubble{left:16px;bottom:16px;max-width:calc(100% - 32px)}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .nav{gap:8px;height:68px}
+  .nav .btn{min-height:38px;padding:0 12px;font-size:12px;white-space:nowrap}
+  .logo{font-size:14px;letter-spacing:.02em}
+  h1{font-size:clamp(22px,6.2vw,40px);line-height:1.1}
+  .traits,.steps{grid-template-columns:1fr}
+  .plans{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">ALTAI OPTIMA</a>
+    <nav aria-label="Ana menü">
+      <ul>
+        <li><a href="#ornekler">Örnekler</a></li>
+        <li><a href="#hesap">Kazancınızı hesaplayın</a></li>
+        <li><a href="#paketler">Paketler</a></li>
+        <li><a href="partner.html">İş ortaklığı</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-red" href="#test">7 gün ücretsiz deneyin</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Dünyanın en iyi satıcısı artık sizin ekibinizde</h1>
+      <p class="lead">Aslan; WhatsApp, Instagram ve tüm kanallarda müşterinize 60 saniyede cevap verir, ürününüzü sizden iyi bilir, Türk misafirperverliğiyle karşılar ve her konuşmayı CRM'e işler. Gece, hafta sonu ve bayramda da.</p>
+      <div class="hero-facts">
+        <div><b class="num">60 sn</b><span>ilk cevap</span></div>
+        <div><b class="num">30+</b><span>dilde satış</span></div>
+        <div><b class="num">7/24</b><span>bayramda da</span></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-red" href="#test">7 gün ücretsiz deneyin</a>
+        <a class="btn btn-line" href="#ornekler">Aslan nasıl konuşuyor</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/aslan-portrait.webp" alt="Yapay zeka satış temsilcisi Aslan" width="800" height="1000">
+      <div class="bubble"><small>Aslan, 23:48</small>İyi akşamlar, hoş geldiniz! M beden stokta. Size nasıl hitap edebilirim?</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOSSES -->
+<section id="kayip" style="padding-top:40px">
+  <div class="wrap">
+    <h2>İşletmeler parayı nerede kaybediyor?</h2>
+    <p class="lead">Türk müşterisi mesaj atar, sesli mesaj bırakır, "fiyat?" diye yorum yazar ve cevabı hemen bekler. Cevap gecikirse sipariş komşu dükkâna gider</p>
+    <div class="facts">
+      <div><div class="num">%90</div><p>Türkiye'de internet kullanıcılarının yüzde 90'ı WhatsApp'ta. Müşteriniz orada yazıyor, sizden de orada cevap bekliyor</p></div>
+      <div><div class="num">≈%50</div><p>KOBİ'lerde müşteri iletişiminin yaklaşık yarısı WhatsApp'tan yürüyor, çoğu zaman bir çalışanın kişisel telefonunda</p></div>
+      <div><div class="num">-%85</div><p>İlk 5 dakikada cevap verilmezse müşteriyi kazanma ihtimali yüzde 85 düşüyor, reklam bütçesi soğumuş müşteriye gidiyor</p></div>
+    </div>
+    <p class="source">Kaynaklar: TÜİK, Hanehalkı Bilişim Teknolojileri Kullanım Araştırması 2026; ShiftDelete.net, KOBİ müşteri iletişimi anketi; J. Oldroyd, K. McElheran, D. Elkington, "The Short Life of Online Sales Leads", Harvard Business Review, 2011</p>
+  </div>
+</section>
+
+<!-- PAINS -->
+<section id="aci" style="padding-top:0">
+  <div class="wrap">
+    <h2>Sizin derdiniz, Aslan'ın işi</h2>
+    <div class="pains">
+      <div class="pain"><div class="problem"><h3>"Fiyat için DM" ve sonra sessizlik</h3><p>Instagram'da yorumlar ve DM'ler saatlerce bekliyor, müşteri rakibe gidiyor</p></div><div class="answer">DM'lere ve yorumlara 60 saniyede, net fiyat ve stok bilgisiyle cevap verir</div></div>
+      <div class="pain"><div class="problem"><h3>Gece, hafta sonu, bayram</h3><p>Mesajlar sabaha, uzun bayram tatillerinde ise haftaya kalıyor</p></div><div class="answer">7/24 çalışır, bayramda ve gece 3'te de aynı enerjiyle</div></div>
+      <div class="pain"><div class="problem"><h3>"Son fiyat ne abi?"</h3><p>Pazarlıkta herkes kafasına göre indirim veriyor, marj eriyor</p></div><div class="answer">Sizin belirlediğiniz sınırlar içinde pazarlık eder: indirim yerine hediye, kargo ya da peşin fiyat</div></div>
+      <div class="pain"><div class="problem"><h3>Fiyatlar her ay değişiyor</h3><p>Personel eski fiyat veriyor, karışıklık ve kayıp çıkıyor</p></div><div class="answer">Tek güncellemeyle tüm kanallarda güncel fiyat listesiyle konuşur</div></div>
+      <div class="pain"><div class="problem"><h3>Yabancı müşteri, dil bariyeri</h3><p>Rus, Alman, İngiliz, Arap müşteri yazıyor; o dili bilen yok ya da o saatte uyuyor</p></div><div class="answer">30'dan fazla dilde müşterinin kendi dilinde satar, size Türkçe özet bırakır</div></div>
+      <div class="pain"><div class="problem"><h3>Müşteriler çalışanın telefonunda</h3><p>İyi satıcı ayrılınca müşteri listesi ve yazışmalar da onunla gidiyor</p></div><div class="answer">Her konuşma ve her kişi anında CRM'inize işlenir, şirketin hafızası şirkette kalır</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ASLAN -->
+<section class="aslan" id="aslan">
+  <div class="wrap split">
+    <img src="assets/aslan-welcome.webp" alt="Aslan elini göğsüne koyarak selamlıyor" width="800" height="1000" loading="lazy">
+    <div>
+      <h2>Aslan gibi satış</h2>
+      <p class="lead">Dünyanın en iyi otellerinin hizmet standardı, Türk misafirperverliği ve Ahilik geleneğinin dürüst ticaret ahlakı. Hepsi tek bir satış temsilcisinde</p>
+      <div class="traits">
+        <div><h3>"Hoş geldiniz" ile başlar</h3><p>Selamlar, teşekkür eder, nasıl hitap edeceğini sorar: Ahmet Bey, Elif Hanım</p></div>
+        <div><h3>Sözünün eri</h3><p>Doğru fiyat, doğru bilgi ve verilen sözün takibi</p></div>
+        <div><h3>Pazarlığı bilir</h3><p>Sizin sınırlarınız içinde, marjınızı koruyarak</p></div>
+        <div><h3>Her dilden konuşur</h3><p>Türkçe, İngilizce, Rusça, Almanca, Arapça ve 30'dan fazla dil</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="ornekler">
+  <div class="wrap">
+    <h2>Aslan farklı sektörlerde nasıl konuşuyor?</h2>
+    <p class="lead">Örnek senaryolar: gece 2'de Rusça yazan emlak alıcısı, Almanca soran otel misafiri, "son fiyat?" diyen Instagram müşterisi</p>
+    <div class="demo">
+      <div>
+        <div class="tabs" role="tablist" aria-label="Sektörler" id="tabs"></div>
+        <p class="channels">WhatsApp, Instagram DM ve yorumlar, Telegram, web sitesi, Sahibinden, Facebook Messenger. Aslan hepsinde aynı anda çalışır ve sesli mesajları da anlar</p>
+      </div>
+      <div class="chat" id="chat" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section id="kurucular" style="padding-top:0">
+  <div class="wrap">
+    <h2>Merhaba! Biz Altai Optima'nın kurucularıyız</h2>
+    <div class="quotes">
+      <div class="founder-card">
+        <img class="founder-photo" src="assets/alina.webp" alt="Alina - Kurucu ortak" width="800" height="1000" loading="lazy">
+        <blockquote>"Satışta geçen on iki yılda yüzlerce çalışkan satıcı gördüm. Yine de müşteri kaybettiler: üç saat sonra cevap verdiler, geri dönmeyi unuttular, yorgun bir günün sonunda sabırlarını yitirdiler. Altai Optima tek bir istekten doğdu: işinizi bu kayıplardan korumak."</blockquote>
+        <cite>Alina<span>Kurucu ortak, satış ve hizmet</span></cite>
+      </div>
+      <div class="founder-card">
+        <img class="founder-photo" src="assets/david.webp" alt="David - Kurucu ortak" width="800" height="1000" loading="lazy">
+        <blockquote>"On yıldır yapay zeka teknolojilerinin ön saflarındayım, son üç yılım yapay zeka tabanlı yazılım geliştiren bir Amerikan şirketinde geçti. İnsanlar butonlu botlardan sıkılıyor, gerçek bir muhatap istiyor. Bu yüzden Aslan akıllı bir çalışan gibi konuşur."</blockquote>
+        <cite>David<span>Kurucu ortak, ürün ve teknoloji</span></cite>
+      </div>
+    </div>
+    <div class="signature">Birlikte büyüyelim!<br>Alina &amp; David</div>
+  </div>
+</section>
+
+<!-- CRM -->
+<section class="aslan" id="crm">
+  <div class="wrap">
+    <h2>Müşterileriniz şirketinizde kalır</h2>
+    <p class="lead">Aslan müşteri kartını anında açar, konuşmanın özetini yazar ve tüm alanları sizin kurallarınıza göre doldurur</p>
+    <p class="crm-list">Bitrix24<span>/</span>HubSpot<span>/</span>Zoho CRM<span>/</span>Salesforce<span>/</span>Logo<span>/</span>Paraşüt<span>/</span>ikas<span>/</span>IdeaSoft<span>/</span>Google E-Tablolar<span>/</span>Excel</p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="hesap">
+  <div class="wrap">
+    <h2>Aslan olmadan ayda ne kadar kaybediyorsunuz?</h2>
+    <div class="calc">
+      <div>
+        <div class="field"><div class="field-top"><label for="leads" style="display:inline">Ayda kaç talep geliyor?</label><output id="leadsOut" class="num"></output></div><input type="range" id="leads" min="10" max="2000" step="10" value="200"></div>
+        <div class="field"><div class="field-top"><label for="conv" style="display:inline">Taleplerin yüzde kaçı satışa dönüyor?</label><output id="convOut" class="num"></output></div><input type="range" id="conv" min="1" max="50" step="1" value="10"></div>
+        <div class="field"><div class="field-top"><label for="check" style="display:inline">Ortalama sepet tutarı</label><output id="checkOut" class="num"></output></div><input type="range" id="check" min="500" max="250000" step="500" value="5000"></div>
+        <div class="field"><div class="field-top"><span>Müşteriye şu an ne kadar hızlı cevap veriyorsunuz?</span></div>
+          <div class="speed" id="speed">
+            <button type="button" data-rate="0.05" aria-pressed="false">5 dakika içinde</button>
+            <button type="button" data-rate="0.12" aria-pressed="false">1 saat içinde</button>
+            <button type="button" data-rate="0.20" aria-pressed="true">Birkaç saat sonra</button>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <p class="small">Her ay kaçırdığınız ciro</p>
+        <div class="big num" id="loss"></div>
+        <p class="small" id="formula"></p>
+        <dl>
+          <div><dt>Aslan'ın maliyeti</dt><dd class="num">12.900 TL/ay</dd></div>
+          <div><dt>Kendini amorti eder</dt><dd class="num" id="payback"></dd></div>
+          <div style="grid-column:1/-1"><dt>Yıllık net kazanç</dt><dd class="num" id="year" style="font-size:32px"></dd></div>
+        </dl>
+        <a class="btn btn-red" href="#test">İşletmem için hesap iste</a>
+        <p class="small" style="margin-top:20px">Tahmini hesaplamadır. Gerçek sonuç sektöre, talep kalitesine ve kuruluma göre değişir</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section id="karsilastirma" style="padding-top:0">
+  <div class="wrap">
+    <h2>Aslan mı, satış temsilcisi mi?</h2>
+    <p class="lead">Kadrolu satış temsilcisi yılda yaklaşık 1.000.000 TL, Aslan yılda 156.800 TL'den başlar</p>
+    <div class="table-box">
+      <table>
+        <thead><tr><th></th><th>Kadrolu satış temsilcisi</th><th>Aslan</th></tr></thead>
+        <tbody>
+          <tr><td>Aylık maliyet</td><td>≈79.000 TL'den: ≈48.600 TL net maaş, SGK ve işveren primleri, yazılım ve hat</td><td>12.900 TL'den, her şey dahil</td></tr>
+          <tr><td>Çalışma süresi</td><td>Haftada 45 saat, haftanın yaklaşık %27'si</td><td>Haftada 168 saat, gece, hafta sonu ve bayram dahil</td></tr>
+          <tr><td>İzin ve ayrılık</td><td>Yıllık izin, rapor; ayrılırken kıdem tazminatı, yeni kişiyi bulma ve eğitme</td><td>Her zaman ulaşılabilir, her zaman güler yüzlü</td></tr>
+          <tr><td>Evrak</td><td>İş sözleşmesi, bordro, SGK bildirgeleri</td><td>Ayda tek fatura</td></tr>
+          <tr><td>Başlangıç</td><td>1-2 ay: ilan, mülakat, deneme süresi</td><td>3 günden itibaren, ürünleriniz ve senaryolarınızla</td></tr>
+          <tr><td>Diller</td><td>Genellikle Türkçe</td><td>30'dan fazla dil</td></tr>
+          <tr><td>Yıllık toplam</td><td>≈1.000.000 TL</td><td>156.800 TL'den</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="saving">
+      <div><p class="small">İlk yıl tasarruf</p><div class="num">≈850.000 TL</div></div>
+      <p class="small" style="max-width:560px">Hesap: kariyer.net 2026 verisine göre ortalama satış temsilcisi maaşı ≈48.600 TL net; 2026 SGK işveren payı ile işverene maliyet ≈76.000 TL, yazılım ve hat ≈3.000 TL, yıllık kıdem tazminatı karşılığı ≈62.000 TL. Aslan: 14.900 TL kurulum (ilk ay dahil) ve 11 ay × 12.900 TL</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="paketler" class="aslan">
+  <div class="wrap">
+    <h2>Şeffaf fiyat, TL cinsinden</h2>
+    <p class="lead">Tüm kanalların ve CRM'inizin entegrasyonu her pakete dahil. Fiyat sadece konuşma sayısına bağlı</p>
+    <div class="plans" id="plans">
+      <div class="plan" data-max="200"><h3>Esnaf</h3><p class="small">200 konuşmaya kadar</p><div class="price num">12.900</div><p class="small">TL / ay</p></div>
+      <div class="plan" data-max="600"><h3>İşletme</h3><p class="small">600 konuşmaya kadar</p><div class="price num">19.900</div><p class="small">TL / ay</p></div>
+      <div class="plan" data-max="1500"><h3>Akış</h3><p class="small">1.500 konuşmaya kadar</p><div class="price num">29.900</div><p class="small">TL / ay</p></div>
+      <div class="plan" data-max="999999"><h3>Sultan</h3><p class="small">1.500 konuşmadan fazla</p><div class="price num">49.900'den</div><p class="small">TL / ay</p></div>
+    </div>
+    <div class="picker">
+      <div class="field-top"><label for="dialogs" style="display:inline">Ayda kaç müşteri konuşması bekliyorsunuz?</label><output id="dialogsOut" class="num"></output></div>
+      <input type="range" id="dialogs" min="50" max="3000" step="50" value="400">
+      <div class="setup">
+        <div><span class="small">Kurulum, tek sefer, ilk ay dahil</span><b class="num">14.900 TL</b></div>
+        <div><span class="small">2. aydan itibaren</span><b class="num" id="planPrice"></b></div>
+        <a class="btn btn-red" href="#test">Aslan'ı ekibime al</a>
+      </div>
+      <p class="small" style="margin-top:28px">Limit aşılırsa önceden haber veririz, ertesi aydan bir üst pakete geçersiniz. Ceza ve kesinti yok. Abonelik aylık, istediğiniz zaman sonlandırabilirsiniz. [KDV ve fatura bilgisi]</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="baslangic">
+  <div class="wrap">
+    <h2>Dört adımda Aslan iş başında</h2>
+    <p class="lead">Yazışmalar, fiyat listeleri ve müşteri tabanı sizindir: tüm veriler gizlilik sözleşmesi ve KVKK kapsamında korunur</p>
+    <ol class="steps">
+      <li><h3>Tanışma</h3><p>Zoom'da ya da WhatsApp'ta kısa bir görüşme. Yazılı tercih ederseniz Aslan brifingi sohbette kendisi yapar</p></li>
+      <li><h3>7 gün ücretsiz test</h3><p>Aslan'ı bir kanalınıza bağlarız, talepleri tabloya toplarız. Ödemeden önce bir hafta gerçek konuşmalar</p></li>
+      <li><h3>Sözleşme</h3><p>Görevleri, paketi ve erişimleri netleştirir, gizlilik maddeli sözleşmeyi imzalarız</p></li>
+      <li><h3>Tam entegrasyon</h3><p>Fiyat listeleri, kampanyalar, tüm kanallar ve CRM. Aslan gerçek yazışmalarınızdan sizin dilinizi öğrenir</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- TRIAL -->
+<section class="trial" id="test">
+  <div class="wrap trial-grid">
+    <div>
+      <h2>7 gün ücretsiz test</h2>
+      <p class="lead">Aslan'ı bir kanalınıza bağlayalım, talepleri tabloya toplayalım. Kart bilgisi gerekmez, 24 saatte başlıyoruz</p>
+    </div>
+    <div>
+      <form id="trialForm">
+        <label>Adınız<input type="text" name="name" placeholder="Ahmet" required autocomplete="name"></label>
+        <label>WhatsApp numaranız<input type="tel" name="phone" placeholder="+90 5__ ___ __ __" required autocomplete="tel"></label>
+        <label>Sektörünüz<input type="text" name="biz" placeholder="Örn. emlak, klinik, butik"></label>
+        <button class="btn" type="submit">7 günlük erişimi al</button>
+        <p class="small">Göndererek <a href="#">KVKK Aydınlatma Metni</a>'ni okuduğunuzu onaylarsınız</p>
+      </form>
+      <p class="thanks" id="thanks">Talebiniz alındı! Ekibimiz WhatsApp'tan size yazacak. Hoş geldiniz!</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLE -->
+<section class="principle">
+  <div class="wrap">
+    <h2>Kârınızın müttefikiyiz</h2>
+    <p>Finansal modelimiz tamamen şeffaf. Tanışma ücretsiz 7 günlük testle başlar. 14.900 TL kurulum ücreti; senaryoların hazırlanmasının, kuralların yüklenmesinin ve sistemin bağlanmasının net maliyetini karşılar.</p>
+    <p>Asıl kazancımız uzun ortaklık. Aslan size düzenli para kazandırdığında kazanıyoruz, siz de aboneliği ay ay gönül rahatlığıyla uzatıyorsunuz. Dilediğiniz an bırakabilirsiniz, ama eminiz: Aslan'la tanışma ilk mesajdan aklınızda kalacak</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="sss" style="padding-top:0">
+  <div class="wrap" style="max-width:920px">
+    <h2>Sık sorulan sorular</h2>
+    <details open><summary>Asistanın adı Aslan mı olmak zorunda?</summary><p>Hayır. Aslan bizim ürünümüzün yüzü. Sizin işletmenizde asistanın adını, karakterini ve hitap tarzını siz seçersiniz: güzellik salonunda Elif, klinikte hasta danışmanı olabilir</p></details>
+    <details><summary>Müşteri robotla konuştuğunu anlar mı?</summary><p>Aslan butonlu bir bot gibi davranmaz: bağlamı tutar, sesli mesajları anlar, doğal ve sıcak bir Türkçeyle yazar. Dilerseniz kendini dijital asistan olarak tanıtacak şekilde ayarlarız</p></details>
+    <details><summary>Verilerimiz güvende mi, KVKK'ya uygun mu?</summary><p>Yazışmalar, fiyat listeleri ve müşteri tabanı sizindir. Sözleşmede gizlilik maddesi yer alır, kişisel veriler KVKK kapsamında işlenir. [Veri işleme ve aktarım detayları]</p></details>
+    <details><summary>Aslan yanlış bir şey söylerse ne olur?</summary><p>Aslan sadece sizin onayladığınız bilgilerle konuşur. Emin olmadığı ya da yetkisini aşan durumlarda konuşmayı tüm detaylarıyla yöneticiye aktarır</p></details>
+    <details><summary>Fatura ve ödeme nasıl?</summary><p>[e-Fatura, ödeme yöntemleri ve şirket bilgileri]</p></details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a class="logo" href="#top" style="color:#fff">ALTAI OPTIMA</a><div class="motto">"Global düşün, yerel hareket et"</div></div>
+      <div><h4>İletişim</h4><ul><li><a href="https://wa.me/79067574355">WhatsApp</a></li><li><a href="https://t.me/altaioptima">Telegram</a></li><li><a href="mailto:optima@altaiweb.online">optima@altaiweb.online</a></li><li><a href="partner.html">İş ortaklığı programı</a></li></ul></div>
+      <div><h4>Yasal</h4><ul><li><a href="#">Mesafeli Hizmet Sözleşmesi</a></li><li><a href="#">KVKK Aydınlatma Metni</a></li><li><a href="#">Açık Rıza Metni</a></li><li><a href="#">Çerez Politikası</a></li><li><a href="#">Ticari Elektronik İleti Onayı</a></li></ul></div>
+    </div>
+    <p class="copy">© 2026 Altai Optima. Tüm hakları saklıdır. [Türkiye'deki şirket unvanı ve vergi numarası]</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var fmt = function (n) { return Math.round(n).toLocaleString("tr-TR"); };
+
+  /* DEMO CHAT */
+  var sectors = [
+    { label: "Güzellik salonu", channel: "WhatsApp", brand: "Lâl Beauty", note: "", msgs: [
+      [1, "Merhaba, cumartesi balayaj için yer var mı? Saçlarım omuz altı.", "23:41"],
+      [0, "İyi akşamlar, hoş geldiniz! Ben Aslan, Lâl Beauty'nin danışmanıyım. Size nasıl hitap edebilirim?", "23:41"],
+      [1, "Elif", "23:42"],
+      [0, "Memnun oldum Elif Hanım. Cumartesi 11:30'da renk uzmanımız Derya Hanım müsait. İşlem yaklaşık 3,5 saat sürüyor; açma, tonlama ve bakım dahil. Saati adınıza ayırayım mı?", "23:42"]]},
+    { label: "Emlak", channel: "WhatsApp", brand: "Alanya Homes", note: "Aslan müşterinin dilinde yazar, CRM'e Türkçe özet düşer", msgs: [
+      [1, "Здравствуйте! Ищу квартиру 1+1 в Махмутларе, до моря не больше 500 м, бюджет до 140 000 €", "02:15"],
+      [0, "Здравствуйте, добро пожаловать! Меня зовут Аслан, я консультант Alanya Homes. Как я могу к вам обращаться?", "02:15"],
+      [1, "Ольга", "02:16"],
+      [0, "Ольга, благодарю! Сейчас есть три квартиры 1+1 в Махмутларе в 400 м от моря, от 118 000 €. Отправить подборку с фото и записать вас на онлайн-показ завтра?", "02:16"]]},
+    { label: "Sağlık turizmi", channel: "Instagram", brand: "Smile Antalya", note: "Gece gelen yabancı hasta adayı sabaha kadar beklemez", msgs: [
+      [1, "Hi! How much are zirconia crowns? I'm coming to Antalya in May.", "03:07"],
+      [0, "Hello and welcome! I'm Aslan from Smile Antalya. May I ask your name?", "03:07"],
+      [1, "James", "03:08"],
+      [0, "Thank you, James! Our doctor prepares an exact treatment plan for free from your X-ray. Could you send a panoramic X-ray or a clear photo of your smile? I'll also check May dates for you.", "03:08"]]},
+    { label: "Butik giyim", channel: "Instagram", brand: "Nar Butik", note: "Pazarlıkta indirim yerine sizin belirlediğiniz hediye", msgs: [
+      [1, "Keten takımın fiyatı nedir? Son fiyat ne olur?", "21:30"],
+      [0, "Merhaba, hoş geldiniz! Ben Aslan. Size nasıl hitap edeyim?", "21:30"],
+      [1, "Zeynep", "21:31"],
+      [0, "Zeynep Hanım, keten takım 2.450 TL. Bugün sipariş verirseniz kargo bizden, yanında keten çanta da hediye. Bedeninizi yazarsanız stoğu hemen kontrol edeyim.", "21:31"]]},
+    { label: "Otel", channel: "Telegram", brand: "Kale Hotel", note: "Misafir kendi dilinde rezervasyon yapar", msgs: [
+      [1, "Guten Tag! Haben Sie vom 12. bis 19. Mai ein Doppelzimmer mit Meerblick frei?", "07:12"],
+      [0, "Guten Tag und herzlich willkommen! Ich bin Aslan vom Kale Hotel. Wie darf ich Sie ansprechen?", "07:12"],
+      [1, "Familie Becker", "07:13"],
+      [0, "Vielen Dank, Familie Becker! Vom 12. bis 19. Mai ist ein Doppelzimmer mit Meerblick frei, Frühstück inklusive. Soll ich es 24 Stunden für Sie reservieren?", "07:13"]]},
+    { label: "Mobilya", channel: "Sahibinden", brand: "Ahşap Ev", note: "", msgs: [
+      [1, "İlandaki yemek odası takımı hâlâ satılık mı? 40 bine bırakır mısınız?", "14:05"],
+      [0, "Merhaba, hoş geldiniz! Ben Aslan, Ahşap Ev'in satış danışmanıyım. Size nasıl hitap edebilirim?", "14:05"],
+      [1, "Murat", "14:06"],
+      [0, "Murat Bey, takım stokta. Liste fiyatı 46.900 TL; peşin ödemede 44.500 TL yapabiliyorum, şehir içi montaj da ücretsiz. Showroom'a bugün mü gelirsiniz, yoksa ölçüleri mi göndereyim?", "14:06"]]}
+  ];
+  var tabs = document.getElementById("tabs");
+  var chat = document.getElementById("chat");
+  function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+  function showSector(i) {
+    var s = sectors[i];
+    Array.prototype.forEach.call(tabs.children, function (b, j) { b.setAttribute("aria-selected", j === i ? "true" : "false"); });
+    var html = '<div class="chat-head"><img src="assets/aslan-avatar.webp" alt=""><div><b>' + esc(s.brand) + '</b><small>Aslan, ' + esc(s.channel) + '</small></div></div>';
+    s.msgs.forEach(function (m) { html += '<div class="msg ' + (m[0] ? "in" : "out") + '">' + esc(m[1]) + '<time>' + m[2] + '</time></div>'; });
+    if (s.note) html += '<p class="chat-note">' + esc(s.note) + '</p>';
+    chat.innerHTML = html;
+  }
+  sectors.forEach(function (s, i) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "tab"; b.setAttribute("role", "tab");
+    b.textContent = s.label;
+    b.addEventListener("click", function () { showSector(i); });
+    tabs.appendChild(b);
+  });
+  showSector(0);
+
+  /* CALCULATOR */
+  var leads = document.getElementById("leads"), conv = document.getElementById("conv"), check = document.getElementById("check");
+  var rate = 0.20, cost = 12900;
+  function calc() {
+    var L = +leads.value, C = +conv.value, A = +check.value;
+    document.getElementById("leadsOut").textContent = fmt(L);
+    document.getElementById("convOut").textContent = "%" + C;
+    document.getElementById("checkOut").textContent = fmt(A) + " TL";
+    var revenue = L * C / 100 * A, loss = revenue * rate;
+    document.getElementById("loss").textContent = fmt(loss) + " TL";
+    document.getElementById("formula").textContent = "Şu an: " + fmt(L) + " talep × %" + C + " × " + fmt(A) + " TL = ayda " + fmt(revenue) + " TL. Hızlı cevap kaçan satışların yaklaşık %" + Math.round(rate * 100) + "'ini geri getirir.";
+    var days = loss > 0 ? Math.max(1, Math.round(cost / loss * 30)) : 0;
+    document.getElementById("payback").textContent = loss <= 0 ? "-" : (days <= 30 ? "≈ " + days + " gün" : "≈ " + Math.round(days / 30) + " ay");
+    var year = loss * 12 - (14900 + 11 * cost);
+    document.getElementById("year").textContent = (year >= 0 ? "+" : "-") + fmt(Math.abs(year)) + " TL";
+  }
+  [leads, conv, check].forEach(function (el) { el.addEventListener("input", calc); });
+  document.querySelectorAll("#speed button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll("#speed button").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true");
+      rate = +b.dataset.rate; calc();
+    });
+  });
+  calc();
+
+  /* PLANS */
+  var dialogs = document.getElementById("dialogs");
+  var plans = document.querySelectorAll("#plans .plan");
+  function pick() {
+    var d = +dialogs.value, chosen = null;
+    plans.forEach(function (p) { p.classList.remove("on"); if (!chosen && d <= +p.dataset.max) chosen = p; });
+    chosen.classList.add("on");
+    document.getElementById("dialogsOut").textContent = fmt(d) + " konuşma, " + chosen.querySelector("h3").textContent;
+    document.getElementById("planPrice").textContent = chosen.querySelector(".price").textContent + " TL / ay";
+  }
+  dialogs.addEventListener("input", pick); pick();
+
+  /* FORM: Telegram Bot Entegrasyonu */
+  // Bot token ve chat_id bilgilerinizi buraya girin:
+  var TELEGRAM_BOT_TOKEN = ""; // örn: "123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ"
+  var TELEGRAM_CHAT_ID = "";   // örn: "-1001234567890" veya "123456789"
+
+  var trialForm = document.getElementById("trialForm");
+  var thanks = document.getElementById("thanks");
+
+  if (trialForm) {
+    trialForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var form = this;
+      var btn = form.querySelector("button[type=submit]");
+      var name = (form.elements["name"] ? form.elements["name"].value : "").trim();
+      var phone = (form.elements["phone"] ? form.elements["phone"].value : "").trim();
+      var biz = (form.elements["biz"] ? form.elements["biz"].value : "").trim() || "Belirtilmedi";
+
+      if (!name || !phone) return;
+
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Gönderiliyor...";
+      }
+
+      function showThanks() {
+        form.style.display = "none";
+        thanks.style.display = "block";
+      }
+
+      if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+        console.warn("Telegram bot token veya chat_id henüz tanımlanmadı. Bildirim konsola kaydedildi.");
+        showThanks();
+        return;
+      }
+
+      var dateStr = new Date().toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" });
+      var text = "🔥 <b>Yeni Test Talebi — Altai Optima (TR)</b>\n\n" +
+                 "👤 <b>İsim:</b> " + name + "\n" +
+                 "📱 <b>WhatsApp:</b> " + phone + "\n" +
+                 "🏢 <b>Sektör:</b> " + biz + "\n" +
+                 "⏱️ <b>Tarih:</b> " + dateStr;
+
+      fetch("https://api.telegram.org/bot" + TELEGRAM_BOT_TOKEN + "/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID,
+          text: text,
+          parse_mode: "HTML"
+        })
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        showThanks();
+      })
+      .catch(function (err) {
+        console.error("Telegram gönderim hatası:", err);
+        showThanks();
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
