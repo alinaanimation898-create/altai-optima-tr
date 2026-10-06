@@ -71,10 +71,10 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--red);outline-offset:3px}
 .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
 section{padding:140px 0}
-h1,h2,h3{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;margin:0;word-break:normal;overflow-wrap:normal;hyphens:none;text-wrap:balance}
+h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;margin:0;word-break:normal;overflow-wrap:normal;hyphens:none;text-wrap:balance}
 h1{font-size:clamp(28px,3.8vw,52px);line-height:1.08;color:var(--ink)}
 h2{font-size:clamp(24px,3.2vw,40px);line-height:1.14;max-width:920px;color:var(--ink)}
-h3{font-size:19px;margin:0 0 8px;font-weight:700}
+h3,h4,h5,h6{font-family:var(--body);font-weight:700;text-transform:none;letter-spacing:normal;margin:0 0 8px;font-size:19px;line-height:1.35}
 p{margin:0}
 .red{color:var(--red)}
 .lead{font-size:19px;color:var(--muted);max-width:680px;margin-top:22px;text-wrap:balance;line-height:1.6}
@@ -98,11 +98,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .nav ul a:hover{color:var(--red)}
 .nav .btn{min-height:46px;padding:0 22px;font-size:15px}
 
-/* 1. HERO (PANORAMIC FULL-WIDTH WITH TEXT ON LEFT) */
+/* 1. HERO (PANORAMIC FULL-WIDTH WITH TEXT ON LEFT, PHOTO SHIFTED LEFT) */
 .hero{position:relative;overflow:hidden;padding:70px 0 80px;background:#fff;min-height:700px;display:flex;align-items:center}
 .hero-bg{position:absolute;top:0;right:0;bottom:0;left:0;z-index:0;pointer-events:none}
-.hero-bg-img{position:absolute;top:0;right:0;width:66%;height:100%;object-fit:cover;object-position:center 20%;display:block}
-.hero-bg-scrim{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(90deg, #FFFFFF 0%, rgba(255,255,255,0.98) 46%, rgba(255,255,255,0.85) 58%, rgba(255,255,255,0.1) 75%, transparent 100%)}
+.hero-bg-img{position:absolute;top:0;right:0;width:76%;height:100%;object-fit:cover;object-position:30% 18%;display:block}
+.hero-bg-scrim{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(90deg, #FFFFFF 0%, rgba(255,255,255,0.98) 42%, rgba(255,255,255,0.85) 54%, rgba(255,255,255,0.12) 74%, transparent 100%)}
 .hero-wrap{position:relative;z-index:2;width:100%}
 .hero-content{max-width:620px;text-align:left}
 .hero-content h1{text-align:left}
@@ -113,8 +113,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .hero-facts b{display:block;font-size:34px;color:var(--garnet);line-height:1}
 .hero-facts span{font-size:13.5px;color:var(--muted);margin-top:6px;display:block}
 .hero-content .cta-row{justify-content:flex-start;gap:16px}
-.hero-badge-float{background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-radius:18px;padding:16px 20px;max-width:540px;box-shadow:0 14px 36px -10px rgba(35,24,22,.14);border:1px solid rgba(227,10,23,.18);text-align:left;margin-top:28px}
-.hero-badge-float small{display:block;color:#008069;font-weight:700;margin-bottom:5px;font-size:12.5px}
 
 /* 2. NUMBERS */
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px}
@@ -133,7 +131,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .story-lead{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:12px}
 .story-lead strong{color:var(--red)}
 .story-standard p{font-size:16px;line-height:1.65;color:var(--muted);margin:8px 0 0}
-.standard-badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--garnet);background:rgba(227,10,23,0.08);padding:4px 12px;border-radius:999px}
+.standard-badge{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--garnet);background:transparent;padding:0;border:0}
 .founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:48px}
 .founder-item{display:flex;gap:24px;align-items:flex-start}
 .founder-avatar{width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center 15%;flex-shrink:0;box-shadow:0 12px 28px -6px rgba(0,0,0,.15);border:3px solid #FAF4F0}
@@ -200,14 +198,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .wa-input-pill{background:#fff;border-radius:24px;flex:1;padding:8px 14px;font-size:13.5px;color:#8696A0;display:flex;align-items:center;gap:8px}
 .wa-mic{width:38px;height:38px;border-radius:50%;background:#00A884;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
 
-/* 7. CRM (SPLIT LAYOUT: STORY ON LEFT, LOGOS ON RIGHT) */
+/* 7. CRM (SPLIT LAYOUT: STORY ON LEFT, MINIMALIST ICONS ON RIGHT) */
 .crm-split{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center}
-.crm-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.crm-card-item{background:#FAF8F5;border:1px solid var(--line);border-radius:18px;padding:18px 16px;display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600;color:#503E38;transition:all .2s ease}
-.crm-card-item:hover{background:#fff;border-color:#E30A17;transform:translateY(-2px);color:var(--ink);box-shadow:0 8px 20px -6px rgba(0,0,0,.08)}
-.crm-card-item svg{width:22px;height:22px;fill:currentColor;flex-shrink:0;color:var(--garnet)}
+.crm-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.crm-card-item{background:transparent;border:1px solid rgba(239,228,219,.85);border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;color:var(--ink);transition:all .2s ease}
+.crm-card-item:hover{border-color:var(--red);transform:translateY(-2px);color:var(--red);box-shadow:0 6px 18px -4px rgba(227,10,23,.12)}
+.crm-card-item svg{width:20px;height:20px;fill:currentColor;flex-shrink:0;color:var(--garnet)}
 
-/* 8. CALCULATOR (EXECUTIVE WHITE CARD, NO DARK PODLOZHKA) */
+/* 8. CALCULATOR (EXECUTIVE TINTED CARD WITH CRIMSON ACCENT) */
 .calc{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:56px;align-items:stretch}
 .calc-inputs-box{background:#FAF8F5;border:1px solid var(--line);border-radius:28px;padding:40px;display:flex;flex-direction:column;justify-content:space-between}
 .field{margin-bottom:28px}
@@ -219,12 +217,12 @@ input[type=range]{width:100%;accent-color:var(--red);height:28px;cursor:pointer}
 .speed button{min-height:42px;padding:0 16px;border-radius:999px;border:1px solid #E3D2C6;background:#fff;font:600 13.5px var(--body);color:var(--muted);cursor:pointer;transition:all .2s}
 .speed button:hover{border-color:var(--ink);color:var(--ink)}
 .speed button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.calc-card{background:#FFFFFF;color:var(--ink);border-radius:28px;padding:40px;border:2px solid #EFE4DC;box-shadow:0 20px 50px -10px rgba(227,10,23,.08),0 8px 24px -4px rgba(35,24,22,.04);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.calc-card{background:linear-gradient(160deg,rgba(227,10,23,0.03) 0%,rgba(227,10,23,0.08) 100%),#FFFFFF;color:var(--ink);border-radius:28px;padding:40px;border:2px solid rgba(227,10,23,0.22);box-shadow:0 20px 50px -10px rgba(227,10,23,.12),0 8px 24px -4px rgba(35,24,22,.04);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
 .calc-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red),var(--gold))}
 .calc-card .tag{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
 .calc-card .big{font-size:clamp(44px,4.8vw,64px);line-height:1;color:var(--red);margin:12px 0 14px;font-weight:800;text-shadow:none}
 .calc-card .formula{font-size:14px;color:var(--muted);line-height:1.5}
-.calc-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:28px 0;padding-top:24px;border-top:1px solid #EFE4DC}
+.calc-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:28px 0;padding-top:24px;border-top:1px solid rgba(227,10,23,.15)}
 .calc-stats dt{font-size:13px;color:var(--muted);font-weight:500}
 .calc-stats dd{margin:4px 0 0;font-size:20px;color:var(--ink);font-weight:700}
 .calc-stats .annual{grid-column:1/-1}
@@ -234,15 +232,21 @@ input[type=range]{width:100%;accent-color:var(--red);height:28px;cursor:pointer}
 
 /* 9. COMPARE SECTION (SIDE LIRAS KEPT CLEAN ON FLANKS) */
 .compare-section{position:relative;background:#FAF8F5;overflow:hidden}
-.lira-flank{position:absolute;top:0;bottom:0;width:140px;pointer-events:none;z-index:0;overflow:hidden}
+.lira-flank{position:absolute;top:0;bottom:0;width:150px;pointer-events:none;z-index:0;overflow:hidden}
 .lira-flank-left{left:0}
 .lira-flank-right{right:0}
-.lira-item{position:absolute;font-family:var(--display);font-size:68px;font-weight:800;color:rgba(227,10,23,.05);line-height:1;user-select:none}
-.lira-item.l1{top:15%;left:20px;animation:liraFloat 6s ease-in-out infinite}
-.lira-item.l2{top:55%;left:45px;font-size:92px;color:rgba(35,24,22,.03);animation:liraFloat 7.5s ease-in-out infinite reverse}
-.lira-item.r1{top:20%;right:20px;animation:liraFloat 6.5s ease-in-out infinite .5s}
-.lira-item.r2{top:65%;right:35px;font-size:84px;color:rgba(227,10,23,.04);animation:liraFloat 8s ease-in-out infinite reverse .8s}
-@keyframes liraFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(4deg)}}
+.lira-item{position:absolute;font-family:var(--display);font-weight:800;color:rgba(227,10,23,.06);line-height:1;user-select:none}
+.lira-item.l1{top:8%;left:22px;font-size:52px;animation:liraFloat 6s ease-in-out infinite}
+.lira-item.l2{top:28%;left:54px;font-size:84px;color:rgba(35,24,22,.04);animation:liraFloat 8s ease-in-out infinite reverse}
+.lira-item.l3{top:50%;left:18px;font-size:60px;animation:liraFloat 7s ease-in-out infinite .6s}
+.lira-item.l4{top:72%;left:60px;font-size:94px;color:rgba(227,10,23,.05);animation:liraFloat 9s ease-in-out infinite reverse 1.2s}
+.lira-item.l5{top:90%;left:26px;font-size:46px;animation:liraFloat 6.5s ease-in-out infinite 1.8s}
+.lira-item.r1{top:10%;right:26px;font-size:62px;animation:liraFloat 6.8s ease-in-out infinite .4s}
+.lira-item.r2{top:30%;right:58px;font-size:90px;color:rgba(227,10,23,.05);animation:liraFloat 8.4s ease-in-out infinite reverse .8s}
+.lira-item.r3{top:52%;right:20px;font-size:54px;animation:liraFloat 7.2s ease-in-out infinite 1.4s}
+.lira-item.r4{top:72%;right:56px;font-size:86px;color:rgba(35,24,22,.04);animation:liraFloat 9.2s ease-in-out infinite reverse 1s}
+.lira-item.r5{top:88%;right:28px;font-size:48px;animation:liraFloat 6.2s ease-in-out infinite 2s}
+@keyframes liraFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(5deg)}}
 
 .table-box{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:60px;max-width:100%;background:#fff;border-radius:24px;border:1px solid var(--line);box-shadow:0 8px 30px -10px rgba(0,0,0,.04);position:relative;z-index:1}
 table{width:100%;min-width:680px;border-collapse:separate;border-spacing:0}
@@ -261,14 +265,14 @@ tr:last-child .aslan-col{border-bottom:2px solid var(--red);border-bottom-left-r
 .clean-saving{display:flex;flex-wrap:wrap;gap:24px 56px;align-items:baseline;margin-top:48px;padding-top:24px;position:relative;z-index:1}
 .clean-saving .num{font-size:clamp(46px,6vw,72px);line-height:1;color:var(--red)}
 
-/* 10. PLANS (PACKAGED CARDS WITH CHECKLISTS & SETUP BREAKDOWN) */
+/* 10. PLANS (INTER FONT FOR CARD TITLES & SETUP FEE BANNER) */
 .plans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
 .plan-card{background:#fff;border:2px solid var(--line);border-radius:24px;padding:32px 24px;display:flex;flex-direction:column;justify-content:space-between;transition:all .25s ease;position:relative}
 .plan-card:hover{transform:translateY(-4px);border-color:#D8C5BC;box-shadow:0 16px 40px -10px rgba(0,0,0,.08)}
 .plan-card.popular{border-color:var(--red);box-shadow:0 16px 40px -10px rgba(227,10,23,.15)}
 .plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 12px;border-radius:999px;white-space:nowrap}
 .plan-card.on{border-color:var(--red);background:#FFFDFD}
-.plan-card h3{font-family:var(--display);font-size:20px;text-transform:uppercase;margin:0 0 4px}
+.plan-card h3{font-family:var(--body);font-size:20px;font-weight:700;text-transform:none;letter-spacing:normal;margin:0 0 4px}
 .plan-for{font-size:12.5px;color:var(--muted);min-height:36px;line-height:1.4}
 .plan-price-wrap{margin:18px 0;padding:16px 0;border-top:1px solid #F0E6DE;border-bottom:1px solid #F0E6DE}
 .plan-price-wrap .price{font-size:38px;font-weight:800;color:var(--ink);line-height:1}
@@ -280,8 +284,12 @@ tr:last-child .aslan-col{border-bottom:2px solid var(--red);border-bottom-left-r
 .plan-btn{margin-top:auto;width:100%;min-height:44px;border-radius:999px;border:1px solid #DCC3B5;background:#fff;font:600 14px var(--body);color:var(--garnet);cursor:pointer;transition:all .2s;text-align:center;display:flex;align-items:center;justify-content:center;text-decoration:none}
 .plan-card.popular .plan-btn,.plan-card.on .plan-btn{background:var(--red);border-color:var(--red);color:#fff}
 
-.plans-slider-box{margin-top:48px;background:#FAF8F5;border:1px solid var(--line);border-radius:24px;padding:32px 36px}
-.plans-setup-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.plans-setup-box{margin-top:48px;background:#FAF8F5;border:1px solid var(--line);border-radius:24px;padding:32px 36px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
+.plans-setup-info{max-width:580px}
+.plans-setup-title{font-size:13.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:6px}
+.plans-setup-price{font-size:clamp(28px,3vw,36px);font-weight:800;color:var(--ink);line-height:1.1}
+.plans-setup-price span{color:var(--red);font-size:18px;font-weight:700;margin-left:8px}
+.plans-setup-desc{font-size:14.5px;color:var(--muted);margin-top:10px;line-height:1.55}
 
 /* 11. STEPS (SLEEK NUMBERED TIMELINE - INTER FONT) */
 .steps-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:64px;position:relative}
@@ -289,14 +297,13 @@ tr:last-child .aslan-col{border-bottom:2px solid var(--red);border-bottom-left-r
 .step-item::before{content:"";position:absolute;top:22px;left:44px;right:-40px;height:2px;background:#F0E6DE;z-index:0}
 .step-item:last-child::before{display:none}
 .step-num{width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid var(--red);color:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--body);font-size:17px;font-weight:800;margin-bottom:24px;position:relative;z-index:1;letter-spacing:-0.02em}
-.step-item h3{font-size:18px;margin:0 0 10px}
+.step-item h3{font-family:var(--body);font-size:18px;font-weight:700;text-transform:none;letter-spacing:normal;margin:0 0 10px}
 .step-item p{color:var(--muted);font-size:15px;line-height:1.55}
 
 /* 12. TRIAL (HIGHLIGHTED PREMIUM SECTION) */
 .trial{background:linear-gradient(150deg,var(--garnet),#D10F1C 65%,var(--gold) 140%);color:#fff;position:relative;overflow:hidden}
-.trial h2{color:#fff}
+.trial h2{color:#fff;font-size:clamp(34px,4.6vw,56px);line-height:1.08}
 .trial .lead{color:rgba(255,255,255,.92)}
-.trial-pill{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;background:rgba(255,255,255,.18);color:#FFE58F;padding:5px 14px;border-radius:999px;margin-bottom:14px}
 .trial-highlight{color:#FFE58F;text-shadow:0 0 24px rgba(255,229,143,.5);position:relative;display:inline-block;padding-bottom:6px}
 .trial-highlight::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:3.5px;background:linear-gradient(90deg,#FFE58F,#FFA940);border-radius:2px;box-shadow:0 2px 10px rgba(255,229,143,.5)}
 .trial-perks{display:flex;flex-wrap:wrap;gap:18px;margin-top:24px;font-size:14px;color:rgba(255,255,255,.95);font-weight:600}
@@ -318,7 +325,7 @@ input[type=text],input[type=tel]{min-height:54px;border-radius:14px;border:0;pad
 /* footer */
 footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-area-inset-bottom,0px))}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
-.foot h4{margin:0 0 14px;color:#fff;font-size:15px}
+.foot h4{margin:0 0 14px;color:#fff;font-size:15px;font-family:var(--body);font-weight:700}
 .foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px}
 .foot a{text-decoration:none;color:#EADBD2;transition:color .2s}
 .foot a:hover{color:#fff}
@@ -331,17 +338,26 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 .red-path.is-active::after{transform:scaleX(1)}
 .red-path.is-active{text-shadow:0 0 20px rgba(227,10,23,.2)}
 
-/* FLOATING JOURNEY WAYFINDER (ONE SINGLE COIN & ARROW GUIDE) */
-.journey-wayfinder{position:fixed;bottom:24px;right:24px;z-index:90;transition:opacity .3s ease,transform .3s ease}
-.wf-btn{display:flex;align-items:center;gap:12px;background:rgba(29,19,17,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);color:#fff;padding:8px 18px 8px 10px;border-radius:999px;cursor:pointer;box-shadow:0 14px 34px -6px rgba(0,0,0,.45),0 0 20px rgba(227,10,23,.25);transition:all .25s ease}
-.wf-btn:hover{transform:translateY(-3px) scale(1.02);background:#1D1311;box-shadow:0 18px 40px -6px rgba(227,10,23,.4)}
-.wf-coin{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FFE599,#E30A17);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 14px rgba(227,10,23,.6)}
-.wf-lira{font-size:15px;font-weight:900;color:#fff}
-.wf-arrow{position:absolute;bottom:-4px;right:-4px;background:#fff;color:var(--red);font-size:11px;font-weight:900;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.25);animation:arrowBob .8s ease-in-out infinite alternate}
-@keyframes arrowBob{0%{transform:translateY(-2px)}100%{transform:translateY(3px)}}
-.wf-info{display:flex;flex-direction:column;text-align:left;line-height:1.2}
-.wf-badge{font-size:9.5px;font-weight:700;letter-spacing:.08em;color:#FFB877;text-transform:uppercase}
-.wf-name{font-size:12.5px;font-weight:600;color:#fff;white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis}
+/* FLOATING WHATSAPP CONCIERGE WIDGET */
+.concierge-widget{position:fixed;bottom:24px;right:24px;z-index:90;max-width:380px;width:calc(100% - 48px);transition:transform .3s cubic-bezier(0.16,1,0.3,1),opacity .3s ease;filter:drop-shadow(0 16px 36px rgba(35,24,22,.18))}
+.concierge-card{background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-radius:20px;border:1px solid rgba(227,10,23,.18);box-shadow:0 12px 30px -8px rgba(0,0,0,.12);overflow:hidden;transition:all .25s ease}
+.concierge-head{background:linear-gradient(135deg,#008069,#00A884);color:#fff;padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+.concierge-author{display:flex;align-items:center;gap:10px}
+.concierge-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.6)}
+.concierge-meta-title{font-size:14px;font-weight:700;line-height:1.2;color:#fff}
+.concierge-meta-sub{font-size:11.5px;color:rgba(255,255,255,.9);display:flex;align-items:center;gap:4px;margin-top:2px}
+.concierge-live-dot{width:6px;height:6px;border-radius:50%;background:#25D366;animation:pulseDot 1.5s infinite}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.2)}}
+.concierge-time-pill{background:rgba(255,255,255,.2);font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:999px;color:#fff;letter-spacing:.02em}
+.concierge-body{padding:14px 16px;background:#FBF8F5}
+.concierge-msg{background:#fff;border-radius:14px;border-top-left-radius:3px;padding:10px 14px;font-size:13.5px;line-height:1.45;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.06);position:relative;border:1px solid #EFE4DC}
+.concierge-actions{display:flex;align-items:center;gap:8px;margin-top:10px}
+.concierge-btn{flex:1;min-height:36px;background:var(--red);color:#fff;border:0;border-radius:999px;font:600 13px var(--body);display:inline-flex;align-items:center;justify-content:center;text-decoration:none;transition:all .2s ease;cursor:pointer}
+.concierge-btn:hover{background:var(--garnet);transform:scale(1.02)}
+.concierge-close{background:transparent;border:0;color:var(--muted);cursor:pointer;padding:6px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:color .2s}
+.concierge-close:hover{color:var(--ink)}
+.concierge-min-btn{display:none;position:fixed;bottom:24px;right:24px;z-index:90;background:linear-gradient(135deg,#008069,#00A884);color:#fff;border:0;border-radius:999px;padding:10px 18px 10px 12px;font:700 14px var(--body);box-shadow:0 12px 28px -6px rgba(0,128,105,.45);cursor:pointer;align-items:center;gap:8px;transition:all .2s ease}
+.concierge-min-btn:hover{transform:translateY(-2px) scale(1.03)}
 
 .mob-br{display:none}
 .desk-br{display:inline}
@@ -357,12 +373,11 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   .hero-bg-scrim{display:none}
   .hero-content{max-width:100%}
   .hero-facts{gap:24px}
-  .hero-badge-float{margin-top:20px;max-width:100%}
   .aslan-split,.demo,.crm-split,.calc,.trial-grid,.founders-grid,.principle-grid{grid-template-columns:1fr;gap:40px}
   .facts{grid-template-columns:1fr;gap:24px}
   .pain{grid-template-columns:1fr;gap:16px}
   .traits-cards{grid-template-columns:1fr 1fr}
-  .crm-cards{grid-template-columns:repeat(2,1fr)}
+  .crm-cards{grid-template-columns:repeat(3,1fr)}
   .plans-grid{grid-template-columns:1fr 1fr}
   .steps-timeline{grid-template-columns:1fr 1fr;gap:32px}
   .step-item::before{display:none}
@@ -370,9 +385,8 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   .lira-flank{display:none}
   .aslan-photo{min-height:auto;aspect-ratio:4/5;max-width:400px;margin:0 auto}
   .principle-photo{max-width:320px;margin:0 auto}
-  .journey-wayfinder{bottom:16px;right:16px}
-  .wf-info{display:none}
-  .wf-btn{padding:6px}
+  .concierge-widget{bottom:16px;right:16px;max-width:340px}
+  .concierge-min-btn{bottom:16px;right:16px}
 }
 @media (max-width:560px){
   .mob-br{display:block}
@@ -381,16 +395,22 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   .nav .btn{min-height:36px;padding:0 14px;font-size:12px;white-space:nowrap}
   .logo-img{height:25px}
   h1{font-size:clamp(17px,4.6vw,22px);line-height:1.24;word-break:normal;hyphens:none}
-  h2{font-size:clamp(16px,4.4vw,22px);line-height:1.24;word-break:normal;hyphens:none}
+  h2{font-size:clamp(15px,4.1vw,20px);line-height:1.24;word-break:normal;hyphens:none}
   .hero-facts{gap:20px}
   .founder-item{flex-direction:column;gap:16px}
   .founder-avatar{width:90px;height:90px}
   .traits-cards{grid-template-columns:1fr}
   .tabs{grid-template-columns:1fr}
-  .crm-cards{grid-template-columns:1fr}
+  .crm-cards{grid-template-columns:repeat(2,1fr);gap:8px}
+  .crm-card-item{padding:10px 12px;font-size:13px}
   .calc-inputs-box,.calc-card{padding:28px 20px}
   .plans-grid{grid-template-columns:1fr}
+  .plans-setup-box{padding:24px 20px}
   .steps-timeline{grid-template-columns:1fr}
+  .concierge-widget{display:none;bottom:12px;right:12px;left:12px;width:auto;max-width:none}
+  .concierge-body{padding:12px 14px}
+  .concierge-msg{font-size:13px;line-height:1.45}
+  .concierge-min-btn{display:inline-flex;bottom:16px;right:16px;font-size:12.5px;padding:8px 14px 8px 10px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -435,10 +455,6 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
         <a class="btn btn-red" href="#test">7 gün ücretsiz deneyin</a>
         <a class="btn btn-line" href="#ornekler">Aslan nasıl konuşuyor</a>
       </div>
-      <div class="hero-badge-float">
-        <small>23:48 • WhatsApp</small>
-        İyi günler. Benim adım Aslan, Altai Optima'ya hoş geldiniz. Size nasıl yardımcı olabilirim? Her türlü soruyu sorabilirsiniz.
-      </div>
     </div>
   </div>
 </section>
@@ -460,7 +476,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 <!-- 3. FOUNDERS (NO PODLOZHKI) -->
 <section id="kurucular" class="founders-block">
   <div class="wrap">
-    <h2>Merhaba! Biz Altai <br class="mob-br">Optima'nın&nbsp;<span class="red red-path" data-path="3" data-label="Çözümleri incele">kurucularıyız</span></h2>
+    <h2>Merhaba! Biz <br class="mob-br">Altai Optima'nın&nbsp;<br class="mob-br"><span class="red red-path" data-path="3" data-label="Çözümleri incele">kurucularıyız</span></h2>
     <p class="lead">Satış deneyimi ve yapay zeka mühendisliğini Türk ticaret kültürünün sıcaklığıyla&nbsp;buluşturduk</p>
     
     <div class="founders-story">
@@ -564,7 +580,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
     <div class="demo">
       <div class="demo-left">
         <div>
-          <h2>Aslan farklı sektörlerde <br class="desk-br"><span class="red red-path" data-path="6" data-label="Ücretsiz test">nasıl&nbsp;konuşuyor?</span></h2>
+          <h2>Aslan farklı <br class="mob-br">sektörlerde <br class="desk-br"><span class="red red-path" data-path="6" data-label="Ücretsiz test">nasıl&nbsp;konuşuyor?</span></h2>
           <p class="lead" style="margin-top:16px">Örnek senaryolar: gece 2'de Rusça yazan emlak alıcısı, Almanca soran otel misafiri, "son fiyat?" diyen Instagram&nbsp;müşterisi</p>
         </div>
         <div>
@@ -585,7 +601,6 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 <section class="trial" id="test">
   <div class="wrap trial-grid">
     <div>
-      <span class="trial-pill">⭐ RİSKSİZ BAŞLANGIÇ</span>
       <h2>7&nbsp;gün <span class="trial-highlight">ücretsiz&nbsp;test</span></h2>
       <p class="lead">Aslan'ı bir kanalınıza bağlayalım, talepleri tabloya toplayalım. Kart bilgisi gerekmez, 24 saatte&nbsp;başlıyoruz</p>
       <div class="trial-perks">
@@ -613,7 +628,6 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
     <div>
       <h2>Müşterileriniz <br class="mob-br">şirketinizde&nbsp;<span class="red red-path" data-path="8" data-label="Kayıp hesabı">kalır</span></h2>
       <p class="lead" style="margin-top:18px">Aslan müşteri kartını anında açar, konuşmanın özetini yazar ve tüm alanları sizin kurallarınıza göre&nbsp;doldurur.</p>
-      <p style="margin-top:16px;color:var(--muted);font-size:16px;line-height:1.6">İyi satıcınız işten ayrılsa bile müşteri portföyü, teklif geçmişi ve özel tercihler şirketinizin hafızasında güvende kalır. Hiçbir lead kaybolmaz, hiçbir müşteri unutulmaz.</p>
     </div>
     <div class="crm-cards">
       <div class="crm-card-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Bitrix24</div>
@@ -680,13 +694,19 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 
 <!-- 10. COMPARE (SIDE LIRAS, CRITERIA HIGHLIGHTS) -->
 <section id="karsilastirma" class="compare-section">
-  <div class="lira-flank lira-flank-left">
+  <div class="lira-flank lira-flank-left" aria-hidden="true">
     <div class="lira-item l1">₺</div>
     <div class="lira-item l2">₺</div>
+    <div class="lira-item l3">₺</div>
+    <div class="lira-item l4">₺</div>
+    <div class="lira-item l5">₺</div>
   </div>
-  <div class="lira-flank lira-flank-right">
+  <div class="lira-flank lira-flank-right" aria-hidden="true">
     <div class="lira-item r1">₺</div>
     <div class="lira-item r2">₺</div>
+    <div class="lira-item r3">₺</div>
+    <div class="lira-item r4">₺</div>
+    <div class="lira-item r5">₺</div>
   </div>
   <div class="wrap" style="position:relative;z-index:1">
     <h2>Aslan mı, <br class="mob-br"><span class="red red-path" data-path="10" data-label="Şeffaf paketler">satış&nbsp;temsilcisi&nbsp;mi?</span></h2>
@@ -802,23 +822,13 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
       </div>
     </div>
 
-    <div class="plans-slider-box">
-      <div class="field-top"><label for="dialogs" style="display:inline;font-size:16px;font-weight:600">Ayda kaç müşteri konuşması bekliyorsunuz?</label><output id="dialogsOut" class="num" style="color:var(--red);font-size:18px;font-weight:700"></output></div>
-      <input type="range" id="dialogs" min="50" max="3000" step="50" value="400">
-      
-      <div class="plans-setup-bar">
-        <div>
-          <span style="font-size:13.5px;color:var(--muted);display:block">Tek seferlik kurulum bedeli</span>
-          <b style="font-size:22px;color:var(--ink)">14.900 TL</b>
-          <span style="font-size:12.5px;color:#0F7A55;font-weight:600;display:block;margin-top:2px">✓ İlk ay aboneliği bu ücrete dahildir</span>
-        </div>
-        <div>
-          <span style="font-size:13.5px;color:var(--muted);display:block">2. aydan itibaren aylık</span>
-          <b style="font-size:22px;color:var(--red)" id="planPrice"></b>
-        </div>
-        <a class="btn btn-red" href="#test">Aslan'ı ekibime al</a>
+    <div class="plans-setup-box">
+      <div class="plans-setup-info">
+        <div class="plans-setup-title">Tek Seferlik Kurulum Bedeli</div>
+        <div class="plans-setup-price">14.900 TL <span>(İlk ay aboneliği dahildir)</span></div>
+        <p class="plans-setup-desc">Limit aşılırsa önceden haber veririz, ertesi aydan bir üst pakete geçersiniz. Ceza ve kesinti yok. Abonelik aylıktır, dilediğiniz an sonlandırabilirsiniz.</p>
       </div>
-      <p class="small" style="margin-top:20px;color:var(--muted)">Limit aşılırsa önceden haber veririz, ertesi aydan bir üst pakete geçersiniz. Ceza ve kesinti yok. Abonelik aylıktır, dilediğiniz an sonlandırabilirsiniz.</p>
+      <a class="btn btn-red" href="#test">7 gün ücretsiz deneyin</a>
     </div>
   </div>
 </section>
@@ -870,19 +880,35 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<!-- FLOATING WAYFINDER -->
-<div id="journeyWayfinder" class="journey-wayfinder" role="region" aria-label="Müşteri Yolculuğu Rehberi">
-  <button type="button" id="wfBtn" class="wf-btn" title="Sonraki kırmızı başlığa git">
-    <div class="wf-coin">
-      <span class="wf-lira">₺</span>
-      <span class="wf-arrow">↓</span>
+<!-- FLOATING WHATSAPP CONCIERGE WIDGET -->
+<div id="conciergeWidget" class="concierge-widget" role="region" aria-label="Aslan WhatsApp Danışmanı">
+  <div class="concierge-card">
+    <div class="concierge-head">
+      <div class="concierge-author">
+        <img class="concierge-avatar" src="assets/aslan-avatar.webp" alt="Aslan" width="36" height="36">
+        <div>
+          <div class="concierge-meta-title">Aslan • Altai Optima</div>
+          <div class="concierge-meta-sub"><span class="concierge-live-dot"></span> çevrimiçi</div>
+        </div>
+      </div>
+      <div class="concierge-time-pill"><span id="conciergeTime">--:--</span> • WhatsApp</div>
     </div>
-    <div class="wf-info">
-      <span class="wf-badge">MÜŞTERİ YOLCULUĞU</span>
-      <span id="wfNextName" class="wf-name">Kayıpları gör</span>
+    <div class="concierge-body">
+      <div class="concierge-msg">
+        İyi günler. Benim adım Aslan, Altai Optima'ya hoş geldiniz. Size nasıl yardımcı olabilirim? Her türlü soruyu sorabilirsiniz.
+      </div>
+      <div class="concierge-actions">
+        <a class="concierge-btn" href="#test">7 Gün Ücretsiz Dene</a>
+        <a class="concierge-btn btn-line" href="https://wa.me/79067574355" target="_blank" rel="noopener" style="font-size:12px;min-height:36px;padding:0 14px">WhatsApp</a>
+        <button type="button" class="concierge-close" id="conciergeClose" aria-label="Küçült" title="Küçült">✕</button>
+      </div>
     </div>
-  </button>
+  </div>
 </div>
+<button type="button" id="conciergeMinBtn" class="concierge-min-btn" aria-label="Aslan ile görüşün">
+  <img src="assets/aslan-avatar.webp" alt="Aslan" style="width:26px;height:26px;border-radius:50%">
+  <span>Aslan • <span id="conciergeTimeMin">--:--</span></span>
+</button>
 
 </main>
 
@@ -1037,17 +1063,13 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   calc();
 
   /* PLANS */
-  var dialogs = document.getElementById("dialogs");
   var plans = document.querySelectorAll("#plans .plan-card");
-  function pick() {
-    var d = +dialogs.value, chosen = null;
-    plans.forEach(function (p) { p.classList.remove("on"); if (!chosen && d <= +p.dataset.max) chosen = p; });
-    if (!chosen && plans.length > 0) chosen = plans[plans.length - 1];
-    chosen.classList.add("on");
-    document.getElementById("dialogsOut").textContent = fmt(d) + " konuşma, " + chosen.querySelector("h3").textContent;
-    document.getElementById("planPrice").textContent = chosen.querySelector(".price").textContent + " TL / ay";
-  }
-  dialogs.addEventListener("input", pick); pick();
+  plans.forEach(function (p) {
+    p.addEventListener("click", function () {
+      plans.forEach(function (x) { x.classList.remove("on"); });
+      p.classList.add("on");
+    });
+  });
 
   /* FORM: Telegram Bot Entegrasyonu */
   var TELEGRAM_BOT_TOKEN = "";
@@ -1111,17 +1133,11 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
     });
   }
 
-  /* CUSTOMER JOURNEY: WAYFINDER & RED-PATH HIGHLIGHTING */
+  /* CUSTOMER JOURNEY: ACCENT KEYWORD EXPANDING UNDERLINE */
   var pathNodes = Array.prototype.slice.call(document.querySelectorAll(".red-path"));
-  var wayfinder = document.getElementById("journeyWayfinder");
-  var wfBtn = document.getElementById("wfBtn");
-  var wfNextName = document.getElementById("wfNextName");
-  var footerEl = document.querySelector("footer");
-  var currentPathIndex = 0;
-
   function updateJourneyPath() {
     if (!pathNodes.length) return;
-    var scrollPos = window.scrollY + window.innerHeight * 0.4;
+    var scrollPos = window.scrollY + window.innerHeight * 0.42;
     var activeIdx = 0;
 
     for (var i = 0; i < pathNodes.length; i++) {
@@ -1139,57 +1155,58 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
         node.classList.remove("is-active");
       }
     });
-
-    currentPathIndex = activeIdx;
-    var nextIdx = activeIdx + 1;
-    if (nextIdx < pathNodes.length) {
-      var nextNode = pathNodes[nextIdx];
-      var label = nextNode.getAttribute("data-label") || nextNode.textContent.trim();
-      if (wfNextName) wfNextName.textContent = label;
-      if (wfBtn) wfBtn.setAttribute("title", "Sonraki adım: " + label);
-    } else {
-      if (wfNextName) wfNextName.textContent = "7 Gün Ücretsiz Test";
-      if (wfBtn) wfBtn.setAttribute("title", "Ücretsiz test formuna git");
-    }
-
-    if (wayfinder && footerEl) {
-      var footTop = footerEl.getBoundingClientRect().top;
-      if (footTop < window.innerHeight - 30) {
-        wayfinder.style.opacity = "0.2";
-        wayfinder.style.pointerEvents = "none";
-      } else {
-        wayfinder.style.opacity = "1";
-        wayfinder.style.pointerEvents = "auto";
-      }
-    }
   }
-
-  if (wfBtn) {
-    wfBtn.addEventListener("click", function() {
-      var nextIdx = currentPathIndex + 1;
-      if (nextIdx < pathNodes.length) {
-        var target = pathNodes[nextIdx];
-        var navH = 90;
-        var elementPosition = target.getBoundingClientRect().top;
-        var offsetPosition = elementPosition + window.pageYOffset - navH;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-        setTimeout(function() {
-          pathNodes.forEach(function(n) { n.classList.remove("is-active"); });
-          target.classList.add("is-active");
-        }, 300);
-      } else {
-        var testSec = document.getElementById("test");
-        if (testSec) testSec.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  }
-
   window.addEventListener("scroll", updateJourneyPath, { passive: true });
   window.addEventListener("resize", updateJourneyPath, { passive: true });
   updateJourneyPath();
+
+  /* WHATSAPP CONCIERGE WIDGET: DYNAMIC CLIENT LOCAL TIME */
+  function updateClientTime() {
+    var now = new Date();
+    var hh = String(now.getHours());
+    if (hh.length < 2) hh = "0" + hh;
+    var mm = String(now.getMinutes());
+    if (mm.length < 2) mm = "0" + mm;
+    var timeStr = hh + ":" + mm;
+    var elTime = document.getElementById("conciergeTime");
+    var elTimeMin = document.getElementById("conciergeTimeMin");
+    if (elTime) elTime.textContent = timeStr;
+    if (elTimeMin) elTimeMin.textContent = timeStr;
+  }
+  updateClientTime();
+  setInterval(updateClientTime, 20000);
+
+  var widget = document.getElementById("conciergeWidget");
+  var minBtn = document.getElementById("conciergeMinBtn");
+  var closeBtn = document.getElementById("conciergeClose");
+  var footerEl = document.querySelector("footer");
+
+  if (closeBtn && widget && minBtn) {
+    closeBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      widget.style.display = "none";
+      minBtn.style.display = "inline-flex";
+    });
+    minBtn.addEventListener("click", function () {
+      widget.style.display = "block";
+      minBtn.style.display = "none";
+    });
+  }
+
+  function checkFooterOverlap() {
+    if (!widget || !footerEl) return;
+    var footTop = footerEl.getBoundingClientRect().top;
+    if (footTop < window.innerHeight - 30) {
+      widget.style.opacity = "0.2";
+      widget.style.pointerEvents = "none";
+      if (minBtn) minBtn.style.opacity = "0.2";
+    } else {
+      widget.style.opacity = "1";
+      widget.style.pointerEvents = "auto";
+      if (minBtn) minBtn.style.opacity = "1";
+    }
+  }
+  window.addEventListener("scroll", checkFooterOverlap, { passive: true });
 })();
 </script>
 </body>
