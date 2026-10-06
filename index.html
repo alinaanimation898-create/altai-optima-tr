@@ -98,21 +98,23 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .nav ul a:hover{color:var(--red)}
 .nav .btn{min-height:46px;padding:0 22px;font-size:15px}
 
-/* 1. HERO (FULL BLEED PANORAMIC BANNER) */
-.hero{padding:50px 0 100px}
-.hero-content{max-width:920px;margin:0 auto;text-align:center}
-.hero-content .lead{margin:24px auto 0;max-width:740px}
-.hero-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:48px;margin:36px 0 40px}
-.hero-facts > div{transition:transform .3s cubic-bezier(0.16,1,0.3,1);cursor:default;text-align:center}
-.hero-facts > div:hover{transform:translateY(-3px) scale(1.05)}
-.hero-facts b{display:block;font-size:36px;color:var(--garnet);line-height:1}
-.hero-facts span{font-size:14px;color:var(--muted);margin-top:6px;display:block}
-.hero-content .cta-row{justify-content:center;gap:16px}
-
-.hero-full-media{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;margin-top:60px;overflow:hidden;box-shadow:0 30px 80px -25px rgba(35,24,22,.25)}
-.hero-full-banner{width:100%;height:clamp(440px,52vw,700px);object-fit:cover;object-position:center 25%;display:block}
-.hero-badge-float{position:absolute;bottom:36px;left:max(28px, calc((100vw - 1160px) / 2));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-radius:20px;padding:18px 24px;max-width:440px;box-shadow:0 20px 50px -10px rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.9);z-index:2;text-align:left}
-.hero-badge-float small{display:block;color:#008069;font-weight:600;margin-bottom:6px;font-size:13px}
+/* 1. HERO (PANORAMIC FULL-WIDTH WITH TEXT ON LEFT) */
+.hero{position:relative;overflow:hidden;padding:70px 0 80px;background:#fff;min-height:700px;display:flex;align-items:center}
+.hero-bg{position:absolute;top:0;right:0;bottom:0;left:0;z-index:0;pointer-events:none}
+.hero-bg-img{position:absolute;top:0;right:0;width:66%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+.hero-bg-scrim{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(90deg, #FFFFFF 0%, rgba(255,255,255,0.98) 46%, rgba(255,255,255,0.85) 58%, rgba(255,255,255,0.1) 75%, transparent 100%)}
+.hero-wrap{position:relative;z-index:2;width:100%}
+.hero-content{max-width:620px;text-align:left}
+.hero-content h1{text-align:left}
+.hero-content .lead{margin:22px 0 0;max-width:580px;text-align:left}
+.hero-facts{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:36px;margin:32px 0 36px}
+.hero-facts > div{transition:transform .3s cubic-bezier(0.16,1,0.3,1);cursor:default;text-align:left}
+.hero-facts > div:hover{transform:translateY(-3px) scale(1.04)}
+.hero-facts b{display:block;font-size:34px;color:var(--garnet);line-height:1}
+.hero-facts span{font-size:13.5px;color:var(--muted);margin-top:6px;display:block}
+.hero-content .cta-row{justify-content:flex-start;gap:16px}
+.hero-badge-float{background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-radius:18px;padding:16px 20px;max-width:540px;box-shadow:0 14px 36px -10px rgba(35,24,22,.14);border:1px solid rgba(227,10,23,.18);text-align:left;margin-top:28px}
+.hero-badge-float small{display:block;color:#008069;font-weight:700;margin-bottom:5px;font-size:12.5px}
 
 /* 2. NUMBERS */
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px}
@@ -123,8 +125,16 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .source{margin-top:44px;font-size:13px;color:#9C8A84;max-width:840px}
 
 /* 3. FOUNDERS (NO PODLOZHKI) */
-.founders-block{padding:140px 0}
-.founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:56px}
+.founders-block{padding:120px 0}
+.founders-story{margin:36px auto 48px;max-width:860px;text-align:left}
+.story-highlight{font-size:19px;line-height:1.65;color:var(--ink);margin-bottom:20px}
+.story-highlight strong{color:var(--red);font-weight:700}
+.story-product{padding-left:22px;border-left:3px solid var(--red)}
+.story-lead{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:12px}
+.story-lead strong{color:var(--red)}
+.story-standard p{font-size:16px;line-height:1.65;color:var(--muted);margin:8px 0 0}
+.standard-badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--garnet);background:rgba(227,10,23,0.08);padding:4px 12px;border-radius:999px}
+.founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:48px}
 .founder-item{display:flex;gap:24px;align-items:flex-start}
 .founder-avatar{width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center 15%;flex-shrink:0;box-shadow:0 12px 28px -6px rgba(0,0,0,.15);border:3px solid #FAF4F0}
 .founder-text cite{font-style:normal;font-weight:700;font-size:22px;color:var(--ink);display:block}
@@ -141,18 +151,18 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .pain .answer{padding-left:28px;position:relative}
 .pain .answer::before{content:"";position:absolute;left:0;top:10px;width:12px;height:12px;border-radius:50%;background:var(--red)}
 
-/* 5. ASLAN GİBİ SATIŞ (PACKAGED LUXURY CARDS & PROMINENT PHOTO) */
+/* 5. ASLAN GİBİ SATIŞ (NO PODLOZHKI, CLEAN EDITORIAL ACCENTS) */
 .aslan-split{display:grid;grid-template-columns:460px 1fr;gap:56px;align-items:center}
 .aslan-photo-card{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 28px 70px -15px rgba(35,24,22,.25)}
 .aslan-photo{width:100%;min-height:540px;aspect-ratio:4/5;object-fit:cover;object-position:center 15%;display:block}
 .aslan-photo-badge{position:absolute;bottom:24px;left:24px;right:24px;background:rgba(35,24,22,.85);backdrop-filter:blur(10px);color:#fff;border-radius:16px;padding:12px 18px;font-size:13px;line-height:1.4;border:1px solid rgba(255,255,255,.15)}
 .aslan-photo-badge b{color:#FFE58F;display:block;font-size:13.5px;margin-bottom:2px}
-.traits-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
-.trait-card{background:#FAF8F5;border:1px solid var(--line);border-radius:20px;padding:24px 22px;transition:all .25s ease;display:flex;flex-direction:column;justify-content:space-between}
-.trait-card:hover{background:#fff;transform:translateY(-3px);border-color:#E30A17;box-shadow:0 12px 30px -10px rgba(227,10,23,.12)}
-.trait-pill{display:inline-block;font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--red);background:rgba(227,10,23,.08);padding:3px 10px;border-radius:999px;margin-bottom:12px;width:fit-content}
-.trait-card h3{font-size:17px;color:var(--ink);margin:0 0 8px;line-height:1.25}
-.trait-card p{font-size:14px;color:var(--muted);line-height:1.5;margin:0}
+.traits-cards{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px}
+.trait-card{background:transparent;border:none;border-left:3px solid rgba(227,10,23,.25);border-radius:0;padding:6px 0 6px 18px;transition:all .25s ease;display:flex;flex-direction:column;justify-content:flex-start}
+.trait-card:hover{background:transparent;border-left-color:var(--red);transform:translateX(5px);box-shadow:none}
+.trait-pill{display:inline-block;font-family:var(--body);font-size:11.5px;font-weight:800;letter-spacing:.08em;color:var(--red);background:transparent;padding:0;margin-bottom:8px}
+.trait-card h3{font-size:18px;color:var(--ink);margin:0 0 6px;line-height:1.3}
+.trait-card p{font-size:14.5px;color:var(--muted);line-height:1.55;margin:0}
 
 /* 6. DEMO (ANIMATED WHATSAPP UI & 10 SECTORS) */
 .demo{display:grid;grid-template-columns:1.15fr 440px;gap:56px;align-items:stretch;margin-top:52px}
@@ -163,8 +173,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:0 4px 14px rgba(35,24,22,.2)}
 .tab[aria-selected="true"] .tab-arrow{color:var(--red);transform:translateX(3px)}
 .tab-arrow{font-size:12px;transition:transform .2s;color:#B9A398}
-.channels-box{background:#FAF8F5;border:1px solid var(--line);border-radius:16px;padding:18px 20px;font-size:13.5px;color:var(--muted);line-height:1.55}
-.channels-box b{color:var(--ink);display:block;margin-bottom:4px}
+.channels-box{background:transparent;border:none;padding:16px 0 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted);line-height:1.6}
+.channels-box b{color:var(--ink);display:block;margin-bottom:6px;font-size:14.5px}
 .wa-window{border-radius:28px;background:#EFEAE2;min-height:580px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 60px -20px rgba(0,0,0,.25);border:1px solid #D8CFC8}
 .wa-head{background:#008069;color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 4px rgba(0,0,0,.1)}
 .wa-user{display:flex;align-items:center;gap:12px}
@@ -197,7 +207,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .crm-card-item:hover{background:#fff;border-color:#E30A17;transform:translateY(-2px);color:var(--ink);box-shadow:0 8px 20px -6px rgba(0,0,0,.08)}
 .crm-card-item svg{width:22px;height:22px;fill:currentColor;flex-shrink:0;color:var(--garnet)}
 
-/* 8. CALCULATOR (BALANCED 2 COLUMNS ON ONE ROW) */
+/* 8. CALCULATOR (EXECUTIVE WHITE CARD, NO DARK PODLOZHKA) */
 .calc{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:56px;align-items:stretch}
 .calc-inputs-box{background:#FAF8F5;border:1px solid var(--line);border-radius:28px;padding:40px;display:flex;flex-direction:column;justify-content:space-between}
 .field{margin-bottom:28px}
@@ -209,27 +219,29 @@ input[type=range]{width:100%;accent-color:var(--red);height:28px;cursor:pointer}
 .speed button{min-height:42px;padding:0 16px;border-radius:999px;border:1px solid #E3D2C6;background:#fff;font:600 13.5px var(--body);color:var(--muted);cursor:pointer;transition:all .2s}
 .speed button:hover{border-color:var(--ink);color:var(--ink)}
 .speed button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.calc-card{background:linear-gradient(150deg,#1D1311 0%,#2B1B18 100%);color:#fff;border-radius:28px;padding:40px;box-shadow:0 24px 60px -15px rgba(35,24,22,.35);display:flex;flex-direction:column;justify-content:space-between}
-.calc-card .tag{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.6);font-weight:600}
-.calc-card .big{font-size:clamp(44px,4.8vw,64px);line-height:1;color:#FF3B30;margin:10px 0 14px;text-shadow:0 0 30px rgba(255,59,48,.3)}
-.calc-card .formula{font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.5}
-.calc-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:28px 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
-.calc-stats dt{font-size:12.5px;color:rgba(255,255,255,.6)}
-.calc-stats dd{margin:4px 0 0;font-size:20px;color:#fff}
+.calc-card{background:#FFFFFF;color:var(--ink);border-radius:28px;padding:40px;border:2px solid #EFE4DC;box-shadow:0 20px 50px -10px rgba(227,10,23,.08),0 8px 24px -4px rgba(35,24,22,.04);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.calc-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red),var(--gold))}
+.calc-card .tag{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.calc-card .big{font-size:clamp(44px,4.8vw,64px);line-height:1;color:var(--red);margin:12px 0 14px;font-weight:800;text-shadow:none}
+.calc-card .formula{font-size:14px;color:var(--muted);line-height:1.5}
+.calc-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:28px 0;padding-top:24px;border-top:1px solid #EFE4DC}
+.calc-stats dt{font-size:13px;color:var(--muted);font-weight:500}
+.calc-stats dd{margin:4px 0 0;font-size:20px;color:var(--ink);font-weight:700}
 .calc-stats .annual{grid-column:1/-1}
-.calc-stats .annual dd{color:#25D366;font-size:28px}
-.calc-card .btn{background:var(--red);color:#fff;align-self:flex-start}
+.calc-stats .annual dd{color:#0F7A55;font-size:30px;font-weight:800}
+.calc-card .btn{background:var(--red);color:#fff;align-self:flex-start;padding:0 28px;box-shadow:0 8px 20px -4px rgba(227,10,23,.35)}
+.calc-card .btn:hover{background:var(--garnet);transform:translateY(-2px)}
 
-/* 9. COMPARE SECTION (FLOATING SIDE LIRAS & HIGHLIGHTED CRITERIA) */
+/* 9. COMPARE SECTION (SIDE LIRAS KEPT CLEAN ON FLANKS) */
 .compare-section{position:relative;background:#FAF8F5;overflow:hidden}
 .lira-flank{position:absolute;top:0;bottom:0;width:140px;pointer-events:none;z-index:0;overflow:hidden}
 .lira-flank-left{left:0}
 .lira-flank-right{right:0}
-.lira-item{position:absolute;font-family:var(--display);font-size:68px;font-weight:800;color:rgba(227,10,23,.06);line-height:1;user-select:none}
+.lira-item{position:absolute;font-family:var(--display);font-size:68px;font-weight:800;color:rgba(227,10,23,.05);line-height:1;user-select:none}
 .lira-item.l1{top:15%;left:20px;animation:liraFloat 6s ease-in-out infinite}
-.lira-item.l2{top:55%;left:45px;font-size:92px;color:rgba(35,24,22,.04);animation:liraFloat 7.5s ease-in-out infinite reverse}
+.lira-item.l2{top:55%;left:45px;font-size:92px;color:rgba(35,24,22,.03);animation:liraFloat 7.5s ease-in-out infinite reverse}
 .lira-item.r1{top:20%;right:20px;animation:liraFloat 6.5s ease-in-out infinite .5s}
-.lira-item.r2{top:65%;right:35px;font-size:84px;color:rgba(227,10,23,.05);animation:liraFloat 8s ease-in-out infinite reverse .8s}
+.lira-item.r2{top:65%;right:35px;font-size:84px;color:rgba(227,10,23,.04);animation:liraFloat 8s ease-in-out infinite reverse .8s}
 @keyframes liraFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(4deg)}}
 
 .table-box{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:60px;max-width:100%;background:#fff;border-radius:24px;border:1px solid var(--line);box-shadow:0 8px 30px -10px rgba(0,0,0,.04);position:relative;z-index:1}
@@ -280,10 +292,15 @@ tr:last-child .aslan-col{border-bottom:2px solid var(--red);border-bottom-left-r
 .step-item h3{font-size:18px;margin:0 0 10px}
 .step-item p{color:var(--muted);font-size:15px;line-height:1.55}
 
-/* 12. TRIAL */
-.trial{background:linear-gradient(150deg,var(--garnet),#D10F1C 65%,var(--gold) 140%);color:#fff}
+/* 12. TRIAL (HIGHLIGHTED PREMIUM SECTION) */
+.trial{background:linear-gradient(150deg,var(--garnet),#D10F1C 65%,var(--gold) 140%);color:#fff;position:relative;overflow:hidden}
 .trial h2{color:#fff}
-.trial .lead{color:rgba(255,255,255,.88)}
+.trial .lead{color:rgba(255,255,255,.92)}
+.trial-pill{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;background:rgba(255,255,255,.18);color:#FFE58F;padding:5px 14px;border-radius:999px;margin-bottom:14px}
+.trial-highlight{color:#FFE58F;text-shadow:0 0 24px rgba(255,229,143,.5);position:relative;display:inline-block;padding-bottom:6px}
+.trial-highlight::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:3.5px;background:linear-gradient(90deg,#FFE58F,#FFA940);border-radius:2px;box-shadow:0 2px 10px rgba(255,229,143,.5)}
+.trial-perks{display:flex;flex-wrap:wrap;gap:18px;margin-top:24px;font-size:14px;color:rgba(255,255,255,.95);font-weight:600}
+.trial-perks span{color:#FFE58F;margin-right:4px}
 .trial-grid{display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center}
 form{display:flex;flex-direction:column;gap:16px}
 label{font-size:14px;font-weight:600;display:flex;flex-direction:column;gap:8px}
@@ -308,43 +325,20 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 .motto{font-family:"Caveat",cursive;font-size:28px;color:#E8C27A;margin-top:14px}
 .copy{margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#B9A398}
 
-/* CUSTOMER JOURNEY: RED KEYWORD PATH & LIRA INDICATOR */
-.red-path{position:relative;display:inline-block;transition:color .3s ease,text-shadow .3s ease}
-.red-path::after{content:"";position:absolute;bottom:-4px;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--red),#FF8A00);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 2px 8px rgba(227,10,23,.5)}
+/* CUSTOMER JOURNEY: ACCENT KEYWORD EXPANDING UNDERLINE */
+.red-path{position:relative;display:inline-block;padding-bottom:8px;line-height:1.15;transition:color .3s ease,text-shadow .3s ease}
+.red-path::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:3.5px;background:linear-gradient(90deg,var(--red),#FF8A00);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(0.16,1,0.3,1);box-shadow:0 3px 10px rgba(227,10,23,.4)}
 .red-path.is-active::after{transform:scaleX(1)}
-.red-path.is-active{text-shadow:0 0 20px rgba(227,10,23,.25)}
+.red-path.is-active{text-shadow:0 0 20px rgba(227,10,23,.2)}
 
-.lira-pin{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FFE599 0%,#E30A17 100%);color:#fff;font-size:12px;font-weight:800;vertical-align:middle;margin-left:8px;box-shadow:0 4px 14px rgba(227,10,23,.45);animation:liraPinPulse 2.4s ease-in-out infinite;text-transform:none;letter-spacing:normal}
-@keyframes liraPinPulse{
-  0%,100%{transform:translateY(0) scale(1);box-shadow:0 4px 14px rgba(227,10,23,.45)}
-  50%{transform:translateY(-3px) scale(1.12);box-shadow:0 8px 22px rgba(227,10,23,.7)}
-}
-
-/* SECTION JOURNEY FLOW CONNECTOR */
-.journey-flow-guide{display:flex;justify-content:center;align-items:center;height:90px;position:relative;z-index:5;pointer-events:none;margin:-45px 0}
-.flow-track{width:2px;height:100%;background:linear-gradient(180deg,transparent,rgba(227,10,23,.3) 30%,rgba(227,10,23,.3) 70%,transparent);position:relative}
-.flow-traveler{position:absolute;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:3px;animation:flowTravel 2.8s cubic-bezier(0.45,0,0.55,1) infinite}
-.flow-lira{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#FFE599,#E30A17);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;box-shadow:0 0 16px rgba(227,10,23,.6),0 4px 10px rgba(0,0,0,.15)}
-.flow-arrow{font-size:13px;color:var(--red);font-weight:900;line-height:1;animation:arrowBob .8s ease-in-out infinite alternate}
-
-@keyframes flowTravel{
-  0%{top:8%;opacity:0;transform:translate(-50%,-50%) scale(.8)}
-  20%{opacity:1;transform:translate(-50%,-50%) scale(1)}
-  80%{opacity:1;transform:translate(-50%,-50%) scale(1)}
-  100%{top:92%;opacity:0;transform:translate(-50%,-50%) scale(.8)}
-}
-@keyframes arrowBob{
-  0%{transform:translateY(-2px)}
-  100%{transform:translateY(3px)}
-}
-
-/* FLOATING JOURNEY WAYFINDER */
+/* FLOATING JOURNEY WAYFINDER (ONE SINGLE COIN & ARROW GUIDE) */
 .journey-wayfinder{position:fixed;bottom:24px;right:24px;z-index:90;transition:opacity .3s ease,transform .3s ease}
 .wf-btn{display:flex;align-items:center;gap:12px;background:rgba(29,19,17,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);color:#fff;padding:8px 18px 8px 10px;border-radius:999px;cursor:pointer;box-shadow:0 14px 34px -6px rgba(0,0,0,.45),0 0 20px rgba(227,10,23,.25);transition:all .25s ease}
 .wf-btn:hover{transform:translateY(-3px) scale(1.02);background:#1D1311;box-shadow:0 18px 40px -6px rgba(227,10,23,.4)}
 .wf-coin{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FFE599,#E30A17);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 14px rgba(227,10,23,.6)}
 .wf-lira{font-size:15px;font-weight:900;color:#fff}
 .wf-arrow{position:absolute;bottom:-4px;right:-4px;background:#fff;color:var(--red);font-size:11px;font-weight:900;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.25);animation:arrowBob .8s ease-in-out infinite alternate}
+@keyframes arrowBob{0%{transform:translateY(-2px)}100%{transform:translateY(3px)}}
 .wf-info{display:flex;flex-direction:column;text-align:left;line-height:1.2}
 .wf-badge{font-size:9.5px;font-weight:700;letter-spacing:.08em;color:#FFB877;text-transform:uppercase}
 .wf-name{font-size:12.5px;font-weight:600;color:#fff;white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis}
@@ -354,10 +348,17 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 
 @media (max-width:960px){
   .desk-br{display:none}
-  section{padding:90px 0}
+  section{padding:80px 0}
   .nav > nav{display:none}
   .nav ul{display:none}
-  .hero-grid,.aslan-split,.demo,.crm-split,.calc,.trial-grid,.founders-grid,.principle-grid{grid-template-columns:1fr;gap:40px}
+  .hero{padding:40px 0 60px;min-height:auto;display:block}
+  .hero-bg{position:relative;width:100%;height:320px;margin-top:32px;border-radius:20px;overflow:hidden}
+  .hero-bg-img{position:absolute;top:0;left:0;width:100%;height:100%;object-position:center 15%}
+  .hero-bg-scrim{display:none}
+  .hero-content{max-width:100%}
+  .hero-facts{gap:24px}
+  .hero-badge-float{margin-top:20px;max-width:100%}
+  .aslan-split,.demo,.crm-split,.calc,.trial-grid,.founders-grid,.principle-grid{grid-template-columns:1fr;gap:40px}
   .facts{grid-template-columns:1fr;gap:24px}
   .pain{grid-template-columns:1fr;gap:16px}
   .traits-cards{grid-template-columns:1fr 1fr}
@@ -367,9 +368,6 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   .step-item::before{display:none}
   .foot{grid-template-columns:1fr}
   .lira-flank{display:none}
-  .hero-badge-float{position:relative;left:auto;right:auto;bottom:auto;margin:16px 18px 0;max-width:none}
-  .hero-full-media{margin-top:40px}
-  .hero-full-banner{height:clamp(280px,58vw,440px)}
   .aslan-photo{min-height:auto;aspect-ratio:4/5;max-width:400px;margin:0 auto}
   .principle-photo{max-width:320px;margin:0 auto}
   .journey-wayfinder{bottom:16px;right:16px}
@@ -382,7 +380,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   .nav{gap:8px;height:64px}
   .nav .btn{min-height:36px;padding:0 14px;font-size:12px;white-space:nowrap}
   .logo-img{height:25px}
-  h1{font-size:clamp(17px,4.8vw,24px);line-height:1.22;word-break:normal;hyphens:none}
+  h1{font-size:clamp(17px,4.6vw,22px);line-height:1.24;word-break:normal;hyphens:none}
   h2{font-size:clamp(16px,4.4vw,22px);line-height:1.24;word-break:normal;hyphens:none}
   .hero-facts{gap:20px}
   .founder-item{flex-direction:column;gap:16px}
@@ -420,9 +418,13 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 
 <!-- 1. HERO -->
 <section class="hero">
-  <div class="wrap">
+  <div class="hero-bg" aria-hidden="true">
+    <img class="hero-bg-img" src="assets/hero-desk.webp" alt="Yapay zeka satış temsilcisi Aslan masada çalışıyor" width="1920" height="1071">
+    <div class="hero-bg-scrim"></div>
+  </div>
+  <div class="wrap hero-wrap">
     <div class="hero-content">
-      <h1>Dünyanın en iyi <span class="red red-path" data-path="1" data-label="Kayıplara bak">satıcısı<span class="lira-pin">₺</span></span><br class="desk-br">artık sizin ekibinizde</h1>
+      <h1>Dünyanın en&nbsp;iyi<br class="mob-br"> <span class="red red-path is-active" data-path="1" data-label="Kayıplara bak">satıcısı</span><br class="desk-br"><br class="mob-br">artık sizin&nbsp;ekibinizde</h1>
       <p class="lead">Aslan; WhatsApp, Instagram ve tüm kanallarda müşterinize 60 saniyede cevap verir, ürününüzü sizden iyi bilir, Türk misafirperverliğiyle karşılar ve her konuşmayı CRM'e işler. Gece, hafta sonu ve&nbsp;bayramda da.</p>
       <div class="hero-facts">
         <div><b class="num">60 sn</b><span>ilk cevap</span></div>
@@ -433,23 +435,18 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
         <a class="btn btn-red" href="#test">7 gün ücretsiz deneyin</a>
         <a class="btn btn-line" href="#ornekler">Aslan nasıl konuşuyor</a>
       </div>
-    </div>
-  </div>
-  <div class="hero-full-media">
-    <img class="hero-full-banner" src="assets/hero-desk.webp" alt="Yapay zeka satış temsilcisi Aslan masada çalışıyor" width="1920" height="1071">
-    <div class="hero-badge-float">
-      <small>🟢 Aslan, 23:48 • WhatsApp Business</small>
-      İyi akşamlar, hoş geldiniz! M beden stokta. Size nasıl hitap&nbsp;edebilirim?
+      <div class="hero-badge-float">
+        <small>23:48 • WhatsApp</small>
+        İyi günler. Benim adım Aslan, Altai Optima'ya hoş geldiniz. Size nasıl yardımcı olabilirim? Her türlü soruyu sorabilirsiniz.
+      </div>
     </div>
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 2. LOSSES -->
 <section id="kayip">
   <div class="wrap">
-    <h2>İşletmeler parayı <br class="mob-br">nerede&nbsp;<span class="red red-path" data-path="2" data-label="Kurucuları tanı">kaybediyor?<span class="lira-pin">₺</span></span></h2>
+    <h2>İşletmeler parayı <br class="mob-br">nerede&nbsp;<span class="red red-path" data-path="2" data-label="Kurucuları tanı">kaybediyor?</span></h2>
     <p class="lead">Türk müşterisi mesaj atar, sesli mesaj bırakır, "fiyat?" diye yorum yazar ve cevabı hemen bekler. Cevap gecikirse sipariş komşu dükkâna&nbsp;gider</p>
     <div class="facts">
       <div><div class="num">%90</div><p>Türkiye'de internet kullanıcılarının yüzde 90'ı WhatsApp'ta. Müşteriniz orada yazıyor, sizden de orada cevap&nbsp;bekliyor</p></div>
@@ -460,13 +457,23 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 3. FOUNDERS (NO PODLOZHKI) -->
 <section id="kurucular" class="founders-block">
   <div class="wrap">
-    <h2>Merhaba! Biz Altai <br class="mob-br">Optima'nın&nbsp;<span class="red red-path" data-path="3" data-label="Çözümleri incele">kurucularıyız<span class="lira-pin">₺</span></span></h2>
+    <h2>Merhaba! Biz Altai <br class="mob-br">Optima'nın&nbsp;<span class="red red-path" data-path="3" data-label="Çözümleri incele">kurucularıyız</span></h2>
     <p class="lead">Satış deneyimi ve yapay zeka mühendisliğini Türk ticaret kültürünün sıcaklığıyla&nbsp;buluşturduk</p>
+    
+    <div class="founders-story">
+      <p class="story-highlight">Altai Optima'yı, satış alanındaki <strong>12 yıllık deneyimimiz</strong> ile <strong>10 yıllık ileri düzey yapay zekâ geliştirme tecrübemizi</strong> birleştirerek hayata geçirdik.</p>
+      <div class="story-product">
+        <p class="story-lead">Ürünümüz <strong>Aslan</strong>, tam anlamıyla hayallerdeki sanal satış temsilcisi.</p>
+        <div class="story-standard">
+          <span class="standard-badge">⭐ Ritz-Carlton standardında hizmet</span>
+          <p>Aslan, gelen her potansiyel müşteriyi maksimum ilgi ve özenle karşılar; saniyeler içinde yanıt verir, samimi bir dille iletişim kurar, sohbetin geçmişini hatırlar, tüm detayları veri tabanına kaydeder ve doğum günlerini zamanında kutlar. İşletme sahibi gönül rahatlığıyla dinlenirken, müşteri her an özel bir ilgi gördüğünü&nbsp;hisseder.</p>
+        </div>
+      </div>
+    </div>
+
     <div class="founders-grid">
       <div class="founder-item">
         <img class="founder-avatar" src="assets/alina.webp" alt="Alina - Kurucu ortak" width="260" height="260" loading="lazy">
@@ -489,12 +496,10 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 4. PAINS -->
 <section id="aci">
   <div class="wrap">
-    <h2>Sizin derdiniz, <br class="mob-br">Aslan'ın&nbsp;<span class="red red-path" data-path="4" data-label="Aslan'ın satışı">işi<span class="lira-pin">₺</span></span></h2>
+    <h2>Sizin derdiniz, <br class="mob-br">Aslan'ın&nbsp;<span class="red red-path" data-path="4" data-label="Aslan'ın satışı">işi</span></h2>
     <div class="pains">
       <div class="pain"><div class="problem"><h3>"Fiyat için DM" ve sonra sessizlik</h3><p>Instagram'da yorumlar ve DM'ler saatlerce bekliyor, müşteri rakibe&nbsp;gidiyor</p></div><div class="answer">DM'lere ve yorumlara 60 saniyede, net fiyat ve stok bilgisiyle cevap&nbsp;verir</div></div>
       <div class="pain"><div class="problem"><h3>Gece, hafta sonu, bayram</h3><p>Mesajlar sabaha, uzun bayram tatillerinde ise haftaya&nbsp;kalıyor</p></div><div class="answer">7/24 çalışır, bayramda ve gece 3'te de aynı&nbsp;enerjiyle</div></div>
@@ -505,8 +510,6 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
     </div>
   </div>
 </section>
-
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
 
 <!-- 5. ASLAN GİBİ SATIŞ -->
 <section id="aslan">
@@ -519,7 +522,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
       </div>
     </div>
     <div>
-      <h2><span class="red red-path" data-path="5" data-label="Diyaloglar">Aslan&nbsp;gibi<span class="lira-pin">₺</span></span> satış</h2>
+      <h2><span class="red red-path" data-path="5" data-label="Diyaloglar">Aslan&nbsp;gibi</span> satış</h2>
       <p class="lead">Dünyanın en iyi otellerinin hizmet standardı, Türk misafirperverliği ve dürüst ticaret ahlakı. Hepsi tek bir satış&nbsp;temsilcisinde</p>
       <div class="traits-cards">
         <div class="trait-card">
@@ -555,15 +558,13 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 6. DEMO (ANIMATED WHATSAPP UI & 10 SECTORS) -->
 <section id="ornekler">
   <div class="wrap">
     <div class="demo">
       <div class="demo-left">
         <div>
-          <h2>Aslan farklı sektörlerde <br class="desk-br"><span class="red red-path" data-path="6" data-label="Ücretsiz test">nasıl&nbsp;konuşuyor?<span class="lira-pin">₺</span></span></h2>
+          <h2>Aslan farklı sektörlerde <br class="desk-br"><span class="red red-path" data-path="6" data-label="Ücretsiz test">nasıl&nbsp;konuşuyor?</span></h2>
           <p class="lead" style="margin-top:16px">Örnek senaryolar: gece 2'de Rusça yazan emlak alıcısı, Almanca soran otel misafiri, "son fiyat?" diyen Instagram&nbsp;müşterisi</p>
         </div>
         <div>
@@ -580,14 +581,18 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 7. TRIAL (MOVED RIGHT AFTER DEMO AS REQUESTED) -->
 <section class="trial" id="test">
   <div class="wrap trial-grid">
     <div>
-      <h2>7&nbsp;gün <span class="red red-path" data-path="7" data-label="CRM hafızası" style="color:#FFE58F">ücretsiz&nbsp;test<span class="lira-pin" style="background:linear-gradient(135deg,#FFE58F,#FF4D4F)">₺</span></span></h2>
+      <span class="trial-pill">⭐ RİSKSİZ BAŞLANGIÇ</span>
+      <h2>7&nbsp;gün <span class="trial-highlight">ücretsiz&nbsp;test</span></h2>
       <p class="lead">Aslan'ı bir kanalınıza bağlayalım, talepleri tabloya toplayalım. Kart bilgisi gerekmez, 24 saatte&nbsp;başlıyoruz</p>
+      <div class="trial-perks">
+        <div><span>✓</span> Kredi kartı gerekmez</div>
+        <div><span>✓</span> 24 saatte canlı kurulum</div>
+        <div><span>✓</span> Taahhüt yok</div>
+      </div>
     </div>
     <div>
       <form id="trialForm">
@@ -602,13 +607,11 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 8. CRM (LOGOS ON RIGHT SIDE) -->
 <section id="crm">
   <div class="wrap crm-split">
     <div>
-      <h2>Müşterileriniz <br class="mob-br">şirketinizde&nbsp;<span class="red red-path" data-path="8" data-label="Kayıp hesabı">kalır<span class="lira-pin">₺</span></span></h2>
+      <h2>Müşterileriniz <br class="mob-br">şirketinizde&nbsp;<span class="red red-path" data-path="8" data-label="Kayıp hesabı">kalır</span></h2>
       <p class="lead" style="margin-top:18px">Aslan müşteri kartını anında açar, konuşmanın özetini yazar ve tüm alanları sizin kurallarınıza göre&nbsp;doldurur.</p>
       <p style="margin-top:16px;color:var(--muted);font-size:16px;line-height:1.6">İyi satıcınız işten ayrılsa bile müşteri portföyü, teklif geçmişi ve özel tercihler şirketinizin hafızasında güvende kalır. Hiçbir lead kaybolmaz, hiçbir müşteri unutulmaz.</p>
     </div>
@@ -627,12 +630,10 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 9. CALCULATOR (BALANCED 2 COLUMNS ON ONE ROW) -->
 <section id="hesap">
   <div class="wrap">
-    <h2>Aslan olmadan ayda <br class="mob-br">ne kadar&nbsp;<span class="red red-path" data-path="9" data-label="Kadro kıyası">kaybediyorsunuz?<span class="lira-pin">₺</span></span></h2>
+    <h2>Aslan olmadan ayda <br class="mob-br">ne kadar&nbsp;<span class="red red-path" data-path="9" data-label="Kadro kıyası">kaybediyorsunuz?</span></h2>
     <div class="calc">
       <div class="calc-inputs-box">
         <div>
@@ -677,8 +678,6 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 10. COMPARE (SIDE LIRAS, CRITERIA HIGHLIGHTS) -->
 <section id="karsilastirma" class="compare-section">
   <div class="lira-flank lira-flank-left">
@@ -690,7 +689,7 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
     <div class="lira-item r2">₺</div>
   </div>
   <div class="wrap" style="position:relative;z-index:1">
-    <h2>Aslan mı, <br class="mob-br"><span class="red red-path" data-path="10" data-label="Şeffaf paketler">satış&nbsp;temsilcisi&nbsp;mi?<span class="lira-pin">₺</span></span></h2>
+    <h2>Aslan mı, <br class="mob-br"><span class="red red-path" data-path="10" data-label="Şeffaf paketler">satış&nbsp;temsilcisi&nbsp;mi?</span></h2>
     <p class="lead">Kadrolu satış temsilcisi yılda yaklaşık 1.000.000 TL, Aslan yılda 156.800 TL'den&nbsp;başlar</p>
     <div class="table-box">
       <table>
@@ -722,12 +721,10 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 11. PLANS (CLEAR PACKAGING) -->
 <section id="paketler">
   <div class="wrap">
-    <h2>Şeffaf fiyat, <br class="mob-br"><span class="red red-path" data-path="11" data-label="Başlangıç adımları">TL&nbsp;cinsinden<span class="lira-pin">₺</span></span></h2>
+    <h2>Şeffaf fiyat, <br class="mob-br"><span class="red red-path" data-path="11" data-label="Başlangıç adımları">TL&nbsp;cinsinden</span></h2>
     <p class="lead">Tüm kanalların ve CRM'inizin entegrasyonu her pakete dahil. Fiyat sadece konuşma sayısına&nbsp;bağlı</p>
     
     <div class="plans-grid" id="plans">
@@ -826,12 +823,10 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 12. STEPS (NUMBERED TIMELINE - INTER FONT) -->
 <section id="baslangic" style="background:#FAF8F5">
   <div class="wrap">
-    <h2>Dört adımda Aslan <br class="mob-br"><span class="red red-path" data-path="12" data-label="Ortaklık prensibi">iş&nbsp;başında<span class="lira-pin">₺</span></span></h2>
+    <h2>Dört adımda Aslan <br class="mob-br"><span class="red red-path" data-path="12" data-label="Ortaklık prensibi">iş&nbsp;başında</span></h2>
     <p class="lead">Yazışmalar, fiyat listeleri ve müşteri tabanı sizindir: tüm veriler gizlilik sözleşmesi ve KVKK kapsamında&nbsp;korunur</p>
     <div class="steps-timeline">
       <div class="step-item">
@@ -858,16 +853,14 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
   </div>
 </section>
 
-<div class="journey-flow-guide" aria-hidden="true"><div class="flow-track"><div class="flow-traveler"><span class="flow-lira">₺</span><span class="flow-arrow">↓</span></div></div></div>
-
 <!-- 13. PRINCIPLE (FOUNDERS PHOTO TOGETHER & CTA) -->
 <section class="principle">
   <div class="wrap principle-grid">
     <div>
-      <img class="principle-photo" src="assets/founders-table.webp" alt="Alina ve David Altai Optima kurucuları" width="1200" height="1200" loading="lazy">
+      <img class="principle-photo" src="assets/founders-office.webp" alt="Alina ve David Altai Optima kurucuları" width="1200" height="1200" loading="lazy">
     </div>
     <div class="principle-text">
-      <h2>Kârınızın&nbsp;<span class="red red-path" data-path="13" data-label="Aslan'ı ekibe kat">müttefikiyiz<span class="lira-pin">₺</span></span></h2>
+      <h2>Kârınızın&nbsp;<span class="red red-path" data-path="13" data-label="Aslan'ı ekibe kat">müttefikiyiz</span></h2>
       <p>Finansal modelimiz tamamen şeffaf. Tanışma ücretsiz 7 günlük testle başlar. 14.900 TL kurulum ücreti; senaryoların hazırlanmasının, kuralların yüklenmesinin ve sistemin bağlanmasının net maliyetini&nbsp;karşılar.</p>
       <p>Asıl kazancımız uzun ortaklık. Aslan size düzenli para kazandırdığında kazanıyoruz, siz de aboneliği ay ay gönül rahatlığıyla uzatıyorsunuz. Dilediğiniz an bırakabilirsiniz, ama eminiz: Aslan'la tanışma ilk mesajdan aklınızda&nbsp;kalacak</p>
       <div style="margin-top:32px">
@@ -1120,13 +1113,15 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
 
   /* CUSTOMER JOURNEY: WAYFINDER & RED-PATH HIGHLIGHTING */
   var pathNodes = Array.prototype.slice.call(document.querySelectorAll(".red-path"));
+  var wayfinder = document.getElementById("journeyWayfinder");
   var wfBtn = document.getElementById("wfBtn");
   var wfNextName = document.getElementById("wfNextName");
+  var footerEl = document.querySelector("footer");
   var currentPathIndex = 0;
 
   function updateJourneyPath() {
     if (!pathNodes.length) return;
-    var scrollPos = window.scrollY + window.innerHeight * 0.45;
+    var scrollPos = window.scrollY + window.innerHeight * 0.4;
     var activeIdx = 0;
 
     for (var i = 0; i < pathNodes.length; i++) {
@@ -1153,8 +1148,19 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
       if (wfNextName) wfNextName.textContent = label;
       if (wfBtn) wfBtn.setAttribute("title", "Sonraki adım: " + label);
     } else {
-      if (wfNextName) wfNextName.textContent = "7 Gün Ücretsiz Dene";
+      if (wfNextName) wfNextName.textContent = "7 Gün Ücretsiz Test";
       if (wfBtn) wfBtn.setAttribute("title", "Ücretsiz test formuna git");
+    }
+
+    if (wayfinder && footerEl) {
+      var footTop = footerEl.getBoundingClientRect().top;
+      if (footTop < window.innerHeight - 30) {
+        wayfinder.style.opacity = "0.2";
+        wayfinder.style.pointerEvents = "none";
+      } else {
+        wayfinder.style.opacity = "1";
+        wayfinder.style.pointerEvents = "auto";
+      }
     }
   }
 
@@ -1162,7 +1168,18 @@ footer{background:var(--ink);color:#EADBD2;padding:80px 0 calc(48px + env(safe-a
     wfBtn.addEventListener("click", function() {
       var nextIdx = currentPathIndex + 1;
       if (nextIdx < pathNodes.length) {
-        pathNodes[nextIdx].scrollIntoView({ behavior: "smooth", block: "center" });
+        var target = pathNodes[nextIdx];
+        var navH = 90;
+        var elementPosition = target.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - navH;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+        setTimeout(function() {
+          pathNodes.forEach(function(n) { n.classList.remove("is-active"); });
+          target.classList.add("is-active");
+        }, 300);
       } else {
         var testSec = document.getElementById("test");
         if (testSec) testSec.scrollIntoView({ behavior: "smooth" });
