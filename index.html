@@ -326,7 +326,7 @@ tr:last-child .aslan-col{border-bottom:2px solid var(--red);border-bottom-left-r
 .trial h2{color:#fff;font-size:clamp(38px,5.2vw,64px);line-height:1.06}
 .trial .lead{color:rgba(255,255,255,.92)}
 .trial-gold{color:#FFE58F;text-shadow:0 0 24px rgba(255,229,143,.5);display:inline-block}
-.trial-highlight{color:#FFE58F;text-shadow:0 0 24px rgba(255,229,143,.5);position:relative;display:inline-block;padding-bottom:4px}
+.trial-highlight{color:#FFE58F;text-shadow:0 0 24px rgba(255,229,143,.5);position:relative;display:inline-block;padding-bottom:4px;white-space:nowrap}
 .trial-highlight::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:3.5px;background:linear-gradient(90deg,#FFE58F,#FFA940);border-radius:2px;box-shadow:0 2px 10px rgba(255,229,143,.5)}
 .trial-perks{display:flex;flex-wrap:wrap;gap:18px;margin-top:24px;font-size:14px;color:rgba(255,255,255,.95);font-weight:600}
 .trial-perks span{color:#FFE58F;margin-right:4px}
@@ -499,6 +499,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   .calc-inputs-box,.calc-card{padding:28px 20px}
   .plans-grid{grid-template-columns:1fr}
   .plans-setup-box{padding:24px 0 0}
+  .trial h2{font-size:clamp(20px,5.8vw,30px);line-height:1.2}
   .steps-timeline{grid-template-columns:1fr}
   .foot{gap:32px;text-align:center}
   .foot ul{align-items:center}
@@ -541,8 +542,8 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   </div>
   <div class="wrap hero-wrap">
     <div class="hero-content">
-      <h1>Dünyanın en&nbsp;iyi<br><span class="red red-path is-active" data-path="1" data-label="Kayıplara bak">satıcısı</span> artık<br>sizin&nbsp;ekibinizde</h1>
-      <p class="lead">Emre; WhatsApp, Instagram ve tüm kanallarda müşterinize 60 saniyede cevap verir, ürününüzü sizin kadar iyi bilir, Türk misafirperverliğiyle karşılar ve her konuşmayı CRM'e işler. Gece, hafta sonu ve&nbsp;bayramda da.</p>
+      <h1>Dünyanın en&nbsp;iyi<br><span class="red red-path is-active" data-path="1" data-label="Kurucuları tanı">satıcısı</span> artık<br>sizin&nbsp;ekibinizde</h1>
+      <p class="lead">Emre; modern bir ahi ustası nezaketiyle WhatsApp, Instagram ve tüm kanallarda müşterinize 60 saniyede cevap verir. Ürününüzü sizin kadar iyi bilir, Türk misafirperverliğiyle ağırlar ve her konuşmayı CRM'e işler. Gece, hafta sonu ve&nbsp;bayramda da.</p>
       <div class="hero-facts">
         <div><b class="num">60 sn</b><span>ilk cevap</span></div>
         <div><b class="num">249 €'dan</b><span>aylık abonelik</span></div>
@@ -557,25 +558,11 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   </div>
 </section>
 
-<!-- 2. LOSSES -->
-<section id="kayip">
-  <div class="wrap">
-    <h2>İşletmeler parayı <br class="mob-br">nerede&nbsp;<span class="red red-path" data-path="2" data-label="Kurucuları tanı">kaybediyor?</span></h2>
-    <p class="lead">Türk müşterisi mesaj atar, sesli mesaj bırakır, "fiyat?" diye yorum yazar ve cevabı hemen bekler. Cevap gecikirse sipariş komşu dükkâna&nbsp;gider</p>
-    <div class="facts">
-      <div><div class="num">%90</div><p>Türkiye'de internet kullanıcılarının yüzde 90'ı WhatsApp'ta. Müşteriniz orada yazıyor, sizden de orada cevap&nbsp;bekliyor</p></div>
-      <div><div class="num">≈%50</div><p>KOBİ'lerde müşteri iletişiminin yaklaşık yarısı WhatsApp'tan yürüyor, çoğu zaman bir çalışanın kişisel&nbsp;telefonunda</p></div>
-      <div><div class="num">-%85</div><p>İlk 5 dakikada cevap verilmezse müşteriyi kazanma ihtimali yüzde 85 düşüyor, reklam bütçesi soğumuş müşteriye&nbsp;gidiyor</p></div>
-    </div>
-    <p class="source">Kaynaklar: TÜİK, Hanehalkı Bilişim Teknolojileri Kullanım Araştırması 2026; ShiftDelete.net, KOBİ müşteri iletişimi anketi; J. Oldroyd, K. McElheran, D. Elkington, "The Short Life of Online Sales Leads", Harvard Business Review, 2011</p>
-  </div>
-</section>
-
-<!-- 3. FOUNDERS (CLEAN EDITORIAL PRESENTATION) -->
+<!-- 2. FOUNDERS (MOVED AS 2ND BLOCK) -->
 <section id="kurucular" class="founders-block">
   <div class="wrap">
-    <h2>Merhaba! Biz <br class="mob-br">Altai Optima'nın&nbsp;<span class="red red-path" data-path="3" data-label="Çözümleri incele">kurucularıyız</span></h2>
-    <p class="lead">Satış alanındaki 12 yıllık deneyimimiz ile 10 yıllık yapay zeka mühendisliğini Türk ticaret kültürünün sıcaklığıyla&nbsp;buluşturduk</p>
+    <h2>Merhaba! Biz <br class="mob-br">Altai Optima'nın&nbsp;<span class="red red-path" data-path="2" data-label="Kayıplara bak">kurucularıyız</span></h2>
+    <p class="lead">Türkiye'de, Alanya'da yaşıyoruz. 12 yıllık satış tecrübemiz ile 10 yıllık yapay zeka mühendisliğini Türk esnaf ve ticaret kültürünün sıcaklığıyla&nbsp;buluşturduk</p>
 
     <div class="founders-grid">
       <div class="founder-item">
@@ -595,10 +582,24 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
     </div>
 
     <div class="founders-credo">
-      <div class="credo-badge">⭐ Ritz-Carlton standardında hizmet</div>
-      <p class="credo-text">Ürünümüz <strong>Emre</strong>, her müşteriyi kapıda karşılanan özel bir misafir gibi ağırlar: saniyeler içinde yanıt verir, samimi bir dille konuşur, sohbet geçmişini hatırlar ve tüm detayları CRM'e kaydeder. Siz dinlenirken işletmeniz aynı özenle&nbsp;büyür.</p>
+      <div class="credo-badge">⭐ Ritz-Carlton standardı &amp; Türk Misafirperverliği</div>
+      <p class="credo-text">Ürünümüz <strong>Emre</strong>, modern bir ahi ustası gibi her müşteriyi dükkânına gelen kıymetli bir misafir olarak ağırlar: saniyeler içinde yanıt verir, dürüst ve samimi bir dille konuşur, sohbet geçmişini hatırlar ve tüm detayları CRM'e kaydeder. Siz dinlenirken işletmeniz aynı vakar ve özenle&nbsp;büyür.</p>
       <div class="credo-sign">Birlikte büyüyelim! Alina &amp; David</div>
     </div>
+  </div>
+</section>
+
+<!-- 3. LOSSES -->
+<section id="kayip">
+  <div class="wrap">
+    <h2>İşletmeler parayı <br class="mob-br">nerede&nbsp;<span class="red red-path" data-path="3" data-label="Çözümleri incele">kaybediyor?</span></h2>
+    <p class="lead">Türk müşterisi mesaj atar, sesli mesaj bırakır, "fiyat?" diye yorum yazar ve cevabı hemen bekler. Cevap gecikirse sipariş komşu dükkâna&nbsp;gider</p>
+    <div class="facts">
+      <div><div class="num">%90</div><p>Türkiye'de internet kullanıcılarının yüzde 90'ı WhatsApp'ta. Müşteriniz orada yazıyor, sizden de orada cevap&nbsp;bekliyor</p></div>
+      <div><div class="num">≈%50</div><p>KOBİ'lerde müşteri iletişiminin yaklaşık yarısı WhatsApp'tan yürüyor, çoğu zaman bir çalışanın kişisel&nbsp;telefonunda</p></div>
+      <div><div class="num">-%85</div><p>İlk 5 dakikada cevap verilmezse müşteriyi kazanma ihtimali yüzde 85 düşüyor, reklam bütçesi soğumuş müşteriye&nbsp;gidiyor</p></div>
+    </div>
+    <p class="source">Kaynaklar: TÜİK, Hanehalkı Bilişim Teknolojileri Kullanım Araştırması 2026; ShiftDelete.net, KOBİ müşteri iletişimi anketi; J. Oldroyd, K. McElheran, D. Elkington, "The Short Life of Online Sales Leads", Harvard Business Review, 2011</p>
   </div>
 </section>
 
@@ -618,50 +619,50 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   </div>
 </section>
 
-<!-- 5. ASLAN GİBİ SATIŞ -->
+<!-- 5. EMRE GİBİ SATIŞ -->
 <section id="aslan">
   <div class="wrap aslan-split">
     <div class="aslan-photo-card">
       <img class="aslan-photo" src="assets/emre-gesture.webp" alt="Yapay zeka satış temsilcisi Emre" width="1200" height="1500" loading="lazy">
       <div class="aslan-photo-badge">
-        <b>⭐ Türk Ahilik Geleneği & Misafirperverlik</b>
-        Müşterinizi kendi dükkânınız gibi karşılar, güvenle satışa dönüştürür
+        <b>⭐ Ahi Ustası Zarafeti &amp; Modern Zeka</b>
+        Müşterinizi kapıdaki misafir gibi ağırlar, dürüstlük ve güvenle satışa dönüştürür
       </div>
     </div>
     <div>
       <h2><span class="red red-path" data-path="5" data-label="Diyaloglar">Emre&nbsp;gibi</span> satış</h2>
-      <p class="lead">Dünyanın en iyi otellerinin hizmet standardı, Türk misafirperverliği ve dürüst ticaret ahlakı. Hepsi tek bir satış&nbsp;temsilcisinde</p>
+      <p class="lead">Klasik botların ezber cümleleri yok. Ahilik geleneğinin dürüstlüğü, 5 yıldızlı otel zarafeti ve bilgisayar hızı: modern bir beyefendi gibi&nbsp;satış&nbsp;yapar</p>
       <div class="traits-list">
         <div class="trait-row">
           <div class="trait-num">01</div>
           <div class="trait-content">
-            <span class="trait-pill">01 / İLETİŞİM STANDARDI</span>
+            <span class="trait-pill">01 / MİSAFİRPERVERLİK</span>
             <h3>"Hoş geldiniz" ile başlar</h3>
-            <p>Selamlar, teşekkür eder, nasıl hitap edeceğini sorar: Ahmet Bey, Elif&nbsp;Hanım</p>
+            <p>Her müşteri dükkâna gelen kıymetli misafirdir. Ahmet Bey, Elif Hanım diye hitap eder; samimi, sıcak ve saygılı bir dille&nbsp;karşılar</p>
           </div>
         </div>
         <div class="trait-row">
           <div class="trait-num">02</div>
           <div class="trait-content">
-            <span class="trait-pill">02 / DÜRÜST TİCARET</span>
-            <h3>Sözünün eri</h3>
-            <p>Doğru fiyat, net bilgi ve verilen sözün kusursuz&nbsp;takibi</p>
+            <span class="trait-pill">02 / SÖZÜNÜN ERİ</span>
+            <h3>Dürüst fiyat, net bilgi</h3>
+            <p>Asla uydurmaz, bilmediğini sahibine sorar. "Fiyatımız dürüst, sözümüz senet" ilkesiyle müşteride sarsılmaz güven&nbsp;yaratır</p>
           </div>
         </div>
         <div class="trait-row">
           <div class="trait-num">03</div>
           <div class="trait-content">
-            <span class="trait-pill">03 / MARJ KORUMASI</span>
-            <h3>Pazarlığı bilir</h3>
-            <p>Sizin belirlediğiniz sınırlar içinde kalarak kârlılığınızı&nbsp;korur</p>
+            <span class="trait-pill">03 / PAZARLIĞIN HAKKI</span>
+            <h3>"Sizi eli boş göndermeyiz"</h3>
+            <p>Türk ticaretinde pazarlığı saygıyla karşılar. Marjınızı koruyarak ikna eder, müşteriyi kırmadan anlaşmayı&nbsp;bağlar</p>
           </div>
         </div>
         <div class="trait-row">
           <div class="trait-num">04</div>
           <div class="trait-content">
-            <span class="trait-pill">04 / GLOBAL SATIŞ</span>
-            <h3>Her dilden konuşur</h3>
-            <p>Türkçe, İngilizce, Rusça, Almanca, Arapça ve 30'dan fazla dilde&nbsp;akıcı</p>
+            <span class="trait-pill">04 / SESLİ MESAJ &amp; 30+ DİL</span>
+            <h3>Şiveyi anlar, her dilde satar</h3>
+            <p>Sesli mesajları dinler ve anında metne döker: Karadenizli de Antepli de anlaşılır. Rusça, Arapça, İngilizce 30'dan fazla dilde vakarla&nbsp;yanıtlar</p>
           </div>
         </div>
       </div>
@@ -696,7 +697,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
 <section class="trial" id="test">
   <div class="wrap trial-grid">
     <div>
-      <h2>İŞİNİZE ÖZEL<br><span class="trial-gold">TEST</span><br><span class="trial-highlight">DRIVE</span></h2>
+      <h2>İŞİNİZE ÖZEL<br><span class="trial-highlight">TEST&nbsp;DRIVE</span></h2>
       <p class="lead">İşletmenize özel bir demo standı kuralım: Emre ile müşteri gibi yazışın, ürünlerinizi nasıl sunduğunu ve sorulara nasıl cevap verdiğini kendiniz deneyimleyin.</p>
       <div class="trial-perks">
         <div><span>✓</span> Kendi ürün ve fiyatlarınızla</div>
@@ -1018,7 +1019,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
     </div>
     <div class="concierge-body">
       <div class="concierge-msg">
-        İyi günler. Benim adım Emre, Altai Optima'ya hoş geldiniz. Size nasıl yardımcı olabilirim? Her türlü soruyu sorabilirsiniz.
+        İyi günler, hoş geldiniz! Ben Emre, Altai Optima'nın satış temsilcisiyim. İşletmeniz için Test Drive'ı birlikte başlatalım mı?
       </div>
       <div class="concierge-actions">
         <a class="concierge-btn" href="#test">Test Drive Başlat</a>
@@ -1145,7 +1146,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
 
     chat.innerHTML = headHtml + initialBody + footHtml;
 
-    // 2. Smoothly reveal Aslan response after exactly 3000ms
+    // 2. Smoothly reveal Emre response after exactly 3000ms
     chatTimer = setTimeout(function () {
       var fullBody = '<div class="wa-body">';
       s.msgs.forEach(function (m, idx) {
