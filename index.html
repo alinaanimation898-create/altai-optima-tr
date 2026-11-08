@@ -210,6 +210,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 /* 8. CALCULATOR (EXECUTIVE TINTED CARD WITH CRIMSON ACCENT) */
 .calc{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:56px;align-items:stretch}
 .calc-inputs-box{background:#FAF8F5;border:1px solid var(--line);border-radius:28px;padding:40px;display:flex;flex-direction:column;justify-content:space-between}
+.calc-currency-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.calc-curr-label{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.calc-curr-switch{display:inline-flex;background:#EFE4DC;padding:3px;border-radius:999px;gap:2px}
+.calc-curr-btn{border:none;background:transparent;padding:6px 16px;border-radius:999px;font:700 13px var(--body);color:var(--muted);cursor:pointer;transition:all .2s ease}
+.calc-curr-btn.active{background:#fff;color:var(--red);box-shadow:0 2px 8px rgba(0,0,0,.08)}
 .field{margin-bottom:28px}
 .field:last-child{margin-bottom:0}
 .field-top{display:flex;justify-content:space-between;gap:16px;font-weight:600;margin-bottom:12px;font-size:15.5px;color:var(--ink)}
@@ -286,6 +291,47 @@ tr:last-child .aslan-col{border-bottom:2px solid var(--red);border-bottom-left-r
 .plan-features svg{width:16px;height:16px;fill:#0F7A55;flex-shrink:0;margin-top:2px}
 .plan-btn{margin-top:auto;width:100%;min-height:44px;border-radius:999px;border:1px solid #DCC3B5;background:#fff;font:600 14px var(--body);color:var(--garnet);cursor:pointer;transition:all .2s;text-align:center;display:flex;align-items:center;justify-content:center;text-decoration:none}
 .plan-card.popular .plan-btn,.plan-card.on .plan-btn{background:var(--red);border-color:var(--red);color:#fff}
+
+.plan-setup-tag{background:rgba(227,10,23,0.06);border:1px dashed rgba(227,10,23,0.25);color:var(--garnet);font-size:12px;font-weight:700;padding:8px 10px;border-radius:10px;margin:0 0 16px;text-align:center;line-height:1.35}
+.plan-setup-tag small{color:var(--muted);font-weight:500;display:inline-block;font-size:11px}
+
+.plans-enterprise-callout{margin-top:28px;background:#FAF8F5;border:1px solid var(--line);border-radius:18px;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.plans-enterprise-callout span{font-size:15px;font-weight:700;color:var(--ink)}
+
+.plans-notes-card{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 8px 24px rgba(35,24,22,0.03)}
+.plans-perks-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.perk-pill{background:#FAF8F5;border:1px solid var(--line);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink)}
+.perk-pill.discount{background:rgba(15,122,85,0.05);border-color:rgba(15,122,85,0.2);color:#0F7A55}
+.perk-pill .icon{font-size:18px}
+.plans-policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);line-height:1.55}
+.plans-policy-grid b{color:var(--ink);display:block;margin-bottom:4px}
+.plans-cta-center{text-align:center;margin-top:28px}
+
+/* 10b. PAY PER CONVERSATION (SEASONAL / FLEXIBLE MODEL) */
+.pay-per-conv-section{background:#FAF8F5;padding:100px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pay-per-conv-box{max-width:1040px;margin:0 auto}
+.pay-header{text-align:center;max-width:760px;margin:0 auto 48px}
+.pay-pill{display:inline-block;background:rgba(227,10,23,0.08);color:var(--red);border:1px solid rgba(227,10,23,0.2);font-size:11.5px;font-weight:800;letter-spacing:.08em;padding:4px 14px;border-radius:999px;margin-bottom:14px}
+.pay-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:24px;align-items:stretch}
+.pay-platform-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 30px rgba(35,24,22,0.03)}
+.pay-tag{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;color:var(--muted);margin-bottom:10px}
+.pay-price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:12px}
+.pay-price-row .price{font-size:48px;font-weight:800;color:var(--red);line-height:1}
+.pay-price-row .curr{font-size:18px;color:var(--muted);font-weight:600}
+.pay-desc{font-size:14px;color:var(--muted);line-height:1.55;margin-bottom:20px}
+.pay-perks{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--ink);border-top:1px solid var(--line);padding-top:20px}
+.pay-perks li{display:flex;align-items:center;gap:10px}
+.pay-perks svg{width:16px;height:16px;fill:#0F7A55;flex-shrink:0}
+
+.pay-tiers-card{background:#fff;border:2px solid rgba(227,10,23,0.2);border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 16px 40px -10px rgba(227,10,23,0.08);position:relative}
+.pay-tiers-list{display:flex;flex-direction:column;gap:12px;margin:20px 0 28px}
+.pay-tier-row{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#FAF8F5;border:1px solid var(--line);border-radius:14px;transition:all .2s ease}
+.pay-tier-row.best-tier{background:linear-gradient(100deg,rgba(227,10,23,0.05),rgba(255,138,0,0.08));border-color:rgba(227,10,23,0.3)}
+.pay-tier-row .tier-range{font-weight:600;font-size:14.5px;color:var(--ink)}
+.pay-tier-row .tier-cost{font-size:13px;color:var(--muted)}
+.pay-tier-row .tier-cost b{font-size:22px;color:var(--red);margin-right:4px}
+.pay-action{display:flex;justify-content:center}
+.pay-action .btn{width:100%}
 
 .plans-setup-box{margin-top:48px;background:transparent;border:none;border-top:1px solid var(--line);border-radius:0;padding:36px 0 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
 .plans-setup-info{max-width:580px}
@@ -385,6 +431,8 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   .hero-content{max-width:100%}
   .hero-facts{gap:24px}
   .aslan-split,.demo,.crm-split,.calc,.trial-grid,.founders-grid,.principle-grid{grid-template-columns:1fr;gap:40px}
+  .pay-grid{grid-template-columns:1fr;gap:20px}
+  .plans-perks-row,.plans-policy-grid{grid-template-columns:1fr;gap:14px}
   .facts{grid-template-columns:1fr;gap:24px}
   .pain{grid-template-columns:1fr;gap:16px}
   .traits-list{margin-top:24px}
@@ -417,7 +465,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   .hero-bg{height:260px;margin:12px 0 22px;border-radius:20px;box-shadow:0 12px 28px -6px rgba(35,24,22,.12)}
   h1{font-size:clamp(17px,4.6vw,22px);line-height:1.34;word-break:normal;hyphens:none}
   h2{font-size:clamp(15px,4.1vw,20px);line-height:1.24;word-break:normal;hyphens:none}
-  .hero-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px 0 24px}
+  .hero-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:22px 0 24px}
   .hero-facts > div{background:#FAF6F3;border:1px solid #EFE4DB;border-radius:14px;padding:12px 6px;text-align:center}
   .hero-facts b{font-size:20px}
   .hero-facts span{font-size:11.5px;margin-top:2px}
@@ -521,6 +569,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
       <p class="lead">Emre; WhatsApp, Instagram ve tüm kanallarda müşterinize 60 saniyede cevap verir, ürününüzü sizin kadar iyi bilir, Türk misafirperverliğiyle karşılar ve her konuşmayı CRM'e işler. Gece, hafta sonu ve&nbsp;bayramda da.</p>
       <div class="hero-facts">
         <div><b class="num">60 sn</b><span>ilk cevap</span></div>
+        <div><b class="num">249 €'dan</b><span>aylık abonelik</span></div>
         <div><b class="num">30+</b><span>dilde satış</span></div>
         <div><b class="num">7/24</b><span>bayramda da</span></div>
       </div>
@@ -720,6 +769,13 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
     <h2>Emre olmadan ayda <br class="mob-br">ne kadar&nbsp;<span class="red red-path" data-path="9" data-label="Kadro kıyası">kaybediyorsunuz?</span></h2>
     <div class="calc">
       <div class="calc-inputs-box">
+        <div class="calc-currency-bar">
+          <span class="calc-curr-label">Para Birimi</span>
+          <div class="calc-curr-switch">
+            <button type="button" class="calc-curr-btn active" id="calcCurrEur" data-curr="EUR">EUR (€)</button>
+            <button type="button" class="calc-curr-btn" id="calcCurrTry" data-curr="TRY">TRY (₺)</button>
+          </div>
+        </div>
         <div>
           <div class="field">
             <div class="field-top"><label for="leads" style="display:inline">Ayda kaç talep geliyor?</label><output id="leadsOut" class="num"></output></div>
@@ -731,7 +787,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
           </div>
           <div class="field">
             <div class="field-top"><label for="check" style="display:inline">Ortalama sepet tutarı</label><output id="checkOut" class="num"></output></div>
-            <input type="range" id="check" min="500" max="250000" step="500" value="5000">
+            <input type="range" id="check" min="10" max="2500" step="10" value="150">
           </div>
         </div>
         <div class="field" style="margin-top:16px">
@@ -751,7 +807,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
         </div>
         <div>
           <dl class="calc-stats">
-            <div><dt>Emre'nin maliyeti</dt><dd class="num">12.900 TL/ay</dd></div>
+            <div><dt>Emre'nin maliyeti</dt><dd class="num" id="calcCost">249 €/ay</dd></div>
             <div><dt>Kendini amorti eder</dt><dd class="num" id="payback"></dd></div>
             <div class="annual"><dt>Yıllık net kazanç</dt><dd class="num" id="year"></dd></div>
           </dl>
@@ -762,25 +818,25 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   </div>
 </section>
 
-<!-- 10. COMPARE (SIDE LIRAS, CRITERIA HIGHLIGHTS) -->
+<!-- 10. COMPARE (SIDE COINS, CRITERIA HIGHLIGHTS) -->
 <section id="karsilastirma" class="compare-section">
   <div class="lira-flank lira-flank-left" aria-hidden="true">
-    <div class="lira-item l1">₺</div>
-    <div class="lira-item l2">₺</div>
-    <div class="lira-item l3">₺</div>
-    <div class="lira-item l4">₺</div>
-    <div class="lira-item l5">₺</div>
+    <div class="lira-item l1">€</div>
+    <div class="lira-item l2">€</div>
+    <div class="lira-item l3">€</div>
+    <div class="lira-item l4">€</div>
+    <div class="lira-item l5">€</div>
   </div>
   <div class="lira-flank lira-flank-right" aria-hidden="true">
-    <div class="lira-item r1">₺</div>
-    <div class="lira-item r2">₺</div>
-    <div class="lira-item r3">₺</div>
-    <div class="lira-item r4">₺</div>
-    <div class="lira-item r5">₺</div>
+    <div class="lira-item r1">€</div>
+    <div class="lira-item r2">€</div>
+    <div class="lira-item r3">€</div>
+    <div class="lira-item r4">€</div>
+    <div class="lira-item r5">€</div>
   </div>
   <div class="wrap" style="position:relative;z-index:1">
     <h2>Emre mi, <br class="mob-br"><span class="red red-path" data-path="10" data-label="Şeffaf paketler">satış&nbsp;temsilcisi&nbsp;mi?</span></h2>
-    <p class="lead compare-lead">Kadrolu satış temsilcisi yılda yaklaşık 1.000.000 TL, Emre yılda 156.800 TL'den&nbsp;başlar</p>
+    <p class="lead compare-lead">Kadrolu satış temsilcisi yılda yaklaşık 18.000 €, Emre yılda 2.988 €'dan&nbsp;başlar</p>
     <div class="swipe-hint" aria-hidden="true"><span class="swipe-hand">👉</span> <span>Tümünü görmek için sağa kaydırın</span> <span class="swipe-arrow">→</span></div>
     <div class="table-box">
       <table>
@@ -792,23 +848,23 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
           </tr>
         </thead>
         <tbody>
-          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Aylık maliyet</span></td><td class="rep-col"><span class="cross">✕</span> ≈79.000 TL'den (maaş, SGK, prim, hat)</td><td class="aslan-col"><span class="check">✓</span> 12.900 TL'den, her şey dahil</td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Aylık maliyet</span></td><td class="rep-col"><span class="cross">✕</span> ≈1.400 €'dan (maaş, SGK, prim, hat)</td><td class="aslan-col"><span class="check">✓</span> 249 €'dan, her şey dahil</td></tr>
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Çalışma süresi</span></td><td class="rep-col"><span class="cross">✕</span> Haftada 45 saat (zamanın %27'si)</td><td class="aslan-col"><span class="check">✓</span> Haftada 168 saat (7/24 gece ve bayram)</td></tr>
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>İzin ve ayrılık</span></td><td class="rep-col"><span class="cross">✕</span> Yıllık izin, rapor, kıdem tazminatı riski</td><td class="aslan-col"><span class="check">✓</span> Kesintisiz hizmet, her zaman güler yüzlü</td></tr>
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Evrak yükü</span></td><td class="rep-col"><span class="cross">✕</span> İş sözleşmesi, bordro, SGK bildirgeleri</td><td class="aslan-col"><span class="check">✓</span> Ayda tek resmi fatura</td></tr>
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Başlangıç</span></td><td class="rep-col"><span class="cross">✕</span> 1-2 ay: ilan, mülakat, deneme süresi</td><td class="aslan-col"><span class="check">✓</span> 3 günden itibaren ürünlerinizle hazır</td></tr>
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Diller</span></td><td class="rep-col"><span class="cross">✕</span> Genellikle sadece Türkçe</td><td class="aslan-col"><span class="check">✓</span> 30'dan fazla dilde akıcı</td></tr>
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Büyük satışlar</span></td><td class="rep-col"><span class="cross">✕</span> Zamanını herkese harcar, ciddi müşteriyi meraklıdan ayırmakta zorlanır</td><td class="aslan-col"><span class="check">✓</span> İhtiyacı, bütçeyi ve tarihi öğrenir, sıcak müşteriyi tüm bilgilerle size devreder</td></tr>
-          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Yıllık toplam</span></td><td class="rep-col"><span class="cross">✕</span> ≈1.000.000 TL</td><td class="aslan-col"><span class="check">✓</span> 156.800 TL'den başlayan maliyet</td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Yıllık toplam</span></td><td class="rep-col"><span class="cross">✕</span> ≈18.000 €</td><td class="aslan-col"><span class="check">✓</span> 2.988 €'dan başlayan maliyet</td></tr>
         </tbody>
       </table>
     </div>
     <div class="clean-saving">
       <div>
         <span class="small" style="display:block;margin-bottom:6px">İlk yıl tahmini tasarruf</span>
-        <div class="num">≈850.000 TL</div>
+        <div class="num">≈15.000 €</div>
       </div>
-      <p class="small" style="max-width:620px">Hesap: kariyer.net 2026 verisine göre ortalama satış temsilcisi maaşı ≈48.600 TL net; 2026 SGK işveren payı ile işverene maliyet ≈76.000 TL, yazılım ve hat ≈3.000 TL, yıllık kıdem tazminatı karşılığı ≈62.000 TL. Emre: 14.900 TL kurulum (ilk ay dahil) ve 11 ay × 12.900&nbsp;TL</p>
+      <p class="small" style="max-width:620px">Hesap: kariyer.net 2026 verisine göre ortalama satış temsilcisi maliyeti ≈1.000.000 TL/yıl (≈18.000 €). Emre: 249 € kurulum (ilk ay dahil) + 11 ay × 249 €. Euro karşılıkları yaklaşık kurla hesaplanmıştır.</p>
     </div>
   </div>
 </section>
@@ -816,20 +872,21 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
 <!-- 11. PLANS (CLEAR PACKAGING) -->
 <section id="paketler">
   <div class="wrap">
-    <h2>Şeffaf fiyat, <br class="mob-br"><span class="red red-path" data-path="11" data-label="Başlangıç adımları">TL&nbsp;cinsinden</span></h2>
-    <p class="lead">Tüm özellikler her pakette. Fiyat sadece konuşma sayısına&nbsp;bağlı</p>
+    <h2>Şeffaf fiyat, <br class="mob-br"><span class="red red-path" data-path="11" data-label="Başlangıç adımları">Euro&nbsp;bazlı</span></h2>
+    <p class="lead">Tüm özellikler her pakette. Fiyat sadece konuşma sayısına bağlı. Mesajları değil, tekil müşterilerle yapılan konuşmaları sayarız</p>
     
     <div class="plans-grid" id="plans">
-      <div class="plan-card" data-max="200">
+      <div class="plan-card" data-max="500">
         <div>
           <h3>Esnaf</h3>
           <p class="plan-for">Butikler ve yerel işletmeler için</p>
           <div class="plan-price-wrap">
-            <div class="price num">12.900</div>
-            <div class="period">TL / ay</div>
+            <div class="price num">249</div>
+            <div class="period">€ / ay</div>
           </div>
+          <div class="plan-setup-tag">⚡ Kurulum 249 € <small>(ilk ay dahil)</small></div>
           <ul class="plan-features">
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 200 konuşmaya kadar</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 500 konuşmaya kadar</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Tüm kanallar + CRM entegrasyonu</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Sesli mesajları anlama ve yanıtlama</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>30+ dilde satış ve pazarlık kuralları</li>
@@ -838,17 +895,18 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
         <a class="plan-btn" href="#test">Bu paketi seç</a>
       </div>
 
-      <div class="plan-card popular" data-max="600">
+      <div class="plan-card popular" data-max="1200">
         <span class="plan-badge">⭐ En Popüler</span>
         <div>
           <h3>İşletme</h3>
           <p class="plan-for">Büyüyen KOBİ'ler ve klinikler için</p>
           <div class="plan-price-wrap">
-            <div class="price num">19.900</div>
-            <div class="period">TL / ay</div>
+            <div class="price num">390</div>
+            <div class="period">€ / ay</div>
           </div>
+          <div class="plan-setup-tag">⚡ Kurulum 390 € <small>(ilk ay dahil)</small></div>
           <ul class="plan-features">
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 600 konuşmaya kadar</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 1.200 konuşmaya kadar</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Esnaf paketindeki her şey</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Kampanya ve fiyat güncellemeleri tek mesajla</li>
           </ul>
@@ -856,16 +914,17 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
         <a class="plan-btn" href="#test">Bu paketi seç</a>
       </div>
 
-      <div class="plan-card" data-max="1500">
+      <div class="plan-card" data-max="3000">
         <div>
           <h3>Akış</h3>
-          <p class="plan-for">Yoğun e-ticaret ve gayrimenkul için</p>
+          <p class="plan-for">Yoğun e-ticaret, otel ve gayrimenkul için</p>
           <div class="plan-price-wrap">
-            <div class="price num">29.900</div>
-            <div class="period">TL / ay</div>
+            <div class="price num">590</div>
+            <div class="period">€ / ay</div>
           </div>
+          <div class="plan-setup-tag">⚡ Kurulum 590 € <small>(ilk ay dahil)</small></div>
           <ul class="plan-features">
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 1.500 konuşmaya kadar</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 3.000 konuşmaya kadar</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>İşletme paketindeki her şey</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Yüksek eşzamanlı diyalog hacmi</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Öncelikli teknik destek hattı</li>
@@ -874,33 +933,110 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
         <a class="plan-btn" href="#test">Bu paketi seç</a>
       </div>
 
-      <div class="plan-card" data-max="999999">
+      <div class="plan-card" data-max="5000">
         <div>
           <h3>Sultan</h3>
           <p class="plan-for">Büyük ekipler ve kurumsal yapılar için</p>
           <div class="plan-price-wrap">
-            <div class="price num">49.900'den</div>
-            <div class="period">TL / ay</div>
+            <div class="price num">990</div>
+            <div class="period">€ / ay</div>
           </div>
+          <div class="plan-setup-tag">⚡ Kurulum 990 € <small>(ilk ay dahil)</small></div>
           <ul class="plan-features">
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>1.500 konuşmadan fazla</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 5.000 konuşmaya kadar</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Özel ERP / CRM API entegrasyonu</li>
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Kurumsal SLA &amp; Dedike yönetici</li>
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Özel yapay zeka fine-tuning</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Kurumsal SLA ve özel hesap yöneticisi</li>
           </ul>
         </div>
         <a class="plan-btn" href="#test">Teklif al</a>
       </div>
     </div>
 
-    <div class="plans-setup-box">
-      <div class="plans-setup-info">
-        <div class="plans-setup-title">Tek Seferlik Kurulum Bedeli</div>
-        <div class="plans-setup-price">14.900 TL <span>(İlk ay aboneliği dahildir)</span></div>
-        <p class="plans-setup-desc">Limit aşılırsa önceden haber veririz, ertesi aydan bir üst pakete geçersiniz. Ceza ve kesinti yok. Abonelik aylıktır, dilediğiniz an sonlandırabilirsiniz.</p>
-      </div>
-      <a class="btn btn-red" href="#test">7 gün ücretsiz deneyin</a>
+    <div class="plans-enterprise-callout">
+      <span>5.000'den fazla konuşma mı?</span>
+      <a class="btn btn-line" href="#test" style="min-height:38px;padding:0 20px;font-size:13.5px">Size özel teklif alın</a>
     </div>
+
+    <div class="plans-notes-card">
+      <div class="plans-perks-row">
+        <div class="perk-pill">
+          <span class="icon">🔌</span>
+          <span><b>Logo, Paraşüt, Mikro veya Netsis entegrasyonu:</b> kuruluma +290 €</span>
+        </div>
+        <div class="perk-pill discount">
+          <span class="icon">🎁</span>
+          <span><b>Yıllık peşin ödemede:</b> %15 indirim</span>
+        </div>
+      </div>
+      <div class="plans-policy-grid">
+        <div>
+          <b>Fatura &amp; KDV</b>
+          Fiyatlar Euro cinsindendir, KDV hariçtir. Fatura, fatura tarihindeki TCMB döviz satış kuru ile Türk lirası olarak düzenlenir.
+        </div>
+        <div>
+          <b>Esnek Geçiş &amp; Ceza Yok</b>
+          Limit aşılırsa önceden haber veririz, ertesi aydan bir üst pakete geçersiniz. Ceza ve kesinti yok. Abonelik aylıktır, dilediğiniz an sonlandırabilirsiniz.
+        </div>
+      </div>
+      <div class="plans-cta-center">
+        <a class="btn btn-red" href="#test" style="min-height:48px;padding:0 36px;font-size:15px">7 gün ücretsiz deneyin</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11b. PAY PER CONVERSATION (SEASONAL) -->
+<section id="sezonluk" class="pay-per-conv-section">
+  <div class="wrap pay-per-conv-box">
+    <div class="pay-header">
+      <span class="pay-pill">ESNEK &amp; SEZONLUK MODEL</span>
+      <h2>Sezonluk işletmeler için: <br class="mob-br">sadece gerçek konuşma&nbsp;<span class="red red-path" data-path="11b" data-label="Sezonluk model">kadar&nbsp;ödeyin</span></h2>
+      <p class="lead" style="margin-top:16px">Kışın sakin, yazın yoğun mu çalışıyorsunuz? Otel, rent a car, restoran ve turizm işletmeleri için esnek&nbsp;model</p>
+    </div>
+
+    <div class="pay-grid">
+      <div class="pay-platform-card">
+        <div>
+          <div class="pay-tag">SABİT PLATFORM BEDELİ</div>
+          <div class="pay-price-row">
+            <span class="price num">149</span>
+            <span class="curr">€ / ay</span>
+          </div>
+          <p class="pay-desc">Sistem altyapısı, yapay zeka sunucuları, 7/24 aktif bekleme ve temel bakım dahildir.</p>
+          <ul class="pay-perks">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Tüm kanallar ve CRM ücretsiz bağlanır</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Tek seferlik kurulum 249 €</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Sezon bitince dondurma imkânı</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pay-tiers-card">
+        <div>
+          <div class="pay-tag" style="color:var(--garnet)">KONUŞMA BAŞINA ÜCRETLENDİRME</div>
+          <p style="font-size:14px;color:var(--muted);margin-bottom:16px">Sadece cevap verilen ve sonuca bağlanan tekil konuşmalar faturalandırılır:</p>
+          <div class="pay-tiers-list">
+            <div class="pay-tier-row">
+              <span class="tier-range">1.000 konuşmaya kadar</span>
+              <span class="tier-cost"><b class="num">0,30</b> € / konuşma</span>
+            </div>
+            <div class="pay-tier-row best-tier">
+              <span class="tier-range">1.001 - 3.000 konuşma</span>
+              <span class="tier-cost"><b class="num">0,20</b> € / konuşma</span>
+            </div>
+            <div class="pay-tier-row">
+              <span class="tier-range">3.000 konuşmadan fazla</span>
+              <span class="tier-cost"><b class="num">0,17</b> € / konuşma</span>
+            </div>
+          </div>
+        </div>
+        <div class="pay-action">
+          <a class="btn btn-red" href="https://wa.me/79067574355" target="_blank" rel="noopener">Bu modeli WhatsApp'ta konuşalım</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   </div>
 </section>
 
@@ -942,7 +1078,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
     </div>
     <div class="principle-text">
       <h2>Kârınızın&nbsp;<span class="red red-path" data-path="13" data-label="Emre'yi ekibe kat">müttefikiyiz</span></h2>
-      <p>Finansal modelimiz tamamen şeffaf. Tanışma ücretsiz 7 günlük testle başlar. 14.900 TL kurulum ücreti; senaryoların hazırlanmasının, kuralların yüklenmesinin ve sistemin bağlanmasının net maliyetini&nbsp;karşılar.</p>
+      <p>Finansal modelimiz tamamen şeffaf. Tanışma ücretsiz 7 günlük testle başlar. 249 € kurulum ücreti; senaryoların hazırlanmasının, kuralların yüklenmesinin ve sistemin bağlanmasının net maliyetini&nbsp;karşılar.</p>
       <p>Asıl kazancımız uzun ortaklık. Emre size düzenli para kazandırdığında kazanıyoruz, siz de aboneliği ay ay gönül rahatlığıyla uzatıyorsunuz. Dilediğiniz an bırakabilirsiniz, ama eminiz: Emre'yle tanışma ilk mesajdan aklınızda&nbsp;kalacak</p>
       <div class="principle-cta">
         <a class="btn btn-red" href="#test">Emre'yi ekibime kat</a>
@@ -1119,19 +1255,51 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
 
   /* CALCULATOR */
   var leads = document.getElementById("leads"), conv = document.getElementById("conv"), check = document.getElementById("check");
-  var rate = 0.20, cost = 12900;
+  var rate = 0.20;
+  var currentCurr = "EUR";
+  var currEurBtn = document.getElementById("calcCurrEur");
+  var currTryBtn = document.getElementById("calcCurrTry");
+  var calcCostEl = document.getElementById("calcCost");
+
+  function getCurrConfig() {
+    if (currentCurr === "TRY") {
+      return { sym: "TL", cost: 12900, setupYear: 14900 + 11 * 12900, costLabel: "12.900 TL/ay" };
+    }
+    return { sym: "€", cost: 249, setupYear: 249 + 11 * 249, costLabel: "249 €/ay" };
+  }
+
+  function setCurrency(curr) {
+    currentCurr = curr;
+    if (curr === "TRY") {
+      if (currEurBtn) currEurBtn.classList.remove("active");
+      if (currTryBtn) currTryBtn.classList.add("active");
+      check.min = "500"; check.max = "250000"; check.step = "500"; check.value = "5000";
+    } else {
+      if (currTryBtn) currTryBtn.classList.remove("active");
+      if (currEurBtn) currEurBtn.classList.add("active");
+      check.min = "10"; check.max = "2500"; check.step = "10"; check.value = "150";
+    }
+    var cfg = getCurrConfig();
+    if (calcCostEl) calcCostEl.textContent = cfg.costLabel;
+    calc();
+  }
+
+  if (currEurBtn) currEurBtn.addEventListener("click", function() { setCurrency("EUR"); });
+  if (currTryBtn) currTryBtn.addEventListener("click", function() { setCurrency("TRY"); });
+
   function calc() {
+    var cfg = getCurrConfig();
     var L = +leads.value, C = +conv.value, A = +check.value;
     document.getElementById("leadsOut").textContent = fmt(L);
     document.getElementById("convOut").textContent = "%" + C;
-    document.getElementById("checkOut").textContent = fmt(A) + " TL";
+    document.getElementById("checkOut").textContent = fmt(A) + " " + cfg.sym;
     var revenue = L * C / 100 * A, loss = revenue * rate;
-    document.getElementById("loss").textContent = fmt(loss) + " TL";
-    document.getElementById("formula").textContent = "Şu an: " + fmt(L) + " talep × %" + C + " × " + fmt(A) + " TL = ayda " + fmt(revenue) + " TL. Hızlı cevap kaçan satışların yaklaşık %" + Math.round(rate * 100) + "'ini geri getirir.";
-    var days = loss > 0 ? Math.max(1, Math.round(cost / loss * 30)) : 0;
+    document.getElementById("loss").textContent = fmt(loss) + " " + cfg.sym;
+    document.getElementById("formula").textContent = "Şu an: " + fmt(L) + " talep × %" + C + " × " + fmt(A) + " " + cfg.sym + " = ayda " + fmt(revenue) + " " + cfg.sym + ". Hızlı cevap kaçan satışların yaklaşık %" + Math.round(rate * 100) + "'ini geri getirir.";
+    var days = loss > 0 ? Math.max(1, Math.round(cfg.cost / loss * 30)) : 0;
     document.getElementById("payback").textContent = loss <= 0 ? "-" : (days <= 30 ? "≈ " + days + " gün" : "≈ " + Math.round(days / 30) + " ay");
-    var year = loss * 12 - (14900 + 11 * cost);
-    document.getElementById("year").textContent = (year >= 0 ? "+" : "-") + fmt(Math.abs(year)) + " TL";
+    var year = loss * 12 - cfg.setupYear;
+    document.getElementById("year").textContent = (year >= 0 ? "+" : "-") + fmt(Math.abs(year)) + " " + cfg.sym;
   }
   [leads, conv, check].forEach(function (el) { el.addEventListener("input", calc); });
   document.querySelectorAll("#speed button").forEach(function (b) {
