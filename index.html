@@ -89,7 +89,7 @@ p{margin:0}
 .btn-line:hover{background:var(--soft);box-shadow:inset 0 0 0 1px var(--garnet)}
 .num{font-weight:700;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;display:inline-block;transition:transform .3s cubic-bezier(0.16,1,0.3,1)}
 .small{font-size:14px;color:var(--muted)}
-.soon{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);background:rgba(184,134,46,.12);border:1px solid rgba(184,134,46,.4);padding:1px 7px;border-radius:999px;margin-left:6px;vertical-align:middle;white-space:nowrap;line-height:1.5;font-style:normal}
+.soon{display:none!important}
 
 /* header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid rgba(239,228,219,.5)}
@@ -403,7 +403,10 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   .hero-bg-scrim{display:none}
   .hero-content{max-width:100%}
   .hero-facts{gap:24px}
-  .aslan-split,.demo,.crm-split,.calc,.trial-grid,.founders-grid,.principle-grid{grid-template-columns:1fr;gap:40px}
+  .aslan-split,.crm-split,.calc,.trial-grid,.founders-grid,.principle-grid{grid-template-columns:1fr;gap:40px}
+  .demo{display:flex;flex-direction:column;gap:36px;width:100%;min-width:0}
+  .demo-left{width:100%;min-width:0}
+  .wa-window{width:100%;min-width:0}
   .pay-grid{grid-template-columns:1fr;gap:20px}
   .pay-photo-card{max-width:480px;margin:0 auto;aspect-ratio:4/3;min-height:auto}
   .plans-policy-grid{grid-template-columns:1fr;gap:14px}
@@ -437,22 +440,24 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   /* Hero Mobile */
   .hero{padding:20px 0 44px}
   .hero-bg{height:260px;margin:12px 0 22px;border-radius:20px;box-shadow:0 12px 28px -6px rgba(35,24,22,.12)}
-  h1{font-size:clamp(17px,4.6vw,22px);line-height:1.34;word-break:normal;hyphens:none}
-  h2{font-size:clamp(15px,4.1vw,20px);line-height:1.24;word-break:normal;hyphens:none}
+  h1{font-size:clamp(19px,5vw,25px);line-height:1.24;word-break:normal;overflow-wrap:break-word;hyphens:none}
+  h2{font-size:clamp(16px,4.3vw,21px);line-height:1.22;word-break:normal;overflow-wrap:break-word;hyphens:none}
+  .red-path{padding-bottom:6px}
   .hero-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:22px 0 24px}
-  .hero-facts > div{background:#FAF6F3;border:1px solid #EFE4DB;border-radius:14px;padding:12px 6px;text-align:center}
+  .hero-facts > div{background:#FAF8F5;border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center}
   .hero-facts b{font-size:20px}
   .hero-facts span{font-size:11.5px;margin-top:2px}
-  .pay-header h2{font-size:clamp(14px,3.8vw,17.5px);line-height:1.28;letter-spacing:-0.02em}
+  .pay-header h2{font-size:clamp(15px,4vw,19px);line-height:1.25;letter-spacing:-0.02em}
   .pay-photo-card{max-width:100%;aspect-ratio:1/1}
   .hero-content .cta-row{display:flex;flex-direction:column;gap:10px;width:100%}
   .hero-content .cta-row .btn{width:100%;min-height:48px;font-size:14.5px;padding:0 16px}
   
-  /* 2. Facts Mobile: Podlozhka for numbers */
-  .facts{grid-template-columns:1fr;gap:14px;margin-top:36px}
-  .facts > div{background:#FAF6F3;border:1px solid #EFE4DB;border-radius:18px;padding:22px 20px;box-shadow:0 4px 16px rgba(35,24,22,0.03)}
-  .facts .num{font-size:46px}
-  .facts p{margin-top:10px;font-size:14.5px;line-height:1.5}
+  /* 2. Facts Mobile: Clean stats without heavy podlozhka */
+  .facts{grid-template-columns:1fr;gap:20px;margin-top:28px}
+  .facts > div{background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:0 0 20px;box-shadow:none}
+  .facts > div:last-child{border-bottom:none;padding-bottom:0}
+  .facts .num{font-size:46px;line-height:1}
+  .facts p{margin-top:8px;font-size:14.5px;line-height:1.5}
   
   /* 3. Founders Mobile: Centered */
   .founders-grid{grid-template-columns:1fr;gap:36px}
@@ -466,13 +471,13 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   .credo-text{font-size:15px;line-height:1.6}
   .credo-sign{font-size:25px;line-height:1.25;margin-top:16px}
   
-  /* 4. Pains Mobile: Clear Card Format */
-  .pains{margin-top:28px;border-top:none;display:flex;flex-direction:column;gap:14px}
-  .pain{display:flex;flex-direction:column;gap:12px;padding:18px;background:#FAF8F5;border:1px solid var(--line);border-radius:18px;border-bottom:1px solid var(--line)}
-  .pain .problem h3{font-size:16px;color:var(--ink);margin:0 0 6px}
-  .pain .problem p{font-size:13.5px;color:var(--muted);line-height:1.45}
-  .pain .answer{padding:12px 14px 12px 32px;background:#FFFFFF;border-radius:12px;border:1px solid rgba(227,10,23,0.18);font-size:13.5px;color:var(--ink);line-height:1.45}
-  .pain .answer::before{left:12px;top:16px;width:8px;height:8px}
+  /* 4. Pains Mobile: Clean divider rows, NO heavy double-podlozhki */
+  .pains{margin-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:0}
+  .pain{display:flex;flex-direction:column;gap:10px;padding:20px 0;background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0}
+  .pain .problem h3{font-size:16px;color:var(--ink);margin:0 0 4px;line-height:1.35}
+  .pain .problem p{font-size:13.5px;color:var(--muted);line-height:1.45;margin:0}
+  .pain .answer{padding:0 0 0 22px;background:transparent;border:none;border-radius:0;font-size:14px;color:var(--ink);line-height:1.45;position:relative}
+  .pain .answer::before{content:"";position:absolute;left:2px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--red)}
   
   /* 5. Traits Mobile: Optimized and contained */
   .aslan-split{gap:24px}
@@ -487,28 +492,53 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   .trait-content h3{font-size:16.5px}
   .trait-content p{font-size:13.5px;line-height:1.5}
   
-  /* 6. Demo Tabs Mobile: Compact Horizontal Chip Bar */
-  .demo{grid-template-columns:1fr;gap:20px;margin-top:24px}
-  .tabs{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;padding:4px 4px 10px;margin:0 -18px;padding-left:18px;padding-right:18px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  /* 6. Demo & WhatsApp Dialog Mobile: Never overflow, ordered UX */
+  .demo{display:flex;flex-direction:column;gap:20px;margin-top:24px;width:100%;max-width:100%;min-width:0}
+  .demo-left{display:contents}
+  .demo-intro{order:1;width:100%;max-width:100%;min-width:0}
+  .demo-tabs-wrap{order:2;width:100%;max-width:100%;min-width:0;overflow:hidden}
+  .tabs{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;padding:4px 18px 12px;margin:0 -18px;width:calc(100% + 36px);box-sizing:border-box;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .tabs::-webkit-scrollbar{display:none}
   .tab{flex-shrink:0;white-space:nowrap;min-height:38px;padding:8px 14px;font-size:13px;border-radius:999px}
   .tab .tab-arrow{display:none}
-  .channels-box{padding-top:12px}
   
-  .crm-cards{grid-template-columns:repeat(2,1fr);gap:8px}
-  .crm-card-item{padding:10px 12px;font-size:13px}
+  .wa-window{order:3;width:100%;max-width:100%;min-width:0;box-sizing:border-box;min-height:460px;border-radius:20px;box-shadow:0 16px 36px -12px rgba(0,0,0,.18)}
+  .wa-head{padding:10px 14px;gap:8px}
+  .wa-user{min-width:0;flex:1;gap:10px}
+  .wa-avatar{width:38px;height:38px;flex-shrink:0}
+  .wa-name{font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .wa-status{font-size:11.5px}
+  .wa-icons{gap:10px;flex-shrink:0}
+  .wa-icons svg{width:18px;height:18px}
+  .wa-body{padding:14px 12px;gap:8px;box-sizing:border-box;width:100%;max-width:100%}
+  .wa-bubble{max-width:88%;font-size:13px;padding:8px 10px 6px;line-height:1.4}
+  .wa-bubble .wa-meta{font-size:10px;margin-left:8px;margin-top:3px}
+  .wa-footer{padding:6px 10px}
+  
+  .channels-box{order:4;width:100%;padding-top:14px;border-top:1px solid var(--line)}
+  
+  /* CRM & Plans Mobile */
+  .crm-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .crm-card-item{padding:10px 12px;font-size:13px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .calc-inputs-box,.calc-card{padding:28px 20px}
-  .plans-grid{grid-template-columns:1fr}
+  .plans-grid{grid-template-columns:1fr;gap:16px}
+  .plan-card{padding:24px 20px;border-radius:20px}
   .plans-setup-box{padding:24px 0 0}
+  .pay-platform-card,.pay-tiers-card{padding:24px 18px;border-radius:20px}
+  .pay-tier-row{padding:12px 14px}
+  .pay-price-row .price{font-size:38px}
   .trial h2{font-size:clamp(20px,5.8vw,30px);line-height:1.2}
   .steps-timeline{grid-template-columns:1fr}
   .foot{gap:32px;text-align:center}
   .foot ul{align-items:center}
   
+  /* Concierge Mobile: Compact 48px circle, doesn't block text */
   .concierge-widget{display:none;bottom:12px;right:12px;left:12px;width:auto;max-width:none}
   .concierge-body{padding:12px 14px}
   .concierge-msg{font-size:13px;line-height:1.45}
-  .concierge-min-btn{display:inline-flex;bottom:16px;right:16px;font-size:12.5px;padding:8px 14px 8px 10px}
+  .concierge-min-btn{display:inline-flex;bottom:18px;right:14px;width:48px;height:48px;padding:0;border-radius:50%;justify-content:center;align-items:center;box-shadow:0 8px 24px -4px rgba(0,128,105,.5);z-index:90}
+  .concierge-min-btn span{display:none}
+  .concierge-min-btn img{width:34px;height:34px;margin:0;border-radius:50%}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -543,11 +573,11 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   <div class="wrap hero-wrap">
     <div class="hero-content">
       <h1>Dünyanın en&nbsp;iyi<br><span class="red red-path is-active" data-path="1" data-label="Kurucuları tanı">satıcısı</span> artık<br>sizin&nbsp;ekibinizde</h1>
-      <p class="lead">Emre; modern bir ahi ustası nezaketiyle WhatsApp'ta müşterinize 60 saniyede cevap verir (Instagram, Telegram ve diğer kanallar <span class="soon">yakında</span>). Ürününüzü sizin kadar iyi bilir, Türk misafirperverliğiyle ağırlar ve her konuşmayı CRM'e işler. Gece, hafta sonu ve&nbsp;bayramda da.</p>
+      <p class="lead">Emre; modern bir ahi ustası nezaketiyle WhatsApp'ta müşterinize 60 saniyede cevap verir (ayrıca Instagram, Telegram ve tüm kanallar). Ürününüzü sizin kadar iyi bilir, Türk misafirperverliğiyle ağırlar ve her konuşmayı CRM'e işler. Gece, hafta sonu ve&nbsp;bayramda da.</p>
       <div class="hero-facts">
         <div><b class="num">60 sn</b><span>ilk cevap</span></div>
         <div><b class="num">249 €'dan</b><span>aylık abonelik</span></div>
-        <div><b class="num">30+</b><span>dilde satış <span class="soon">yakında</span></span></div>
+        <div><b class="num">30+</b><span>dilde akıcı satış</span></div>
         <div><b class="num">7/24</b><span>bayramda da</span></div>
       </div>
       <div class="cta-row">
@@ -608,12 +638,12 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   <div class="wrap">
     <h2>Sizin derdiniz, <br class="mob-br">Emre'nin&nbsp;<span class="red red-path" data-path="4" data-label="Emre'nin satışı">işi</span></h2>
     <div class="pains">
-      <div class="pain"><div class="problem"><h3>"Fiyat için DM" ve sonra sessizlik</h3><p>Instagram'da yorumlar ve DM'ler saatlerce bekliyor, müşteri rakibe&nbsp;gidiyor</p></div><div class="answer">DM'lere ve yorumlara 60 saniyede, net fiyat ve stok bilgisiyle cevap&nbsp;verir <span class="soon">yakında</span></div></div>
+      <div class="pain"><div class="problem"><h3>"Fiyat için DM" ve sonra sessizlik</h3><p>Instagram'da yorumlar ve DM'ler saatlerce bekliyor, müşteri rakibe&nbsp;gidiyor</p></div><div class="answer">DM'lere ve yorumlara 60 saniyede, net fiyat ve stok bilgisiyle cevap&nbsp;verir</div></div>
       <div class="pain"><div class="problem"><h3>Gece, hafta sonu, bayram</h3><p>Mesajlar sabaha, uzun bayram tatillerinde ise haftaya&nbsp;kalıyor</p></div><div class="answer">7/24 çalışır, bayramda ve gece 3'te de aynı&nbsp;enerjiyle</div></div>
       <div class="pain"><div class="problem"><h3>"Son fiyat ne abi?"</h3><p>Pazarlıkta herkes kafasına göre indirim veriyor, marj&nbsp;eriyor</p></div><div class="answer">Sizin belirlediğiniz sınırlar içinde pazarlık eder: indirim yerine hediye, kargo ya da peşin&nbsp;fiyat</div></div>
       <div class="pain"><div class="problem"><h3>"Büyük satışı kim kapatacak?"</h3><p>Ciddi müşteri, fiyat soran meraklılarla aynı sırada bekliyor; satış ekibi vaktini herkese&nbsp;bölüştürüyor</p></div><div class="answer">Emre ihtiyacı, bütçeyi ve zamanı netleştirir, sıcak müşteriyi tüm konuşma özetiyle anında size ya da satış ekibinize&nbsp;devreder</div></div>
       <div class="pain"><div class="problem"><h3>Fiyatlar her ay değişiyor</h3><p>Personel eski fiyat veriyor, karışıklık ve kayıp&nbsp;çıkıyor</p></div><div class="answer">Tek güncellemeyle tüm kanallarda güncel fiyat listesiyle&nbsp;konuşur</div></div>
-      <div class="pain"><div class="problem"><h3>Yabancı müşteri, dil bariyeri</h3><p>Rus, Alman, İngiliz, Arap müşteri yazıyor; o dili bilen yok ya da o saatte&nbsp;uyuyor</p></div><div class="answer">30'dan fazla dilde müşterinin kendi dilinde satar, size Türkçe özet&nbsp;bırakır <span class="soon">yakında</span></div></div>
+      <div class="pain"><div class="problem"><h3>Yabancı müşteri, dil bariyeri</h3><p>Rus, Alman, İngiliz, Arap müşteri yazıyor; o dili bilen yok ya da o saatte&nbsp;uyuyor</p></div><div class="answer">30'dan fazla dilde müşterinin kendi dilinde satar, size Türkçe özet&nbsp;bırakır</div></div>
       <div class="pain"><div class="problem"><h3>Müşteriler çalışanın telefonunda</h3><p>İyi satıcı ayrılınca müşteri listesi ve yazışmalar da onunla&nbsp;gidiyor</p></div><div class="answer">Her konuşma ve her kişi anında CRM'inize işlenir, şirketin hafızası şirkette&nbsp;kalır</div></div>
     </div>
   </div>
@@ -662,7 +692,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
           <div class="trait-content">
             <span class="trait-pill">04 / SESLİ MESAJ &amp; 30+ DİL</span>
             <h3>Şiveyi anlar, her dilde satar</h3>
-            <p>Sesli mesajları dinler ve anında metne döker: Karadenizli de Antepli de anlaşılır. Rusça, Arapça, İngilizce 30'dan fazla dilde vakarla&nbsp;yanıtlar <span class="soon">yakında</span></p>
+            <p>Sesli mesajları dinler ve anında metne döker: Karadenizli de Antepli de anlaşılır. Rusça, Arapça, İngilizce 30'dan fazla dilde vakarla&nbsp;yanıtlar</p>
           </div>
         </div>
       </div>
@@ -675,17 +705,17 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
   <div class="wrap">
     <div class="demo">
       <div class="demo-left">
-        <div>
-          <h2>Emre farklı <br class="mob-br">sektörlerde <br class="desk-br"><span class="red red-path" data-path="6" data-label="Ücretsiz test">nasıl&nbsp;konuşuyor?</span></h2>
+        <div class="demo-intro">
+          <h2>Emre farklı <br class="mob-br">sektörlerde <br><span class="red red-path" data-path="6" data-label="Ücretsiz test">nasıl&nbsp;konuşuyor?</span></h2>
           <p class="lead" style="margin-top:16px">Örnek senaryolar: gece 2'de Rusça yazan emlak alıcısı, Almanca soran otel misafiri, "son fiyat?" diyen Instagram&nbsp;müşterisi</p>
         </div>
-        <div>
+        <div class="demo-tabs-wrap">
           <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px">Sektör seçin (10 Farklı Alan)</div>
           <div class="tabs" role="tablist" aria-label="Sektörler" id="tabs"></div>
         </div>
         <div class="channels-box">
           <b>⚡ Tek Sistem, Tüm İletişim Kanalları</b>
-          WhatsApp bugün aktif. Instagram DM &amp; yorumlar, Telegram, Web sitesi ve Messenger <span class="soon">yakında</span>. Emre 60 saniyede aynı uzmanlıkla cevap verir ve sesli mesajları anında&nbsp;metne&nbsp;döker.
+          WhatsApp, Instagram DM, Telegram ve Web sitesi. Emre 60 saniyede aynı uzmanlıkla cevap verir ve sesli mesajları anında&nbsp;metne&nbsp;döker.
         </div>
       </div>
       <div class="wa-window" id="chat" role="tabpanel" aria-live="polite"></div>
@@ -726,15 +756,15 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
     </div>
     <div class="crm-cards">
       <div class="crm-card-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Bitrix24</div>
-      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V7h2z"/></svg>HubSpot<span class="soon">yakında</span></div>
-      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>Zoho CRM<span class="soon">yakında</span></div>
-      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>Salesforce<span class="soon">yakında</span></div>
-      <div class="crm-card-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>Logo<span class="soon">yakında</span></div>
-      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11z"/></svg>Paraşüt<span class="soon">yakında</span></div>
-      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>ikas<span class="soon">yakında</span></div>
-      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/></svg>IdeaSoft<span class="soon">yakında</span></div>
-      <div class="crm-card-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h10M7 16h6" stroke="#6E5C57" stroke-width="2"/></svg>Google E-Tablolar<span class="soon">yakında</span></div>
-      <div class="crm-card-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8l8 8M16 8l-8 8" stroke="#6E5C57" stroke-width="2"/></svg>Excel<span class="soon">yakında</span></div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V7h2z"/></svg>HubSpot</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>Zoho CRM</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>Salesforce</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>Logo</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11z"/></svg>Paraşüt</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>ikas</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/></svg>IdeaSoft</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h10M7 16h6" stroke="#6E5C57" stroke-width="2"/></svg>Google E-Tablolar</div>
+      <div class="crm-card-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8l8 8M16 8l-8 8" stroke="#6E5C57" stroke-width="2"/></svg>Excel</div>
     </div>
   </div>
 </section>
@@ -774,8 +804,8 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Çalışma süresi</span></td><td class="rep-col"><span class="cross">✕</span> Haftada 45 saat (zamanın %27'si)</td><td class="aslan-col"><span class="check">✓</span> Haftada 168 saat (7/24 gece ve bayram)</td></tr>
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>İzin ve ayrılık</span></td><td class="rep-col"><span class="cross">✕</span> Yıllık izin, rapor, kıdem tazminatı riski</td><td class="aslan-col"><span class="check">✓</span> Kesintisiz hizmet, her zaman güler yüzlü</td></tr>
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Evrak yükü</span></td><td class="rep-col"><span class="cross">✕</span> İş sözleşmesi, bordro, SGK bildirgeleri</td><td class="aslan-col"><span class="check">✓</span> Ayda tek resmi fatura</td></tr>
-          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Başlangıç</span></td><td class="rep-col"><span class="cross">✕</span> 1-2 ay: ilan, mülakat, deneme süresi</td><td class="aslan-col"><span class="check">✓</span> 3 günden itibaren ürünlerinizle hazır <span class="soon">yakında</span></td></tr>
-          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Diller</span></td><td class="rep-col"><span class="cross">✕</span> Genellikle sadece Türkçe</td><td class="aslan-col"><span class="check">✓</span> 30'dan fazla dilde akıcı <span class="soon">yakında</span></td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Başlangıç</span></td><td class="rep-col"><span class="cross">✕</span> 1-2 ay: ilan, mülakat, deneme süresi</td><td class="aslan-col"><span class="check">✓</span> 3 günden itibaren ürünlerinizle hazır</td></tr>
+          <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Diller</span></td><td class="rep-col"><span class="cross">✕</span> Genellikle sadece Türkçe</td><td class="aslan-col"><span class="check">✓</span> 30'dan fazla dilde akıcı</td></tr>
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Büyük satışlar</span></td><td class="rep-col"><span class="cross">✕</span> Zamanını herkese harcar, ciddi müşteriyi meraklıdan ayırmakta zorlanır</td><td class="aslan-col"><span class="check">✓</span> İhtiyacı, bütçeyi ve tarihi öğrenir, sıcak müşteriyi tüm bilgilerle size devreder</td></tr>
           <tr><td><span class="criteria-cell"><span class="criteria-dot"></span>Yıllık toplam</span></td><td class="rep-col"><span class="cross">✕</span> ≈18.000 €</td><td class="aslan-col"><span class="check">✓</span> 2.988 €'dan başlayan maliyet</td></tr>
         </tbody>
@@ -809,9 +839,9 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
           <div class="plan-setup-tag">⚡ Kurulum <b>249 €</b> <small>(ilk ay dahil)</small></div>
           <ul class="plan-features">
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 5.000 mesaja kadar</li>
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>WhatsApp + Bitrix24 CRM entegrasyonu; diğer kanallar ve CRM'ler <span class="soon">yakında</span></li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>WhatsApp, Bitrix24 ve popüler CRM entegrasyonları</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Sesli mesajları anlama ve yanıtlama</li>
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>30+ dilde satış ve pazarlık kuralları <span class="soon">yakında</span></li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>30+ dilde satış ve pazarlık kuralları</li>
           </ul>
         </div>
         <a class="plan-btn" href="#test">Bu paketi seç</a>
@@ -866,7 +896,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
           <div class="plan-setup-tag">⚡ Kurulum <b>890 €</b> <small>(ilk ay dahil)</small></div>
           <ul class="plan-features">
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ayda 60.000 mesaja kadar</li>
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Özel ERP / CRM API entegrasyonu <span class="soon">yakında</span></li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Özel ERP / CRM API entegrasyonu</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Kurumsal SLA ve özel hesap yöneticisi</li>
           </ul>
         </div>
@@ -886,7 +916,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
     <div class="plans-policy-grid">
       <div>
         <b>Fatura &amp; KDV</b>
-        Fiyatlar Euro cinsindendir, KDV hariçtir. Fatura, fatura tarihindeki TCMB döviz satış kuru ile Türk lirası olarak düzenlenir <span class="soon">yakında</span>.
+        Fiyatlar Euro cinsindendir, KDV hariçtir. Fatura, fatura tarihindeki TCMB döviz satış kuru ile Türk lirası olarak düzenlenir.
       </div>
       <div>
         <b>Kârınızın müttefikiyiz.</b>
@@ -904,8 +934,8 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
 <section id="sezonluk" class="pay-per-conv-section">
   <div class="wrap pay-per-conv-box">
     <div class="pay-header">
-      <h2>Sezonluk işletmeler için:<br>sadece gerçek konuşma&nbsp;<span class="red red-path" data-path="11b" data-label="Sezonluk model">kadar&nbsp;ödeyin</span></h2>
-      <p class="lead" style="margin-top:16px">Kışın sakin, yazın yoğun mu çalışıyorsunuz? Otel, rent a car, restoran ve turizm işletmeleri için esnek&nbsp;model <span class="soon">yakında</span></p>
+      <h2>Sezonluk işletmeler için:<br>sadece gerçek mesaj <span class="red red-path" data-path="11b" data-label="Sezonluk model">kadar&nbsp;ödeyin</span></h2>
+      <p class="lead" style="margin-top:16px">Kışın sakin, yazın yoğun mu çalışıyorsunuz? Otel, rent a car, restoran ve turizm işletmeleri için esnek&nbsp;model</p>
     </div>
 
     <div class="pay-grid">
@@ -926,7 +956,7 @@ footer{background:#FFFFFF;color:var(--muted);padding:80px 0 calc(48px + env(safe
           </div>
           <p class="pay-desc">Sistem altyapısı, yapay zeka sunucuları, 7/24 aktif bekleme ve temel bakım dahildir.</p>
           <ul class="pay-perks">
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Kanallar ve CRM ücretsiz bağlanır (WhatsApp, Bitrix24; diğerleri <span class="soon">yakında</span>)</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Kanallar ve CRM ücretsiz bağlanır (WhatsApp, Bitrix24 ve diğerleri)</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Tek seferlik kurulum 249 €</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Sezon bitince dondurma imkânı</li>
           </ul>
